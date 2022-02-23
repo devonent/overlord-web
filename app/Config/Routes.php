@@ -58,14 +58,13 @@ $routes->get('/instrumentos/guitarras/guitarra003', 'Public_controllers/Single_g
 $routes->get('/instrumentos/guitarras/guitarra004', 'Public_controllers/Single_guitars::guitar004');
 $routes->get('/instrumentos/guitarras/guitarra005', 'Public_controllers/Single_guitars::guitar005');
 
-// -----------------------------------------------------------------------
-// PRIVATE SIDE ROUTES
-// -----------------------------------------------------------------------
-$routes->get('/login', 'Private_controllers/Login::index');
+$routes->get('/login', 'Public_controllers/Login::index');
+$routes->post('/iniciar_sesion', 'Public_controllers/Login::check_user');
 
-$routes->post('/iniciar_sesion', 'Private_controllers/Login::check_user');
-
-$routes->get('/dashboard', 'Private_controllers/Dashboard::index');
+// -----------------------------------------------------------------------
+// Panel SIDE ROUTES
+// -----------------------------------------------------------------------
+$routes->get('/dashboard', 'Panel_controllers/Dashboard::index');
 
 
 /*

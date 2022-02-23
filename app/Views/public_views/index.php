@@ -261,8 +261,8 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
-							<h1>Lo más nuevo</h1>
-							<p>Instrumentos novedosos, que seguro te harán ver como <br> una estrella de la industria de la música.</p>
+							<h1>Ofertas</h1>
+							<p>Checa estas ofertas, seguro que encuentras <br> algo que te vuelva una estrella de la música.</p>
 						</div>
 					</div>
 				</div>
@@ -402,8 +402,8 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
-							<h1>Próximamente</h1>
-							<p>Las leyendas hechas realidad. Próximamente, estos productos <br> saldrán a la luz, y puede que quieras saber más de ellos.</p>
+							<h1>Lo más nuevo</h1>
+							<p>Instrumentos novedosos, que seguro te harán ver como <br> una estrella de la industria de la música.</p>
 						</div>
 					</div>
 				</div>

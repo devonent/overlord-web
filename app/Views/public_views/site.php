@@ -51,6 +51,7 @@
 						<a href="#">Acerca de<span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">El sitio</a>
 					</nav>
+				</div>
 			</div>
 		</div>
 	</section>
