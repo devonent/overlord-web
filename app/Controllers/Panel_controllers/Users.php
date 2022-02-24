@@ -4,22 +4,23 @@ namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 use App\Libraries\Permissions;
 
-class Dashboard extends BaseController {
+class Users extends BaseController {
     private $is_allowed = TRUE;
 
     public function __construct() {
         $session = session();
-        if(!Permissions::is_role_allowed(DASHBOARD_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
+        if(!Permissions::is_role_allowed(USERS_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
             $this->is_allowed = FALSE;
         }//end if role not allowed
     }//end __construct function
 
     public function index() {
         if($this->is_allowed){
-            return $this->create_view('panel_views/index', $this->load_data());
+            return $this->create_view('panel_views/users', $this->load_data());
         }//end if not allowed
         else {
-            return redirect()->to(route_to('login'));
+            create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...');
+            return redirect()->to(route_to('dashboard'));
         }//end else not allowed
     }//end index function
 
@@ -31,7 +32,7 @@ class Dashboard extends BaseController {
         $data['user_full_name'] = $session->user_full_name;
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
-        
+
         switch ($session->id_rol) {
             case ADMIN_ROLE['id']:
                 $data['user_role'] = ADMIN_ROLE['nombre'];
@@ -50,13 +51,13 @@ class Dashboard extends BaseController {
                 break;
         }//end switch determine role
 
-        $data['section_name'] = 'Dashboard';
+        $data['section_name'] = 'Usuarios';
 
         return $data;
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
-        $content['menu'] = generate_nav_menu(DASHBOARD_TASK, session()->id_rol);
+        $content['menu'] = generate_nav_menu(USERS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
-}//end Dashboard class
+}//end Users class

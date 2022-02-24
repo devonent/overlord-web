@@ -1,6 +1,6 @@
 <?php
 
-function config_nav_menu() {
+function config_nav_menu($id_role = 0) {
     $menu = array();
     $menu_item = array();
     $submenu_item = array();
@@ -11,11 +11,6 @@ function config_nav_menu() {
     $menu_item['icon'] = 'bi bi-grid-fill';
     $menu_item['text'] = 'Dashboard';
     $menu_item['submenu'] = array();
-        $submenu_item = array();
-        $submenu_item['is_active'] = false;
-        $submenu_item['link'] = route_to('asdf');
-        $submenu_item['text'] = 'asdf';
-        $menu_item['submenu']['asdf'] = $submenu_item;
     $menu['dashboard'] = $menu_item;
 
     //Instrumentos section
@@ -55,17 +50,28 @@ function config_nav_menu() {
 
     $menu['instruments'] = $menu_item;
 
+    if($id_role == ADMIN_ROLE['id']){
+        //Users section
+        $menu_item['is_active'] = false;
+        $menu_item['link'] = route_to('usuarios');
+        $menu_item['icon'] = 'bi bi-people-fill';
+        $menu_item['text'] = 'Usuarios';
+        $menu_item['submenu'] = array();
+        $menu['users'] = $menu_item;
+    }//end if admin only
+
+
     return $menu;
 
 }//end config_nav_menu function
 
-function activate_section($active_section = NULL, $menu = NULL) {
-    switch ($active_section) {
+function activate_section($section_to_activate = NULL, $menu = NULL) {
+    switch ($section_to_activate) {
         // Activate dashboard section
         case DASHBOARD_TASK:
             $menu['dashboard']['is_active'] = TRUE;
             break;
-
+            
         // Activate instruments subsections
         case INS_GUITARS_TASK:
             $menu['instruments']['is_active'] = TRUE;
@@ -87,17 +93,21 @@ function activate_section($active_section = NULL, $menu = NULL) {
             $menu['instruments']['submenu']['monitors']['is_active'] = TRUE;
             break;
 
-        default:
+        case USERS_TASK:
+            $menu['users']['is_active'] = TRUE;
+            break;
+            
+            default:
             # No se activará ningún elemento
             break;
-    }//end switch
+        }//end switch
 
     return $menu;
 }//end activate_section function
 
-function generate_nav_menu($active_section) {
-    $menu = config_nav_menu();
-    $menu = activate_section($active_section, $menu);
+function generate_nav_menu($section_to_activate = NULL, $id_role = 0) {
+    $menu = config_nav_menu($id_role);
+    $menu = activate_section($section_to_activate, $menu);
     $html = '';
     $html .= '
         <li class="sidebar-title ps-0 text-muted">Menu de navegación</li>

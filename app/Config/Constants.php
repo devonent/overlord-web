@@ -104,4 +104,7 @@ define ("INS_DRUMS_TASK", "baterias");
 define ("INS_KEYBOARDS_TASK", "teclados");
 define ("INS_MONITORS_TASK", "monitores");
 
+// USERS
+define ("USERS_TASK", "usuarios");
+
 // ======= PORTAL CONSTANTS ===================

@@ -66,6 +66,7 @@ $routes->post('/iniciar_sesion', 'Panel_controllers/Login::check_user');
 $routes->get('/cerrar_sesion', 'Panel_controllers/Logout::index');
 
 $routes->get('/dashboard', 'Panel_controllers/Dashboard::index');
+$routes->get('/usuarios', 'Panel_controllers/Users::index');
 
 
 /*
