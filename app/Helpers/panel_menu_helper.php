@@ -1,7 +1,5 @@
 <?php
 
-use App\Controllers\Public_controllers\Instruments;
-
 function config_nav_menu() {
     $menu = array();
     $menu_item = array();

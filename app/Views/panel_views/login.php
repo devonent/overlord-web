@@ -19,6 +19,9 @@
 		CSS
 		============================================= -->
 	<?php require_once "public_resources/modules/public_styles.php"?>
+
+	<link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/toastify/toastify.css') ?>">
+
 </head>
 
 <body>
@@ -57,11 +60,21 @@
 	<!-- End Banner Area -->
 
 	<!--================Login Box Area =================-->
-	<section class="login_box_area section_gap">
+	<section class="login_box_area section_gap pt-5">
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="row">
 				<div class="col-lg-6">
-					<div class="login_form_inner mb-5">
+					<div class="login_box_img">
+						<img class="img-fluid" src="<?= base_url('public_resources/img/login.jpg') ?>" alt="">
+						<div class="hover">
+							<h4>Accede al panel de administración</h4>
+							<p>Asegurate de ingresar las credenciales de una cuenta válida. Solo se permite el acceso a personal autorizado.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+					<div class="login-icon pb-4"><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></div>
 						<h3>Iniciar sesión</h3>
 						<!-- <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate"> -->
 						<?php 
@@ -101,7 +114,7 @@
 									echo form_input($data);
 								?>
 							</div>
-							<div class="col-md-12 form-group mb-5">
+							<div class="col-md-12 form-group my-4">
 								<button type="submit" value="submit" class="primary-btn">Ingresar</button>
 							</div>
 						<?=
@@ -117,6 +130,10 @@
 
 	<?php require_once "public_resources/modules/public_scripts.php"?>
 	<?php require_once "public_resources/modules/public_footer.php"?>
+	
+	<script src="<?= base_url('panel_resources/assets/vendors/toastify/toastify.js') ?>"></script>
+	
+	<script><?= print_message() ?></script>
 </body>
 
 </html>

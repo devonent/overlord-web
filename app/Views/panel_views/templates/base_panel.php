@@ -73,31 +73,24 @@
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 text-gray-600">John Ducky</h6>
+                                            <h6 class="mb-0 text-gray-600"><?= $user_full_name ?></h6>
                                             <p class="mb-0 text-sm text-gray-600">Administrator</p>
                                         </div>
                                         <div class="user-img d-flex ">
                                             <div class="avatar avatar-md">
-                                                <img src="<?= base_url('panel_resources/assets/images/faces/1.jpg') ?>">
+                                                
+                                                <img src="<?= base_url('panel_resources/assets/images/faces/' . ($user_img == NULL ? ($user_sex == MALE_SEX ? 'avatar-m1.jpg' : 'avatar-f1.jpg') : $user_img)); ?>">
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                        <h6 class="dropdown-header">Hola, <?= $user_name ?>!</h6>
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
-                                            Profile</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
-                                            Settings</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                   
+                                    <li><a class="dropdown-item" href="<?= route_to('cerrar_sesion') ?>"><i
+                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Cerrar sesión</a></li>
                                 </ul>
                             </div>
                             <!-- =============== -->

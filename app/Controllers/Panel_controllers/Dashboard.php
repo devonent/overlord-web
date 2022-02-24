@@ -14,6 +14,12 @@ class Dashboard extends BaseController {
 
     private function load_data() {
         $data = array();
+        //Session elements
+        $session = session();
+        $data['user_name'] = $session->user_name;
+        $data['user_full_name'] = $session->user_full_name;
+        $data['user_img'] = $session->user_img;
+        $data['user_sex'] = $session->user_sex;
 
         return $data;
     }//end load_data function

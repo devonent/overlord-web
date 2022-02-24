@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers\Public_controllers;
+namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 
 class Login extends BaseController {
     public function index() {
-        return $this->create_view('public_views/login');
+        return $this->create_view('panel_views/login');
     }//end index function
 
     private function create_view($view_name = '') {
@@ -30,9 +30,11 @@ class Login extends BaseController {
             $session->set('user_img', $user_data->imagen);
             $session->set('id_rol', $user_data->id_rol);
             
-            echo 'Bienvenido ' . $session->get('user_full_name');
-        } else {
-            echo 'Acceso denegado...';
-        }
+            return redirect()->to(route_to('dashboard'));
+        }//end if si existe el usuario
+        else {
+            create_user_message('Su usuario y/o contraseña son incorrectas...');
+            return redirect()->to(route_to('login'));
+        }//end else si existe el usuario
     }//end check_user function
 }

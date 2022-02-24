@@ -36,7 +36,7 @@ $routes->setAutoRoute(true);
 // PUBLIC SIDE ROUTES
 // -----------------------------------------------------------------------
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Public_controllers/Home::index');
 
 $routes->get('/nosotros', 'Public_controllers/Info::index');
 $routes->get('/ofertas', 'Public_controllers/Deals::index');
@@ -58,12 +58,13 @@ $routes->get('/instrumentos/guitarras/guitarra003', 'Public_controllers/Single_g
 $routes->get('/instrumentos/guitarras/guitarra004', 'Public_controllers/Single_guitars::guitar004');
 $routes->get('/instrumentos/guitarras/guitarra005', 'Public_controllers/Single_guitars::guitar005');
 
-$routes->get('/login', 'Public_controllers/Login::index');
-$routes->post('/iniciar_sesion', 'Public_controllers/Login::check_user');
-
 // -----------------------------------------------------------------------
 // Panel SIDE ROUTES
 // -----------------------------------------------------------------------
+$routes->get('/login', 'Panel_controllers/Login::index');
+$routes->post('/iniciar_sesion', 'Panel_controllers/Login::check_user');
+$routes->get('/cerrar_sesion', 'Panel_controllers/Logout::index');
+
 $routes->get('/dashboard', 'Panel_controllers/Dashboard::index');
 
 
