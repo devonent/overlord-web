@@ -35,8 +35,10 @@ CREATE TABLE usuario (
 
 -- INSERT VALUES INTO 'usuario' TABLE
 INSERT INTO usuario (nombre, apellido_p, apellido_m, sexo, email, password, id_rol) VALUES
+('Darien', 'Pérez', 'Cano', 'M', 'darien@gmail.com', 'darien', 1),
+('Andric', 'Pérez', 'Cano', 'M', 'andric@gmail.com', 'andric', 2),
+('Stacey', 'Conde', 'Corona', 'F', 'stacey@gmail.com', 'stacey', 3),
 ('Paulina', 'Fernández', 'Macia', 'F', 'paulina_905@gmail.com', 'paulina_905', 1),
 ('Igor', 'Ávila', 'Sánchez', 'F', 'igor_216@gmail.com', 'igor_216', 2),
-('Andric', 'Pérez', 'Cano', 'M', 'andric_117@gmail.com', 'andric_117', 3),
-('Emily', 'Vilchez', 'González', 'F', 'emily_343@gmail.com', 'emily_343', 1),
-('Héctor', 'Campo', 'Méndez', 'M', 'héctor_007@gmail.com', 'hector_007', 2);
+('Emily', 'Vilchez', 'González', 'F', 'emily_343@gmail.com', 'emily_343', 3),
+('Héctor', 'Campo', 'Méndez', 'M', 'héctor_007@gmail.com', 'hector_007', 1);

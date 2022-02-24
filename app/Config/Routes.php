@@ -66,6 +66,12 @@ $routes->post('/iniciar_sesion', 'Panel_controllers/Login::check_user');
 $routes->get('/cerrar_sesion', 'Panel_controllers/Logout::index');
 
 $routes->get('/dashboard', 'Panel_controllers/Dashboard::index');
+
+$routes->get('/guitarras', 'Panel_controllers/Ins_guitars::index');
+$routes->get('/baterias', 'Panel_controllers/Ins_drums::index');
+$routes->get('/teclados', 'Panel_controllers/Ins_keyboards::index');
+$routes->get('/monitores', 'Panel_controllers/Ins_monitors::index');
+
 $routes->get('/usuarios', 'Panel_controllers/Users::index');
 
 

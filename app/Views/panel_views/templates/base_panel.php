@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/css/app.css') ?>">
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/fontawesome/all.min.css') ?>">
 
-    <link rel="shortcut icon" href="<?= base_url('panel_resources/assets/images/favicon.svg" type="image/x-icon') ?>">
+    <link rel="shortcut icon" href="<?= base_url('panel_resources/assets/images/logo/overlord_s_admin_positive.svg') ?>" type="image/x-icon">
     <!-- =============================== -->
     <!-- CSS's específicos de las vistas -->
     <?= $this->renderSection("css") ?>
@@ -32,7 +32,7 @@
                 <div class="sidebar-header pt-3">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="<?= route_to('dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/logo.png') ?>" alt="Logo" srcset=""></a>
+                            <a href="<?= route_to('dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/overlord_h_admin_positive.svg') ?>" alt="Logo" class="admin-logo"></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
