@@ -1,5 +1,7 @@
 <?php
 
+use App\Controllers\Public_controllers\Instruments;
+
 function config_nav_menu() {
     $menu = array();
     $menu_item = array();
@@ -11,6 +13,11 @@ function config_nav_menu() {
     $menu_item['icon'] = 'bi bi-grid-fill';
     $menu_item['text'] = 'Dashboard';
     $menu_item['submenu'] = array();
+        $submenu_item = array();
+        $submenu_item['is_active'] = false;
+        $submenu_item['link'] = route_to('asdf');
+        $submenu_item['text'] = 'asdf';
+        $menu_item['submenu']['asdf'] = $submenu_item;
     $menu['dashboard'] = $menu_item;
 
     //Instrumentos section
@@ -54,11 +61,48 @@ function config_nav_menu() {
 
 }//end config_nav_menu function
 
-function generate_nav_menu() {
+function activate_section($active_section = NULL, $menu = NULL) {
+    switch ($active_section) {
+        // Activate dashboard section
+        case DASHBOARD_TASK:
+            $menu['dashboard']['is_active'] = TRUE;
+            break;
+
+        // Activate instruments subsections
+        case INS_GUITARS_TASK:
+            $menu['instruments']['is_active'] = TRUE;
+            $menu['instruments']['submenu']['guitars']['is_active'] = TRUE;
+            break;
+
+        case INS_DRUMS_TASK:
+            $menu['instruments']['is_active'] = TRUE;
+            $menu['instruments']['submenu']['drums']['is_active'] = TRUE;
+            break;
+
+        case INS_KEYBOARDS_TASK:
+            $menu['instruments']['is_active'] = TRUE;
+            $menu['instruments']['submenu']['keyboards']['is_active'] = TRUE;
+            break;
+
+        case INS_MONITORS_TASK:
+            $menu['instruments']['is_active'] = TRUE;
+            $menu['instruments']['submenu']['monitors']['is_active'] = TRUE;
+            break;
+
+        default:
+            # No se activará ningún elemento
+            break;
+    }//end switch
+
+    return $menu;
+}//end activate_section function
+
+function generate_nav_menu($active_section) {
     $menu = config_nav_menu();
+    $menu = activate_section($active_section, $menu);
     $html = '';
     $html .= '
-        <li class="sidebar-title">Menu</li>
+        <li class="sidebar-title ps-0 text-muted">Menu de navegación</li>
     ';
     foreach($menu as $menu_item) {
         if($menu_item['link'] != '#!') {
@@ -71,7 +115,28 @@ function generate_nav_menu() {
             </li>
             ';
         }//end if menu no tiene submenu
-    }//end foreach
+        else {
+            $html .= '
+            <li class="sidebar-item has-sub ' . (($menu_item['is_active']) ? 'active' : '') . '">
+                <a href="' . $menu_item['link'] . '" class="sidebar-link">
+                    <i class="' . $menu_item['icon'] . '"></i>
+                    <span>' . $menu_item['text'] . '</span>
+                </a>
+                <ul class="submenu ' . (($menu_item['is_active']) ? 'active' : '') . '">            
+            ';
+                foreach($menu_item['submenu'] as $submenu_item) {
+                    $html .= '
+                    <li class="submenu-item ' . (($submenu_item['is_active']) ? 'active' : '') . '">
+                        <a href="' . $submenu_item['link'] . '">' . $submenu_item['text'] . '</a>
+                    </li>
+                    ';
+                }//end foreach submenu
+            $html .= '
+                </ul>
+            </li>
+            ';
+        }//end else menu tiene submenu
+    }//end foreach menu
 
     return $html;
 }

@@ -19,7 +19,7 @@ class Dashboard extends BaseController {
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
-        $content['menu'] = generate_nav_menu();
+        $content['menu'] = generate_nav_menu(DASHBOARD_TASK );
         return view($view_name, $content);
     }
 }

@@ -27,7 +27,7 @@
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
-                <div class="sidebar-header pt-1">
+                <div class="sidebar-header pt-3">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
                             <a href="<?= route_to('dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/logo.png') ?>" alt="Logo" srcset=""></a>

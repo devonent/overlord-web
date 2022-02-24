@@ -77,3 +77,31 @@ defined('EXIT_USER_INPUT')     || define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+// ============================================
+// ============================================
+// ==== CONSTANTS DEFINITION FOR OVERLORD =====
+// ============================================
+// ============================================
+
+// ROLES
+define("ADMIN_ROLE", array('nombre'=>'Administrador', 'id'=>'1'));
+define("OPERATOR_ROLE", array('nombre'=>'Operador', 'id'=>'2'));
+define("USER_ROLE", array('nombre'=>'Usuario', 'id'=>'3'));
+
+// SEXES
+define("MALE_SEX", 'M');
+define("FEMALE_SEX", 'F');
+
+// ======= PANEL CONSTANTS ===================
+
+// DASHBOARD
+define("DASHBOARD_TASK", "dashboard");
+
+// INSTRUMENTS
+define ("INS_GUITARS_TASK", "guitarras");
+define ("INS_DRUMS_TASK", "baterias");
+define ("INS_KEYBOARDS_TASK", "teclados");
+define ("INS_MONITORS_TASK", "monitores");
+
+// ======= PORTAL CONSTANTS ===================
