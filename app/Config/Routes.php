@@ -65,14 +65,18 @@ $routes->get('/login', 'Panel_controllers/Login::index');
 $routes->post('/iniciar_sesion', 'Panel_controllers/Login::check_user');
 $routes->get('/cerrar_sesion', 'Panel_controllers/Logout::index');
 
-$routes->get('/dashboard', 'Panel_controllers/Dashboard::index');
+$routes->get('panel/dashboard', 'Panel_controllers/Dashboard::index');
 
-$routes->get('/guitarras', 'Panel_controllers/Ins_guitars::index');
-$routes->get('/baterias', 'Panel_controllers/Ins_drums::index');
-$routes->get('/teclados', 'Panel_controllers/Ins_keyboards::index');
-$routes->get('/monitores', 'Panel_controllers/Ins_monitors::index');
+$routes->get('panel/guitarras', 'Panel_controllers/Ins_guitars::index');
+$routes->get('panel/baterias', 'Panel_controllers/Ins_drums::index');
+$routes->get('panel/teclados', 'Panel_controllers/Ins_keyboards::index');
+$routes->get('panel/monitores', 'Panel_controllers/Ins_monitors::index');
 
-$routes->get('/usuarios', 'Panel_controllers/Users::index');
+$routes->get('panel/ofertas', 'Panel_controllers/Deals::index');
+
+$routes->get('panel/galeria', 'Panel_controllers/Gallery::index');
+
+$routes->get('panel/usuarios', 'Panel_controllers/Users::index');
 
 
 /*

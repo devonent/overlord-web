@@ -14,6 +14,7 @@ class Permissions {
             case INS_DRUMS_TASK:
             case INS_KEYBOARDS_TASK:
             case INS_MONITORS_TASK:
+            case GALLERY_TASK:
                 $allowed_roles = array(
                     ADMIN_ROLE['id'],
                     OPERATOR_ROLE['id'],
@@ -22,6 +23,14 @@ class Permissions {
                 $is_allowed = in_array($id_role, $allowed_roles);
                 break;
 
+            // SECCIONES PERMITIRDAS PARA ADMIN Y OPERADDOR
+            case DEALS_TASK:
+                $allowed_roles = array(
+                    ADMIN_ROLE['id'],
+                    OPERATOR_ROLE['id']
+                );
+                $is_allowed = in_array($id_role, $allowed_roles);
+                break;
             // SECCIONES PERMITIDAS SOLO PARA EL ADMIN
             case USERS_TASK:
                 $allowed_roles = array(

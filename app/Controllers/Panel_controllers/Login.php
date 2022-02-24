@@ -30,7 +30,7 @@ class Login extends BaseController {
             $session->set('user_img', $user_data->imagen);
             $session->set('id_rol', $user_data->id_rol);
             
-            return redirect()->to(route_to('dashboard'));
+            return redirect()->to(route_to('panel/dashboard'));
         }//end if si existe el usuario
         else {
             create_user_message('Su usuario y/o contraseña son incorrectas...');

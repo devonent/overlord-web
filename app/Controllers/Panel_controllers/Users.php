@@ -20,7 +20,7 @@ class Users extends BaseController {
         }//end if not allowed
         else {
             create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...');
-            return redirect()->to(route_to('dashboard'));
+            return redirect()->to(route_to('panel/dashboard'));
         }//end else not allowed
     }//end index function
 

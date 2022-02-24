@@ -32,7 +32,7 @@
                 <div class="sidebar-header pt-3">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="<?= route_to('dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/overlord_h_admin_positive.svg') ?>" alt="Logo" class="admin-logo"></a>
+                            <a href="<?= route_to('panel/dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/overlord_h_admin_positive.svg') ?>" alt="Logo"></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -165,8 +165,8 @@
     <!-- JS's específicos de las vistas -->
     <?= $this->renderSection("js") ?>
     <!-- ============================== -->
-    <script><?= print_message() ?></script>
 
+    <script><?= print_message() ?></script>
 </body>
 
 </html>

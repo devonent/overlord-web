@@ -4,19 +4,19 @@ namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 use App\Libraries\Permissions;
 
-class Ins_guitars extends BaseController {
+class Gallery extends BaseController {
     private $is_allowed = TRUE;
 
     public function __construct() {
         $session = session();
-        if(!Permissions::is_role_allowed(INS_GUITARS_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
+        if(!Permissions::is_role_allowed(GALLERY_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
             $this->is_allowed = FALSE;
         }//end if role not allowed
     }//end __construct function
 
     public function index() {
         if($this->is_allowed){
-            return $this->create_view('panel_views/ins_guitars', $this->load_data());
+            return $this->create_view('panel_views/gallery', $this->load_data());
         }//end if not allowed
         else {
             create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...');
@@ -51,13 +51,13 @@ class Ins_guitars extends BaseController {
                 break;
         }//end switch determine role
 
-        $data['section_name'] = 'Guitarras';
+        $data['section_name'] = 'Galería';
 
         return $data;
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
-        $content['menu'] = generate_nav_menu(INS_GUITARS_TASK, session()->id_rol);
+        $content['menu'] = generate_nav_menu(GALLERY_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
 }//end Dashboard class

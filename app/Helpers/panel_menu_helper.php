@@ -7,7 +7,7 @@ function config_nav_menu($id_role = 0) {
 
     //Dashboard section
     $menu_item['is_active'] = false;
-    $menu_item['link'] = route_to('dashboard');
+    $menu_item['link'] = route_to('panel/dashboard');
     $menu_item['icon'] = 'bi bi-grid-fill';
     $menu_item['text'] = 'Dashboard';
     $menu_item['submenu'] = array();
@@ -18,51 +18,62 @@ function config_nav_menu($id_role = 0) {
     $menu_item['link'] = '#!';
     $menu_item['icon'] = 'bi bi-file-music-fill';
     $menu_item['text'] = 'Instrumentos';
-    $menu_item['submenu'] = array();
-        
+    $menu_item['submenu'] = array();   
         //Guitarras subsection
         $submenu_item = array();
         $submenu_item['is_active'] = false;
-        $submenu_item['link'] = route_to('guitarras');
+        $submenu_item['link'] = route_to('panel/guitarras');
         $submenu_item['text'] = 'Guitarras';
         $menu_item['submenu']['guitars'] = $submenu_item;
-        
         //Baterias subsection
         $submenu_item = array();
         $submenu_item['is_active'] = false;
-        $submenu_item['link'] = route_to('baterias');
+        $submenu_item['link'] = route_to('panel/baterias');
         $submenu_item['text'] = 'Baterías';
         $menu_item['submenu']['drums'] = $submenu_item;
-        
         //Teclados subsection
         $submenu_item = array();
         $submenu_item['is_active'] = false;
-        $submenu_item['link'] = route_to('teclados');
+        $submenu_item['link'] = route_to('panel/teclados');
         $submenu_item['text'] = 'Teclados';
         $menu_item['submenu']['keyboards'] = $submenu_item;
-        
         //Monitores subsection
         $submenu_item = array();
         $submenu_item['is_active'] = false;
-        $submenu_item['link'] = route_to('monitores');
+        $submenu_item['link'] = route_to('panel/monitores');
         $submenu_item['text'] = 'Monitores';
         $menu_item['submenu']['monitors'] = $submenu_item;
-
     $menu['instruments'] = $menu_item;
-
-    if($id_role == ADMIN_ROLE['id']){
-        //Users section
+    
+    //Ofertas section
+    if($id_role == ADMIN_ROLE['id'] || $id_role == OPERATOR_ROLE['id']){
         $menu_item['is_active'] = false;
-        $menu_item['link'] = route_to('usuarios');
+        $menu_item['link'] = route_to('panel/ofertas');
+        $menu_item['icon'] = 'bi bi-tag-fill';
+        $menu_item['text'] = 'Ofertas';
+        $menu_item['submenu'] = array();
+        $menu['deals'] = $menu_item;
+    }//end if admin and operator only
+
+    //Galeria section
+    $menu_item['is_active'] = false;
+    $menu_item['link'] = route_to('panel/galeria');
+    $menu_item['icon'] = 'bi bi-image-fill';
+    $menu_item['text'] = 'Galería';
+    $menu_item['submenu'] = array();
+    $menu['gallery'] = $menu_item;
+
+    //Usuarios section
+    if($id_role == ADMIN_ROLE['id']){
+        $menu_item['is_active'] = false;
+        $menu_item['link'] = route_to('panel/usuarios');
         $menu_item['icon'] = 'bi bi-people-fill';
         $menu_item['text'] = 'Usuarios';
         $menu_item['submenu'] = array();
         $menu['users'] = $menu_item;
     }//end if admin only
-
-
+    
     return $menu;
-
 }//end config_nav_menu function
 
 function activate_section($section_to_activate = NULL, $menu = NULL) {
@@ -93,14 +104,22 @@ function activate_section($section_to_activate = NULL, $menu = NULL) {
             $menu['instruments']['submenu']['monitors']['is_active'] = TRUE;
             break;
 
+        case DEALS_TASK:
+            $menu['deals']['is_active'] = TRUE;
+            break;
+
+        case GALLERY_TASK:
+            $menu['gallery']['is_active'] = TRUE;
+            break;
+
         case USERS_TASK:
             $menu['users']['is_active'] = TRUE;
             break;
             
-            default:
-            # No se activará ningún elemento
+         default:
+            //No se activará ningún elemento
             break;
-        }//end switch
+    }//end switch
 
     return $menu;
 }//end activate_section function
@@ -147,4 +166,4 @@ function generate_nav_menu($section_to_activate = NULL, $id_role = 0) {
     }//end foreach menu
 
     return $html;
-}
+}//end generate_nav_menu function
