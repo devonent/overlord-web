@@ -1,44 +1,10 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<?= $this->extend('portal_views/templates/base_portal') ?>
 
-<head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Author Meta -->
-	<meta name="author" content="CodePixar">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<title>Overlord - Pianos</title>
+<?= $this->section('css') ?>
 
-	<!-- CSS
-            ============================================= -->
-	<?php require_once "portal_resources/modules/public_styles.php"?>
-</head>
+<?= $this->endSection() ?>
 
-<body id="category">
-
-	<!-- Start Header Area -->
-	<header class="header_area sticky-header">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light main_box">
-				<div class="container">
-
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<?php require_once "portal_resources/modules/public_navbrand.php"?>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<?php require_once "portal_resources/modules/public_navcontent.php"?>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- End Header Area -->
-
+<?= $this->section('content') ?>
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb mb-5">
 		<div class="container">
@@ -187,9 +153,8 @@
 			</div>
 		</div>
 	</div>
+<?= $this->endSection() ?>
 
-	<?php require_once "portal_resources/modules/public_scripts.php"?>
-	<?php require_once "portal_resources/modules/public_footer.php"?>
-</body>
+<?= $this->section('js') ?>
 
-</html>
+<?= $this->endSection() ?>

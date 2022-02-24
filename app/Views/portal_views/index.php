@@ -1,46 +1,10 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<?= $this->extend('portal_views/templates/base_portal') ?>
 
-<head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Author Meta -->
-	<meta name="author" content="CodePixar">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<title>Overlord - Instrumentos Musicales</title>
-	<!--
-		CSS
-		============================================= -->
-	<?php require_once "portal_resources/modules/public_styles.php"?>
-
+<?= $this->section('css') ?>
 	<link rel="stylesheet" href="<?= base_url('portal_resources/css/magnific-popup.css') ?>" />
-</head>
+<?= $this->endSection() ?>
 
-<body>
-
-	<!-- Start Header Area -->
-	<header class="header_area sticky-header">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light main_box">
-				<div class="container">
-
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<?php require_once "portal_resources/modules/public_navbrand.php"?>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<?php require_once "portal_resources/modules/public_navcontent.php"?>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- End Header Area -->
-
+<?= $this->section('content') ?>
 	<!-- start banner Area -->
 	<section class="banner-area">
 		<div class="container">
@@ -540,58 +504,8 @@
 		</div>
 	</section>
 	<!-- end product Area -->
+<?= $this->endSection() ?>
 
-	<!-- Start exclusive deal Area -->
-	<!-- <div class="section-title text-center pt-5 mb-3">
-		<h1>Tal vez te interese...</h1>
-		<p>
-			Checa estos productos únicos
-		</p>
-	</div>
-	<section class="exclusive-deal-area">
-		<div class="container-fluid">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-6 no-padding exclusive-right my-5">
-					<div class="active-exclusive-product-slider"> -->
-						<!-- single exclusive carousel -->
-						<!-- <div class="single-exclusive-slider">
-							<img class="img-fluid" src="<?= base_url('portal_resources/img/product/e-p1.png') ?>" alt="">
-							<div class="product-details">
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<h4>Guitarra Less Paul</h4>
-								<div class="add-bag d-flex align-items-center justify-content-center">
-									<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>"><span class="lnr lnr-cross" style="transform: rotate(45deg)"></span></a>
-									<span class="add-text text-uppercase">Más info.</span>
-								</div>
-							</div>
-						</div> -->
-						<!-- single exclusive carousel -->
-						<!-- <div class="single-exclusive-slider">
-							<img class="img-fluid" src="<?= base_url('portal_resources/img/product/e-p1.png') ?>" alt="">
-							<div class="product-details">
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<h4>Guitarra Less Paule</h4>
-								<div class="add-bag d-flex align-items-center justify-content-center">
-									<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>"><span class="lnr lnr-cross" style="transform: rotate(45deg)"></span></a>
-									<span class="add-text text-uppercase">Más info.</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- End exclusive deal Area -->
+<?= $this->section('js') ?>
 
-	<?php require_once "portal_resources/modules/public_scripts.php"?>
-	<?php require_once "portal_resources/modules/public_footer.php"?>
-</body>
-
-</html>
+<?= $this->endSection() ?>
