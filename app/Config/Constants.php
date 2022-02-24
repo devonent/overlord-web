@@ -98,20 +98,45 @@ define("FEMALE_SEX", 'F');
 // DASHBOARD
 define("DASHBOARD_TASK", "dashboard");
 
-// INSTRUMENTS
-define ("INS_GUITARS_TASK", "guitarras");
-define ("INS_DRUMS_TASK", "baterias");
-define ("INS_KEYBOARDS_TASK", "teclados");
-define ("INS_MONITORS_TASK", "monitores");
+// INSTRUMENTOS
+define("INS_GUITARS_TASK", "guitarras");
+define("INS_DRUMS_TASK", "baterias");
+define("INS_KEYBOARDS_TASK", "teclados");
+define("INS_MONITORS_TASK", "monitores");
 
-// GALLERY
-define ("GALLERY_TASK", "galeria");
+// GALERÍA
+define("GALLERY_TASK", "galeria");
 
-// DEALS
-define ("DEALS_TASK", "ofertas");
+// OFERTAS
+define("DEALS_TASK", "ofertas");
 
-// USERS
-define ("USERS_TASK", "usuarios");
+// USUARIOS
+define("USERS_TASK", "usuarios");
 
 
 // ======= PORTAL CONSTANTS ===================
+
+// INICIO
+define("PORTAL_HOME_TASK", "inicio_portal");
+
+// NOSOTROS
+define("PORTAL_INFO_TASK", "nosotros_portal");
+
+// OFERTAS
+define("PORTAL_DEALS_TASK", "ofertas_portal");
+
+// INSTRUMENTOS
+define("PORTAL_INS_GUITARS_TASK", "guitarras_portal");
+define("PORTAL_INS_DRUMS_TASK", "baterias_portal");
+define("PORTAL_INS_KEYBOARDS_TASK", "teclados_portal");
+define("PORTAL_INS_MONITORS_TASK", "monitores_portal");
+
+// GALERÍA
+define("PORTAL_GALLERY_TASK", "galeria_portal");
+
+// CONTACTO
+define("PORTAL_CONTACT_TASK", "contacto_portal");
+
+// ACERCA DE
+define("PORTAL_ABOUT_SITE_TASK", "sitio_portal");
+define("PORTAL_ABOUT_AUTHOR_TASK", "autor_portal");

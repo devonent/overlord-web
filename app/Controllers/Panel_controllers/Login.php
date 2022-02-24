@@ -5,11 +5,18 @@ use App\Controllers\BaseController;
 
 class Login extends BaseController {
     public function index() {
-        return $this->create_view('panel_views/login');
+        return $this->create_view('panel_views/login', $this->load_data());
     }//end index function
 
-    private function create_view($view_name = '') {
-        return view($view_name);
+    private function load_data(){
+        $data = array();
+        $data['section_name'] = 'Iniciar sesión';
+        return $data;
+    }//end load_data function
+
+    private function create_view($view_name = '', $content = array()) {
+        $content['menu'] = generate_portal_navbar();
+        return view($view_name, $content);
     }//end create_view function
 
     public function check_user() {

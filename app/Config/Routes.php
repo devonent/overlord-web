@@ -41,22 +41,22 @@ $routes->get('/', 'Portal_controllers/Home::index');
 $routes->get('/nosotros', 'Portal_controllers/Info::index');
 $routes->get('/ofertas', 'Portal_controllers/Deals::index');
 // Instruments dropdown
-$routes->get('/instrumentos/guitarras', 'Portal_controllers/Instruments::guitars');
-$routes->get('/instrumentos/baterias', 'Portal_controllers/Instruments::drums');
-$routes->get('/instrumentos/teclados', 'Portal_controllers/Instruments::keyboards');
-$routes->get('/instrumentos/monitores', 'Portal_controllers/Instruments::monitors');
+$routes->get('/instrumentos/guitarras', 'Portal_controllers/Ins_guitars::index');
+$routes->get('/instrumentos/baterias', 'Portal_controllers/Ins_drums::index');
+$routes->get('/instrumentos/teclados', 'Portal_controllers/Ins_keyboards::index');
+$routes->get('/instrumentos/monitores', 'Portal_controllers/Ins_monitors::index');
 //
 $routes->get('/galeria', 'Portal_controllers/Gallery::index');
 $routes->get('/contacto', 'Portal_controllers/Contact::index');
 // About us dropdown
-$routes->get('/acerca/sitio', 'Portal_controllers/About::site');
-$routes->get('/acerca/autor', 'Portal_controllers/About::author');
+$routes->get('/acerca/sitio', 'Portal_controllers/Site::index');
+$routes->get('/acerca/autor', 'Portal_controllers/Author::index');
 
-$routes->get('/instrumentos/guitarras/guitarra001', 'Portal_controllers/Single_guitars::guitar001');
-$routes->get('/instrumentos/guitarras/guitarra002', 'Portal_controllers/Single_guitars::guitar002');
-$routes->get('/instrumentos/guitarras/guitarra003', 'Portal_controllers/Single_guitars::guitar003');
-$routes->get('/instrumentos/guitarras/guitarra004', 'Portal_controllers/Single_guitars::guitar004');
-$routes->get('/instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
+    $routes->get('/instrumentos/guitarras/guitarra001', 'Portal_controllers/Single_guitars::guitar001');
+    $routes->get('/instrumentos/guitarras/guitarra002', 'Portal_controllers/Single_guitars::guitar002');
+    $routes->get('/instrumentos/guitarras/guitarra003', 'Portal_controllers/Single_guitars::guitar003');
+    $routes->get('/instrumentos/guitarras/guitarra004', 'Portal_controllers/Single_guitars::guitar004');
+    $routes->get('/instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
 
 // -----------------------------------------------------------------------
 // Panel SIDE ROUTES
