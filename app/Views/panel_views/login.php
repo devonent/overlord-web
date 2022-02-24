@@ -18,7 +18,7 @@
 	<!--
 		CSS
 		============================================= -->
-	<?php require_once "public_resources/modules/public_styles.php"?>
+	<?php require_once "portal_resources/modules/public_styles.php"?>
 
 	<link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/toastify/toastify.css') ?>">
 
@@ -33,10 +33,10 @@
 				<div class="container">
 
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<?php require_once "public_resources/modules/public_navbrand.php"?>
+					<?php require_once "portal_resources/modules/public_navbrand.php"?>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<?php require_once "public_resources/modules/public_navcontent.php"?>
+					<?php require_once "portal_resources/modules/public_navcontent.php"?>
 				</div>
 			</nav>
 		</div>
@@ -65,7 +65,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login_box_img">
-						<img class="img-fluid" src="<?= base_url('public_resources/img/login.jpg') ?>" alt="">
+						<img class="img-fluid" src="<?= base_url('portal_resources/img/login.jpg') ?>" alt="">
 						<div class="hover">
 							<h4>Accede al panel de administración</h4>
 							<p>Asegurate de ingresar las credenciales de una cuenta válida. Solo se permite el acceso a personal autorizado.</p>
@@ -128,8 +128,8 @@
 	</section>
 	<!--================End Login Box Area =================-->
 
-	<?php require_once "public_resources/modules/public_scripts.php"?>
-	<?php require_once "public_resources/modules/public_footer.php"?>
+	<?php require_once "portal_resources/modules/public_scripts.php"?>
+	<?php require_once "portal_resources/modules/public_footer.php"?>
 	
 	<script src="<?= base_url('panel_resources/assets/vendors/toastify/toastify.js') ?>"></script>
 	
