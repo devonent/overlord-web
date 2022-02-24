@@ -13,10 +13,13 @@ class Dashboard extends BaseController {
     }//end index function
 
     private function load_data() {
+        $data = array();
 
+        return $data;
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
+        $content['menu'] = generate_nav_menu();
         return view($view_name, $content);
     }
 }

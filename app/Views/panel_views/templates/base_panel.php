@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $page_section ?> | Overlord</title>
+    <title> | Overlord</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/perfect-scrollbar/perfect-scrollbar.css') ?>">
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/bootstrap-icons/bootstrap-icons.css') ?>">
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/css/app.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/fontawesome/all.min.css') ?>">
+
     <link rel="shortcut icon" href="<?= base_url('panel_resources/assets/images/favicon.svg" type="image/x-icon') ?>">
     <!-- =============================== -->
     <!-- CSS's específicos de las vistas -->
@@ -25,7 +27,7 @@
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
-                <div class="sidebar-header">
+                <div class="sidebar-header pt-1">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
                             <a href="<?= route_to('dashboard') ?>"><img src="<?= base_url('panel_resources/assets/images/logo/logo.png') ?>" alt="Logo" srcset=""></a>
@@ -35,19 +37,26 @@
                         </div>
                     </div>
                 </div>
-                <!-- ================== -->
-                <!-- MENÚ DE NAVEGACIÓN -->
-                <?= $menu ?>
-                <!-- ================== -->
+                <!-- Menu lateral -->
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <!-- ================== -->
+                        <!-- MENÚ DE NAVEGACIÓN -->
+                        <?= $menu ?>
+                        <!-- ================== -->
+                    </ul>
+                </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
+
+        <!-- Navbar -->
         <div id="main" class='layout-navbar'>
-            <header class='mb-3'>
+            <header class='mb-0'>
                 <nav class="navbar navbar-expand navbar-light ">
-                    <div class="container-fluid">
+                    <div class="container-fluid px-1">
                         <a href="#" class="burger-btn d-block">
-                            <i class="bi bi-justify fs-3"></i>
+                            <i class="bi bi-list fs-3"></i>
                         </a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -56,43 +65,18 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown me-1">
-                                    <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class='bi bi-envelope bi-sub fs-4 text-gray-600'></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <h6 class="dropdown-header">Mail</h6>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown me-3">
-                                    <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <h6 class="dropdown-header">Notifications</h6>
-                                        </li>
-                                        <li><a class="dropdown-item">No notification available</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            
 
                             <!-- ================== -->
                             <!-- Perfil del usuario -->
-                            <div class="dropdown">
+                            <div class="dropdown ms-auto">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">John Ducky</h6>
                                             <p class="mb-0 text-sm text-gray-600">Administrator</p>
                                         </div>
-                                        <div class="user-img d-flex align-items-center">
+                                        <div class="user-img d-flex ">
                                             <div class="avatar avatar-md">
                                                 <img src="<?= base_url('panel_resources/assets/images/faces/1.jpg') ?>">
                                             </div>
@@ -124,7 +108,7 @@
             </header>
 
             <!-- Contenido de la sección -->
-            <div id="main-content">
+            <div id="main-content" class="pt-0">
                 <div class="page-heading">
                     <div class="page-title">
                         <div class="row">
@@ -135,7 +119,7 @@
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <!-- ========== -->
                                 <!-- Breadcrumb -->
-                                <?= $breadcrumb ?>
+                                
                                 <!-- ========== -->
 
                                 <!-- <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -175,10 +159,10 @@
         </div>
     </div>
 
-    <script src="<?= base_url('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/bootstrap.bundle.min.js') ?>"></script>
 
-    <script src="<?= base_url('assets/js/main.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/main.js') ?>"></script>
 
     <!-- ============================== -->
     <!-- JS's específicos de las vistas -->
