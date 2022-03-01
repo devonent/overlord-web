@@ -59,7 +59,7 @@ $routes->get('/acerca/autor', 'Portal_controllers/Author::index');
     $routes->get('/instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
 
 // -----------------------------------------------------------------------
-// Panel SIDE ROUTES
+// PANEL SIDE ROUTES
 // -----------------------------------------------------------------------
 $routes->get('/login', 'Panel_controllers/Login::index');
 $routes->post('/iniciar_sesion', 'Panel_controllers/Login::check_user');
