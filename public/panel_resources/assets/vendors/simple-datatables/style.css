@@ -145,3 +145,8 @@
 	white-space: nowrap;
 	margin-left: 15px;
 }
+
+.dropdown-label-left {
+	white-space: nowrap;
+	margin-right: 15px;
+}

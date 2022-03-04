@@ -23,8 +23,8 @@ class App extends BaseConfig
      *
      * @var string
      */
-    // public $baseURL = 'http://localhost:8080/';
-    public $baseURL = 'https://overlordmusic.000webhostapp.com/';
+    public $baseURL = 'http://localhost:8080/';
+    // public $baseURL = 'https://overlordmusic.000webhostapp.com/';
 
     /**
      * --------------------------------------------------------------------------
