@@ -3,12 +3,16 @@
 namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 use App\Libraries\Permissions;
+use App\Libraries\Breadcrumb;
 
 class Ins_guitars extends BaseController {
     private $is_allowed = TRUE;
+    private $breadcrumb;
 
     public function __construct() {
         $session = session();
+        $this->breadcrumb = new Breadcrumb();
+
         if(!Permissions::is_role_allowed(INS_GUITARS_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
             $this->is_allowed = FALSE;
         }//end if role not allowed
@@ -52,6 +56,12 @@ class Ins_guitars extends BaseController {
         }//end switch determine role
 
         $data['section_name'] = 'Guitarras';
+
+        //Breadcrumb
+        $this->breadcrumb->add('Dashboard', 'panel/dashboard');
+        $this->breadcrumb->add('Instrumentos', 'panel/guitarras');
+        $this->breadcrumb->add('Guitarras', 'panel/guitarras');
+        $data['breadcrumb'] = $this->breadcrumb->render();
 
         return $data;
     }//end load_data function

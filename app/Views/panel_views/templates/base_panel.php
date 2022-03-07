@@ -106,15 +106,15 @@
             <div id="main-content" class="pt-0">
                 <div class="page-heading">
                     <div class="page-title">
-                        <div class="row">
-                            <div class="col-12 col-md-6 order-md-1 order-last">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-6 order-md-1 order-first">
                                 <h3><?= $section_name ?></h3>
                                 <!-- <p class="text-subtitle text-muted">Navbar will appear in top of the page.</p> -->
                             </div>
-                            <div class="col-12 col-md-6 order-md-2 order-first">
+                            <div class="col-12 col-md-6 order-md-2 order-last">
                                 <!-- ========== -->
                                 <!-- Breadcrumb -->
-                                
+                                <?= $breadcrumb ?>
                                 <!-- ========== -->
 
                             </div>

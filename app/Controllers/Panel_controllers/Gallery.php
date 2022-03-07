@@ -3,12 +3,16 @@
 namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 use App\Libraries\Permissions;
+use App\Libraries\Breadcrumb;
 
 class Gallery extends BaseController {
     private $is_allowed = TRUE;
+    private $breadcrumb;
 
     public function __construct() {
         $session = session();
+        $this->breadcrumb = new Breadcrumb();
+
         if(!Permissions::is_role_allowed(GALLERY_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
             $this->is_allowed = FALSE;
         }//end if role not allowed
@@ -52,6 +56,11 @@ class Gallery extends BaseController {
         }//end switch determine role
 
         $data['section_name'] = 'Galería';
+
+        //Breadcrumb
+        $this->breadcrumb->add('Dashboard', 'panel/dashboard');
+        $this->breadcrumb->add('Galería', 'panel/galeria');
+        $data['breadcrumb'] = $this->breadcrumb->render();
 
         return $data;
     }//end load_data function

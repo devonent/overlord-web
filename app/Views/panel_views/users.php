@@ -12,7 +12,14 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    Usuarios registrados
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 order-md-1 order-first">
+                        Usuarios registrados
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-last text-end">
+                        <a href="<?= base_url('panel/usuarios/registrar_usuario') ?>" class="btn btn-success">Registrar usuario nuevo</a>
+                    </div>
+                </div>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped datatable-users" id="datatable-users">
