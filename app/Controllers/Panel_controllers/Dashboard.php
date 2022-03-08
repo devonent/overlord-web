@@ -3,7 +3,7 @@
 namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
 use App\Libraries\Permissions;
-use App\Libraries\Breadcrumb;
+use App\Libraries\Panel_breadcrumb;
 
 class Dashboard extends BaseController {
     private $is_allowed = TRUE;
@@ -11,7 +11,7 @@ class Dashboard extends BaseController {
 
     public function __construct() {
         $session = session();
-        $this->breadcrumb = new Breadcrumb();
+        $this->breadcrumb = new Panel_breadcrumb();
 
         if(!Permissions::is_role_allowed(DASHBOARD_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
             $this->is_allowed = FALSE;
@@ -57,8 +57,8 @@ class Dashboard extends BaseController {
         $data['section_name'] = 'Dashboard';
 
         //Breadcrumb
-        $this->breadcrumb->add('Dashboard', 'panel/dashboard');
-        $data['breadcrumb'] = $this->breadcrumb->render();
+        $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
+        $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
 
         return $data;
     }//end load_data function
@@ -68,3 +68,4 @@ class Dashboard extends BaseController {
         return view($view_name, $content);
     }//end create_view function
 }//end Dashboard class
+

@@ -1288,3 +1288,11 @@ a {
 .icon-mid:before {
     vertical-align: middle;
 }
+.btn-icon {
+	position: relative;
+	left: -3px;
+    top: 3px;
+	display: inline-block;
+	padding: 0px 4px;
+	/* border-radius: 3px 0 0 3px; */
+}

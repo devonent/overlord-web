@@ -17,7 +17,10 @@
                         Usuarios registrados
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-last text-end">
-                        <a href="<?= base_url('panel/usuarios/registrar_usuario') ?>" class="btn btn-success">Registrar usuario nuevo</a>
+                        <a href="<?= base_url('panel/usuarios/registrar_usuario') ?>" class="btn btn-success">
+                            <span class="btn-icon"><i class="bi bi-person-plus-fill"></i></span>
+                            Registrar usuario nuevo
+                        </a>
                     </div>
                 </div>
                 </div>
@@ -63,74 +66,4 @@
     <!-- Scripts para datatables -->
     <script src="<?= base_url('panel_resources/assets/vendors/simple-datatables/simple-datatables.js') ?>"></script>
     <script src="<?= base_url('panel_resources/assets/vendors/simple-datatables/user-datatable-init.js') ?>"></script>
-    <!-- <script>
-        $(document).ready(function(){
-            $('#datatable-users').DataTable({
-                "responsive": true,
-                "language": {
-                    "paginate": {
-                        "previous": '<i class="fas fa-angle-left"></i>',
-                        "next": '<i class="fas fa-angle-right"></i>'
-                    },
-                    "emptyTable": "No hay información",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "zeroRecords": "No se encontraron resultados.",
-                    "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No hay registros",
-                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)",
-                    "sSearch": "Buscar",
-                    "sProcessing": "Procesando...",
-                    "loadingRecords": "Cargando...",
-                    "thousands": ","
-                }
-            });
-        });
-    </script> -->
-    <!-- <script>
-        $(document).ready(function(){
-            let dataTable = new simpleDatatables.DataTable('#datatable-users', {
-                "responsive": true,
-                "language": {
-                    "paginate": {
-                        "previous": '<i class="fas fa-angle-left"></i>',
-                        "next": '<i class="fas fa-angle-right"></i>'
-                    },
-                    "emptyTable": "No hay información",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "zeroRecords": "No se encontraron resultados.",
-                    "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No hay registros",
-                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)",
-                    "sSearch": "Buscar",
-                    "sProcessing": "Procesando...",
-                    "loadingRecords": "Cargando...",
-                    "thousands": ","
-                }
-            });
-        });
-    </script> -->
-    <!-- <script>
-        function load(){
-            let dataTable = new simpleDatatables.DataTable('#datatable-users', {
-                "responsive": true,
-                "language": {
-                    "paginate": {
-                        "previous": '<i class="fas fa-angle-left"></i>',
-                        "next": '<i class="fas fa-angle-right"></i>'
-                    },
-                    "emptyTable": "No hay información",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "zeroRecords": "No se encontraron resultados.",
-                    "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No hay registros",
-                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)",
-                    "sSearch": "Buscar",
-                    "sProcessing": "Procesando...",
-                    "loadingRecords": "Cargando...",
-                    "thousands": ","
-                }
-            });
-        };
-        window.onload = load;
-    </script> -->
 <?= $this->endSection() ?>
