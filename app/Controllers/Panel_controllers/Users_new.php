@@ -5,7 +5,7 @@ use App\Controllers\BaseController;
 use App\Libraries\Permissions;
 use App\Libraries\Panel_breadcrumb;
 
-class Users extends BaseController {
+class Users_new extends BaseController {
     private $is_allowed = TRUE;
     private $breadcrumb;
 
@@ -20,7 +20,7 @@ class Users extends BaseController {
 
     public function index() {
         if($this->is_allowed){
-            return $this->create_view('panel_views/users', $this->load_data());
+            return $this->create_view('panel_views/users_new', $this->load_data());
         }//end if not allowed
         else {
             create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...');
@@ -55,11 +55,12 @@ class Users extends BaseController {
                 break;
         }//end switch determine role
 
-        $data['section_name'] = 'Usuarios';
+        $data['section_name'] = 'Registrar usuario nuevo';
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
         $this->breadcrumb->add_breadcrumb('Usuarios', 'panel/usuarios');
+        $this->breadcrumb->add_breadcrumb('Registrar usuario', 'panel/usuarios/registrar_usuario');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
 
         return $data;
@@ -69,4 +70,4 @@ class Users extends BaseController {
         $content['menu'] = generate_nav_menu(USERS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
-}//end Users class
+}//end User_news class

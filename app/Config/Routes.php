@@ -76,8 +76,8 @@ $routes->get('panel/ofertas', 'Panel_controllers/Deals::index');
 
 $routes->get('panel/galeria', 'Panel_controllers/Gallery::index');
 
-$routes->get('panel/usuarios', 'Panel_controllers/Users::index');
-$routes->get('panel/usuarios/registrar_usuario', 'Panel_controllers/User_create_form::index');
+$routes->get('panel/usuarios', 'Panel_controllers/Users_all::index');
+$routes->get('panel/usuarios/registrar_usuario', 'Panel_controllers/Users_new::index');
 
 
 /*
