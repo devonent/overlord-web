@@ -154,6 +154,13 @@
     height: 60px;
     font-size: 1.4rem;
 }
+.avatar.avatar-profile .avatar-content,
+.avatar.avatar-profile img {
+    width: 250px;
+    height: 250px;
+    font-size: 1.4rem;
+    object-fit: cover;
+}
 .btn .badge {
     border-radius: 50%;
     margin-left: 5px;

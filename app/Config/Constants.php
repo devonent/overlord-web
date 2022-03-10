@@ -104,6 +104,11 @@ define("INS_DRUMS_TASK", "baterias");
 define("INS_KEYBOARDS_TASK", "teclados");
 define("INS_MONITORS_TASK", "monitores");
 
+define("INS_GUITARS_NEW_TASK", "guitarras_nuevo");
+define("INS_DRUMS_NEW_TASK", "baterias_nuevo");
+define("INS_KEYBOARDS_NEW_TASK", "teclados_nuevo");
+define("INS_MONITORS_NEW_TASK", "monitores_nuevo");
+
 // GALERÍA
 define("GALLERY_TASK", "galeria");
 
@@ -111,7 +116,8 @@ define("GALLERY_TASK", "galeria");
 define("DEALS_TASK", "ofertas");
 
 // USUARIOS
-define("USERS_TASK", "usuarios");
+define("USERS_ALL_TASK", "usuarios_todos");
+define("USERS_NEW_TASK", "usuarios_nuevo");
 
 
 // ======= PORTAL CONSTANTS ===================

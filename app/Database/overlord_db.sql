@@ -1,5 +1,6 @@
-CREATE USER 'overlord_admin'@'localhost' IDENTIFIED BY ''; -- Creación del usuario
+CREATE USER 'overlord_admin'@'localhost' IDENTIFIED BY 'Mision:Dralion117Dadawin'; -- Creación del usuario
 GRANT ALL PRIVILEGES ON overlord_db.* to 'overlord_admin'@'localhost'; -- Asignar persmisos al usuario
+FLUSH PRIVILEGES;
 -- /////////////////////////////////////////////////////////////////////////
 DROP DATABASE overlord_db; -- Borrar la base de datos
 

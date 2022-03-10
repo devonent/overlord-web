@@ -13,7 +13,7 @@ class Users_new extends BaseController {
         $session = session();
         $this->breadcrumb = new Panel_breadcrumb();
 
-        if(!Permissions::is_role_allowed(USERS_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
+        if(!Permissions::is_role_allowed(USERS_NEW_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
             $this->is_allowed = FALSE;
         }//end if role not allowed
     }//end __construct function
@@ -63,11 +63,15 @@ class Users_new extends BaseController {
         $this->breadcrumb->add_breadcrumb('Registrar usuario', 'panel/usuarios/registrar_usuario');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
 
+        //Elementos propios del controller
+        $roles_table = new \App\Models\Tabla_rol;
+        $data['roles'] = $roles_table->generate_roles_dropdown();
+
         return $data;
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
-        $content['menu'] = generate_nav_menu(USERS_TASK, session()->id_rol);
+        $content['menu'] = generate_nav_menu(USERS_NEW_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
 }//end User_news class

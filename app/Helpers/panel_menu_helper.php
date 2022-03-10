@@ -85,21 +85,25 @@ function activate_section($section_to_activate = NULL, $menu = NULL) {
             
         // Activate instruments subsections
         case INS_GUITARS_TASK:
+        case INS_GUITARS_NEW_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['guitars']['is_active'] = TRUE;
             break;
 
         case INS_DRUMS_TASK:
+        case INS_DRUMS_NEW_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['drums']['is_active'] = TRUE;
             break;
 
         case INS_KEYBOARDS_TASK:
+        case INS_KEYBOARDS_NEW_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['keyboards']['is_active'] = TRUE;
             break;
 
         case INS_MONITORS_TASK:
+        case INS_MONITORS_NEW_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['monitors']['is_active'] = TRUE;
             break;
@@ -112,7 +116,8 @@ function activate_section($section_to_activate = NULL, $menu = NULL) {
             $menu['gallery']['is_active'] = TRUE;
             break;
 
-        case USERS_TASK:
+        case USERS_ALL_TASK:
+        case USERS_NEW_TASK:
             $menu['users']['is_active'] = TRUE;
             break;
             

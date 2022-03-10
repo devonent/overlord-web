@@ -19,7 +19,7 @@ class Tabla_usuario extends Model {
         'email',
         'password',
         'imagen',
-        'id_rol',
+        'id_rol'
     ];
 
     public function login_user($email = '', $pass = '') {

@@ -13,7 +13,7 @@ class Users_all extends BaseController {
         $session = session();
         $this->breadcrumb = new Panel_breadcrumb();
 
-        if(!Permissions::is_role_allowed(USERS_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
+        if(!Permissions::is_role_allowed(USERS_ALL_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
             $this->is_allowed = FALSE;
         }//end if role not allowed
     }//end __construct function
@@ -66,7 +66,7 @@ class Users_all extends BaseController {
     }//end load_data function
 
     private function create_view($view_name = '', $content = array()){
-        $content['menu'] = generate_nav_menu(USERS_TASK, session()->id_rol);
+        $content['menu'] = generate_nav_menu(USERS_ALL_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
 }//end Users_all class

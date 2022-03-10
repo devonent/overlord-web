@@ -65,5 +65,5 @@
 <?= $this->section('js') ?>
     <!-- Scripts para datatables -->
     <script src="<?= base_url('panel_resources/assets/vendors/simple-datatables/simple-datatables.js') ?>"></script>
-    <script src="<?= base_url('panel_resources/assets/vendors/simple-datatables/user-datatable-init.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/users-all-datatable-init.js') ?>"></script>
 <?= $this->endSection() ?>

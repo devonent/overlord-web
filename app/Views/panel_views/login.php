@@ -38,7 +38,6 @@
 					<div class="login_form_inner">
 					<div class="login-icon pb-4"><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></div>
 						<h3>Iniciar sesión</h3>
-						<!-- <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate"> -->
 						<?php 
 							$data = array(
 								'id' => 'form-login',
@@ -47,7 +46,6 @@
 							echo form_open('iniciar_sesion', $data);
 						?>
 							<div class="col-md-12 form-group">
-								<!-- <input type="text" class="form-control" id="name" name="name" placeholder="Usuario" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuario'"> -->
 								<?php 
 									$data = array (
 										'type' => 'email',
@@ -62,7 +60,6 @@
 								?>
 							</div>
 							<div class="col-md-12 form-group">
-								<!-- <input type="text" class="form-control" id="name" name="name" placeholder="Contraseña" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contraseña'"> -->
 								<?php 
 									$data = array (
 										'type' => 'password',

@@ -134,6 +134,9 @@
         </div>
     </div>
 
+    <script src="<?= base_url('panel_resources/assets/vendors/jquery/jquery-360.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/vendors/jquery-validate/jquery.validate.js') ?>"></script>
+
     <script src="<?= base_url('panel_resources/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') ?>"></script>
     <script src="<?= base_url('panel_resources/assets/js/bootstrap.bundle.min.js') ?>"></script>
 
