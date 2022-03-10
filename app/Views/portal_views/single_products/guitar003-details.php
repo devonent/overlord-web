@@ -10,13 +10,8 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Detalles del producto</h1>
-                    <nav class="d-flex align-items-center">
-                        <a href="<?= base_url('/') ?>">Inicio<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Productos<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="<?= base_url('/instrumentos/guitarras') ?>">Guitarras<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Ibanez GRGA120QA GIO</a>
-                    </nav>
+                    <h1><?= $section_name ?></h1>
+					<?= $breadcrumb ?>
                 </div>
             </div>
         </div>
@@ -83,7 +78,7 @@
                             Ya seas un principiante, o un maestro del shreding, esta guitarra se adaptará a cualquiera de tus necesidades. Sus pastillas Infinity R son ideales para tonos saturados y sucios, hechas para las almas que buscan el rock pesado y el metal.
                         </p>
                         <div class="card_area d-flex align-items-center">
-                            <a class="primary-btn" href="<?= base_url('/') ?>">Regresar</a>
+                            <a class="primary-btn" href="<?= base_url('instrumentos/guitarras') ?>">Regresar</a>
                         </div>
                     </div>
                 </div>

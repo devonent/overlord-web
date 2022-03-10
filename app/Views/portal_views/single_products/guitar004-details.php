@@ -10,13 +10,8 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Detalles del producto</h1>
-                    <nav class="d-flex align-items-center">
-                        <a href="<?= base_url('/') ?>">Inicio<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Productos<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="<?= base_url('/instrumentos/guitarras') ?>">Guitarras<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Ibanez RG421AHM</a>
-                    </nav>
+                    <h1><?= $section_name ?></h1>
+					<?= $breadcrumb ?>
                 </div>
             </div>
         </div>
@@ -78,7 +73,7 @@
                             Combinando sus características distintivas, como un aspecto nítido, humbuckers potentes y mástiles delgados, esta guitarra ha sido esculpida para ser versátil, adaptandose a cualquier tipo de música gracias a sus pastillas Quantum Humbucker.
                         </p>
                         <div class="card_area d-flex align-items-center">
-                            <a class="primary-btn" href="<?= base_url('/') ?>">Regresar</a>
+                            <a class="primary-btn" href="<?= base_url('instrumentos/guitarras') ?>">Regresar</a>
                         </div>
                     </div>
                 </div>

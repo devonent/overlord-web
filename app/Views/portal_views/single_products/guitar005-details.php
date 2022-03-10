@@ -10,13 +10,8 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1>Detalles del producto</h1>
-                    <nav class="d-flex align-items-center">
-                        <a href="<?= base_url('/') ?>">Inicio<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Productos<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="<?= base_url('/instrumentos/guitarras') ?>">Guitarras<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="#">Ibanez PIA3761</a>
-                    </nav>
+                    <h1><?= $section_name ?></h1>
+					<?= $breadcrumb ?>
                 </div>
             </div>
         </div>
@@ -98,7 +93,7 @@
                             Una leyenda viviente. Un rendimiento inigualable. Un estilo visionario. Una clase magistral total. Citando a Steve Vai, 'esta guitarra es una de las mejores en el universo'. Esta hacha legendaria te brinda acceso a todo tipo de texturas tonales, desde un mordisco arenoso, hasta un crujido vicioso en un abrir y cerrar de ojos.
                         </p>
                         <div class="card_area d-flex align-items-center">
-                            <a class="primary-btn" href="<?= base_url('/') ?>">Regresar</a>
+                            <a class="primary-btn" href="<?= base_url('instrumentos/guitarras') ?>">Regresar</a>
                         </div>
                     </div>
                 </div>

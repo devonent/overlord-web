@@ -10,10 +10,8 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Ofertas especiales</h1>
-					<nav class="d-flex align-items-center">
-						<a href="<?= base_url('/') ?>">Inicio<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Ofertas</a>
+					<h1><?= $section_name ?></h1>
+					<?= $breadcrumb ?>
 					</nav>
 				</div>
 			</div>

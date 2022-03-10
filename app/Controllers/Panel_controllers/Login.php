@@ -2,15 +2,26 @@
 
 namespace App\Controllers\Panel_controllers;
 use App\Controllers\BaseController;
+use App\Libraries\Portal_breadcrumb;
 
 class Login extends BaseController {
+    private $breadcrumb;
+
     public function index() {
         return $this->create_view('panel_views/login', $this->load_data());
     }//end index function
 
     private function load_data(){
+        $this->breadcrumb = new Portal_breadcrumb();
+
         $data = array();
         $data['section_name'] = 'Iniciar sesión';
+
+        //Breadcrumb
+        $this->breadcrumb->add_breadcrumb('Inicio', '/');
+        $this->breadcrumb->add_breadcrumb('Iniciar sesión', 'instrumentos/baterias');
+        $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
+
         return $data;
     }//end load_data function
 
