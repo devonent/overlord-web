@@ -30,30 +30,14 @@ class Users_all extends BaseController {
 
     private function load_data() {
         $data = array();
+
         //Session elements
         $session = session();
         $data['user_name'] = $session->user_name;
         $data['user_full_name'] = $session->user_full_name;
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
-
-        switch ($session->id_rol) {
-            case ADMIN_ROLE['id']:
-                $data['user_role'] = ADMIN_ROLE['nombre'];
-                break;
-
-            case OPERATOR_ROLE['id']:
-                $data['user_role'] = OPERATOR_ROLE['nombre'];
-                break;
-                
-            case USER_ROLE['id']:
-                $data['user_role'] = USER_ROLE['nombre'];
-                break;
-            
-            default:
-                
-                break;
-        }//end switch determine role
+        $data['user_role'] = $session->user_rol;
 
         $data['section_name'] = 'Usuarios';
 
@@ -61,6 +45,12 @@ class Users_all extends BaseController {
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
         $this->breadcrumb->add_breadcrumb('Usuarios', 'panel/usuarios');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
+
+        // ==============
+        // USUARIOS TODOS
+        // ==============
+        $user_table = new \App\Models\Tabla_usuario;
+        $data['users_all'] = $user_table->get_all_users();
 
         return $data;
     }//end load_data function

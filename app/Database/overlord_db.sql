@@ -40,7 +40,7 @@ INSERT INTO usuario (nombre, apellido_p, apellido_m, sexo, email, password, id_r
 ('Andric', 'Pérez', 'Cano', 'M', 'andric@gmail.com', 'andric', 2),
 ('Stacey', 'Conde', 'Corona', 'F', 'stacey@gmail.com', 'stacey', 3),
 ('Paulina', 'Fernández', 'Macia', 'F', 'paulina_905@gmail.com', 'paulina_905', 1),
-('Igor', 'Ávila', 'Sánchez', 'F', 'igor_216@gmail.com', 'igor_216', 2),
+('Igor', 'Ávila', 'Sánchez', 'M', 'igor_216@gmail.com', 'igor_216', 2),
 ('Emily', 'Vilchez', 'González', 'F', 'emily_343@gmail.com', 'emily_343', 3),
 ('Héctor', 'Campo', 'Méndez', 'M', 'héctor_007@gmail.com', 'hector_007', 1);
 

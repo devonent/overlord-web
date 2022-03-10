@@ -1303,3 +1303,19 @@ a {
 	padding: 0px 4px;
 	/* border-radius: 3px 0 0 3px; */
 }
+.btn-icon-datatable {
+	position: relative;
+	/* left: -0.8px; */
+    top: 4px;
+	display: inline-block;
+	/* padding: 0px 4px; */
+	/* border-radius: 3px 0 0 3px; */
+}
+.btn-icon-datatable-paginate {
+	position: relative;
+	left: -3px;
+    top: 2px;
+	display: inline-block;
+	padding: 0px 4px;
+	/* border-radius: 3px 0 0 3px; */
+}

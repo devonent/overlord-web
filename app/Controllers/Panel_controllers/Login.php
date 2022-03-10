@@ -47,6 +47,7 @@ class Login extends BaseController {
             $session->set('user_email', $user_data->email);
             $session->set('user_img', $user_data->imagen);
             $session->set('id_rol', $user_data->id_rol);
+            $session->set('user_rol', $user_data->rol);
             
             return redirect()->to(route_to('panel/dashboard'));
         }//end if si existe el usuario

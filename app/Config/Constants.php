@@ -92,6 +92,7 @@ define("USER_ROLE", array('nombre'=>'Usuario', 'id'=>'3'));
 // SEXES
 define("MALE_SEX", 'M');
 define("FEMALE_SEX", 'F');
+define("SEXES", array('M' => 'Masculino', 'F' => 'Femenino'));
 
 // ======= PANEL CONSTANTS ===================
 

@@ -2,7 +2,8 @@
 
 <?= $this->section('css') ?>
     <!-- Hoja de estilos para implementar datatables -->
-    <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/simple-datatables/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/datatable/datatables.css') ?>">
+    
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -33,22 +34,30 @@
                                 <th>Sexo</th>
                                 <th>Email</th>
                                 <th>Rol</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                for ($i=0; $i < 50; $i++) { 
+                                $i = 0;
+                                foreach ($users_all as $user) {
                                     echo '
                                     <tr>
-                                        <td>'.($i + 1).'</td>
-                                        <td>Nombre</td>
-                                        <td>Sexo</td>
-                                        <td>Email</td>
-                                        <td>Rol</td>
-                                        <td>Editar</td>
-                                        <td>Eliminar</td>
+                                        <td>'.++$i.'</td>
+                                        <td>'.$user->nombre.'</td>
+                                        <td>'.SEXES[$user->sexo].'</td>
+                                        <td>'.$user->email.'</td>
+                                        <td>'.$user->rol.'</td>
+                                        <td class="text-center">
+                                        <div class="btn-group" >
+                                            <a href="#!" class="btn btn-primary">
+                                                <i class="bi bi-pencil-fill btn-icon-datatable"></i>
+                                            </a>
+                                            <a href="#!" class="btn btn-danger">
+                                                <i class="bi bi-trash-fill btn-icon-datatable"></i>
+                                            </a>
+                                        </div>
+                                        </td>
                                     </tr>
                                     ';
                                 }
@@ -64,6 +73,14 @@
 
 <?= $this->section('js') ?>
     <!-- Scripts para datatables -->
-    <script src="<?= base_url('panel_resources/assets/vendors/simple-datatables/simple-datatables.js') ?>"></script>
-    <script src="<?= base_url('panel_resources/assets/js/views/users-all-datatable-init.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/vendors/datatable/datatables.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/users-all-datatable-init.js') ?>"></script>    
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
 <?= $this->endSection() ?>
