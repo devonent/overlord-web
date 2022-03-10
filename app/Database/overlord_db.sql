@@ -45,7 +45,7 @@ INSERT INTO usuario (nombre, apellido_p, apellido_m, sexo, email, password, id_r
 ('Héctor', 'Campo', 'Méndez', 'M', 'héctor_007@gmail.com', 'hector_007', 1);
 
 -- CREATION OF 'ins_baterias' TABLE
-CREATE TABLE ins_baterias (
+CREATE TABLE ins_bateria (
     id_bateria int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID de la batería',
     precio decimal(10,2) NOT NULL COMMENT 'Precio de la bateria en MXN',
     stock int NOT NULL COMMENT 'Número de unidades disponibles',
@@ -60,7 +60,7 @@ CREATE TABLE ins_baterias (
 )ENGINE=INNODB;
 
 -- CREATION OF 'ins_guitarras' TABLE
-CREATE TABLE ins_guitarras (
+CREATE TABLE ins_guitarra (
     id_guitarra int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID de la guitarra',
     precio decimal(10,2) NOT NULL COMMENT 'Precio de la guitarra en MXN',
     stock int NOT NULL COMMENT 'Número de unidades disponibles',
@@ -77,7 +77,7 @@ CREATE TABLE ins_guitarras (
 )ENGINE=INNODB;
 
 -- CREATION OF 'ins_monitores' TABLE
-CREATE TABLE ins_monitores (
+CREATE TABLE ins_monitor (
     id_monitor int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID del monitor',
     precio decimal(10,2) NOT NULL COMMENT 'Precio del monitor en MXN',
     stock int NOT NULL COMMENT 'Número de unidades disponibles',
@@ -94,7 +94,7 @@ CREATE TABLE ins_monitores (
 )ENGINE=INNODB;
 
 -- CREATION OF 'ins_teclados' TABLE
-CREATE TABLE ins_teclados (
+CREATE TABLE ins_teclado (
     id_teclado int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID del teclado',
     precio decimal(10,2) NOT NULL COMMENT 'Precio del teclado en MXN',
     stock int NOT NULL COMMENT 'Número de unidades disponibles',
@@ -111,7 +111,7 @@ CREATE TABLE ins_teclados (
 )ENGINE=INNODB;
 
 -- INSERT VALUES INTO 'ins_baterias' TABLE
-INSERT INTO ins_baterias (precio, stock, marca, modelo, acabado_color, carcasa, elementos_extra, piezas_totales, descripcion, imagen) VALUES
+INSERT INTO ins_bateria (precio, stock, marca, modelo, acabado_color, carcasa, elementos_extra, piezas_totales, descripcion, imagen) VALUES
 (13229.99, 5, 'DDrum', 'D2 Drum Kit', 'Midnight Black', 'Tilo', '1 soporte hi-hat, 1 soporte de platillos, 1 soporte de snare, 1 taburete, 1 pedal de bombo, 2 platos 14" para hi-hat, 1 plato 16" crash.', 14, 'DDrum El kit de batería de 6 piezas D2 22" es una batería ejemplar diseñada para principiantes y aprendices. Es todo lo que necesitas y más. Después de todo, DDrum se especializa en baterías diseñadas y hechas con cariño por bateristas, para bateristas. Así que, ¿a quién mejor recurrir para su primer kit?', 'd01.jpg'),
 (21099.99, 2, 'Yamaha', 'Stage Custom', 'Raven Black', 'Abedul', 'N/A', 5, '¡Nuevo y mejorado! El kit de batería Yamaha Stage Custom Birch moderniza las características del clásico kit anterior. La parte posterior de la carcasa de 5 piezas Stage Custom de Yamaha presenta una estructura de 6 capas y está hecha 100% de abedul, produciendo tonos fuertes y resonantes.', 'd02.jpg'),
 (32239.99, 1, 'Tama', 'Superstar Classic Exotix', 'Gloss Sapphire Lacebark Pine', 'Arce', 'N/A', 7, 'Diseño rompedor. Tono de ley. El paquete de cascos de 7 piezas Tama Superstar Classic Exotix de 22" sube el listón y reduce el precio. Perfecto si buscas una relación calidad-precio excepcional. La nueva versión de Tama del Superstar incluye cascos de arce cuidadosamente seleccionados, que ofrecen un carácter tonal rico y cálido con tonos medios y brillantes.', 'd03.jpg'),
@@ -129,7 +129,7 @@ INSERT INTO ins_baterias (precio, stock, marca, modelo, acabado_color, carcasa, 
 (14189.99, 6, 'Mapex', 'Mars Bebop', 'Driftwood', 'Abedul', 'N/A', 4, 'Busca un kit compacto que se cargue fácilmente en su automóvil? Entonces no busques más. El Mapex Mars 18" Bebop Shell Pack de 4 piezas cuenta con carcasas de poca profundidad y tamaños más pequeños, lo que lo hace ideal para el baterista que toca y tiene poco espacio. ', 'd15.jpg');
 
 -- INSERT VALUES INTO 'ins_guitarras' TABLE
-INSERT INTO ins_guitarras (precio, stock, marca, modelo, acabado_color, cuerpo, mastil, diapason, no_trastes, no_cuerdas, descripcion, imagen) VALUES
+INSERT INTO ins_guitarra (precio, stock, marca, modelo, acabado_color, cuerpo, mastil, diapason, no_trastes, no_cuerdas, descripcion, imagen) VALUES
 (37499.99, 3, 'Gibson', 'SG Standard', 'Heritage Cherry', 'Caoba', 'Caoba', 'Palo de rosa', 22, 6, 'Todo guitarrista reconoce una icónica Gibson SG cuando la ve. Con un mástil de caoba, dos Gibson 490 humbucker y un cuerpo elegante basado en los modelos SG de los "60s, esta guitarra representa lo mejor de la historia y del ahora,con un diseño clásico y características modernas.', 'g01.jpg'),
 (16059.99, 4, 'Epiphone', 'Les Paul Custom', 'Alpine White', 'Caoba', 'Caoba', 'Ébano', 22, 6, 'Un diseño maestro, echo para guitarristas modernos. Esta Les Paul Custom toma como base las características clasicas, y las lleva a un nuevo nivel. Graves profundos, agudos vertiginosos, y todo lo que hay en medio gracias a sus dos pastillas humbucker. Llamarás la atención, seguro, y sin perder el estilo.', 'g02.jpg'),
 (5549.99, 8, 'Ibanez', 'GRGA120QA GIO', 'Transparent Black Sunburst', 'Tapa de grano de arce acolchado con cuerpo de álamo', 'Arce', 'Corazón Púrputa', 24, 6, 'Ya seas un principiante, o un maestro del shreding, esta guitarra se adaptará a cualquiera de tus necesidades. Sus pastillas Infinity R son ideales para tonos saturados y sucios, hechas para las almas que buscan el rock pesado y el metal.', 'g03.jpg'),
@@ -147,7 +147,7 @@ INSERT INTO ins_guitarras (precio, stock, marca, modelo, acabado_color, cuerpo, 
 (5099.99, 5, 'Ibanez', 'GRX40 GIO', 'Candy Apple Red', 'Álamo', 'Arce GRX', 'Jatoba', 22, 6, 'Un hacha para las masas. La Ibanez GRX40 GIO es una guitarra impresionante que está llena de potencial. Con tres pastillas Infinity, incluida una humbucker y dos bobinas simples, ofrece una amplia gama de tonos que le darán el poder de hacer que cualquier género suene excelente. ', 'g15.jpg');
 
 -- INSERT VALUES INTO 'ins_monitores' TABLE
-INSERT INTO ins_monitores (precio, stock, marca, modelo, acabado_color, material, no_monitores, anchura_mm, altura_mm, profundidad_mm, descripcion, imagen) VALUES
+INSERT INTO ins_monitor (precio, stock, marca, modelo, acabado_color, material, no_monitores, anchura_mm, altura_mm, profundidad_mm, descripcion, imagen) VALUES
 (2629.99, 5, 'Presonus', 'Eris E3.5', 'Negro', 'Fibra de densidad media', 2, 141, 210, 162, 'Los monitores multimedia activos Presonus Eris E3,5 pulgadas, par, son lo último en monitores de estudio compactos y portátiles, diseñados para músicos, productores y configuraciones multimedia. Con un diseño biamplificado compuesto por un transductor Kevlar LF de 3,5 pulgadas y un transductor de alta frecuencia de cúpula de seda de 1 pulgada, el Presonus Eris E3.5 ofrece un amplio rango de frecuencia y componentes de primera calidad.', 'm01.jpg'),
 (2999.99, 6, 'Mackie', 'CR3-X', 'Negro', 'Metal cepillado', 2, 163, 231, 170, 'Los altavoces de monitor multimedia Mackie CR3-X de 3" son la solución perfecta para músicos en casa, jugadores, creadores de contenido en línea, transmisores y más. La conectividad flexible y el excelente rendimiento de audio aseguran que no importa qué tarea estés haciendo, ya sea relajante. escuchando sus canciones favoritas, mezclando su música o sumergiéndose en un juego en línea con sus amigos.', 'm02.jpg'),
 (3219.99, 2, 'Mackie', 'CR4-X', 'Negro', 'Metal cepillado', 2, 180, 263, 192, 'No se conforme con un sonido deficiente. Lleva tu escucha al siguiente nivel. Tanto si eres músico, creador de contenido, jugador o simplemente te encanta escuchar música y te preocupas por la calidad del sonido. Los altavoces de monitor multimedia Mackie CR4-X de 4" son para usted.', 'm03.jpg'),
@@ -165,7 +165,7 @@ INSERT INTO ins_monitores (precio, stock, marca, modelo, acabado_color, material
 (12348.99, 6, 'ESI', 'uniK', 'Negro', 'MDF', 2, 190, 265, 210, 'El monitor de estudio activo ESI uniK 08+ es un monitor de referencia activo de grado de estudio de 5" con una salida de 40W. Este monitor de estudio activo profesional cuenta con un controlador de baja frecuencia de Kevlar de 4" y un nuevo tweeter magnetostático de alta frecuencia diseñado a medida que produce tonos graves gruesos y dominantes con una respuesta de alta frecuencia articulada y transparente.', 'm15.jpg');
 
 -- INSERT VALUES INTO 'ins_teclados' TABLE
-INSERT INTO ins_teclados (precio, stock, marca, modelo, acabado_color, monitor, no_teclas, anchura_mm, altura_mm, profundidad_mm, descripcion, imagen) VALUES
+INSERT INTO ins_teclado (precio, stock, marca, modelo, acabado_color, monitor, no_teclas, anchura_mm, altura_mm, profundidad_mm, descripcion, imagen) VALUES
 (1229.99, 6, 'Casio', 'SA 77 Mini', 'Negro', 'LCD', 44, 606, 78, 198, 'Perfecto para los dedos pequeños. El mini teclado portátil Casio SA 77 está cuidadosamente diseñado con un poderoso conjunto de funciones fáciles de usar. Equipado con 100 sonidos diferentes, el SA 77 constituye una emocionante introducción a la interpretación ya la música electrónica.', 'k01.jpg'),
 (1349.99, 4, 'Alesis', 'Harmony', 'Negro', 'LED', 32, 559, 64, 165, 'Comienza el viaje para convertirte en compositor. El teclado portátil Alesis Harmony 32 con parlantes incorporados le brinda todo el espacio del mundo para ser creativo. Rápidamente te volverás experto en el teclado, inventando pequeños jingles y melodías, mientras perfeccionas tu oído y te preparas para un futuro musical.', 'k02.jpg'),
 (1639.99, 1, 'Yamaha', 'PSS E30', 'Blanco', 'LED', 37, 506, 54, 201, 'Descubre el mundo de la música. De una manera divertida y atractiva. El teclado portátil Yamaha PSS E30 ha sido diseñado específicamente para niños pequeños e incluye todo lo que tu hijo necesita para descubrir la música.', 'k03.jpg'),

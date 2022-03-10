@@ -161,6 +161,13 @@
     font-size: 1.4rem;
     object-fit: cover;
 }
+.product-picture img {
+    border-radius: 20px;
+    width: 400px;
+    height: auto;
+    font-size: 1.4rem;
+    object-fit: contain;
+}
 .btn .badge {
     border-radius: 50%;
     margin-left: 5px;

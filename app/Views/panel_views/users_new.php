@@ -20,7 +20,7 @@
                         <div class="form-body">
                             <div class="row">
                                 <!-- Separador -->
-                                <span class="my-"></span>
+                                <span class="my-2"></span>
 
                                 <div class="col-12 col-lg-4 text-center container-fluid">
                                     <div class="avatar avatar-profile me-3">
@@ -79,7 +79,7 @@
                                 </div>
                                 
                                 <!-- Separador -->
-                                <span class="my-"></span>
+                                <span class="my-2"></span>
 
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
@@ -137,7 +137,7 @@
                                 </div>
 
                                 <!-- Separador -->
-                                <span class="my-"></span>
+                                <span class="my-2"></span>
 
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
@@ -184,7 +184,7 @@
                                 </div>
 
                                 <!-- Separador -->
-                                <span class="my-"></span>
+                                <span class="my-2"></span>
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Registrar</button>

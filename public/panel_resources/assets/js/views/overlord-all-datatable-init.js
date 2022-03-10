@@ -1,8 +1,6 @@
-// let table1 = document.querySelector('.datatable-users');
-// let dataTable = new simpleDatatables.DataTable(table1);
-
 $(document).ready(function(){
-    $('.datatable-users').DataTable({
+    var numCols = $('.datatable-overlord thead th').length - 1;
+    $('.datatable-overlord').DataTable({
         "responsive": true,
         "language": {
             "paginate": {
@@ -24,7 +22,7 @@ $(document).ready(function(){
             { 
                 "searchable": false, 
                 "orderable": false,
-                "targets": [5] 
+                "targets": [numCols] 
             }
         ]
     });

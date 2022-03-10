@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/css/app.css') ?>">
     <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/fontawesome/all.min.css') ?>">
 
+    <!-- Hoja de estilos para implementar datatables -->
+    <link rel="stylesheet" href="<?= base_url('panel_resources/assets/vendors/datatable/datatables.css') ?>">
+
     <link rel="shortcut icon" href="<?= base_url('panel_resources/assets/images/logo/overlord_s_admin_positive.svg') ?>" type="image/x-icon">
     <!-- =============================== -->
     <!-- CSS's específicos de las vistas -->
@@ -143,6 +146,9 @@
 	<script src="<?= base_url('panel_resources/assets/vendors/toastify/toastify.js') ?>"></script>
 
     <script src="<?= base_url('panel_resources/assets/js/main.js') ?>"></script>
+
+    <!-- Scripts para datatables -->
+    <script src="<?= base_url('panel_resources/assets/vendors/datatable/datatables.js') ?>"></script>
 
     <!-- ============================== -->
     <!-- JS's específicos de las vistas -->

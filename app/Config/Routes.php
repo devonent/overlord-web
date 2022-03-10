@@ -52,11 +52,11 @@ $routes->get('contacto', 'Portal_controllers/Contact::index');
 $routes->get('acerca/sitio', 'Portal_controllers/Site::index');
 $routes->get('acerca/autor', 'Portal_controllers/Author::index');
 
-    $routes->get('instrumentos/guitarras/guitarra001', 'Portal_controllers/Single_guitars::guitar001');
-    $routes->get('instrumentos/guitarras/guitarra002', 'Portal_controllers/Single_guitars::guitar002');
-    $routes->get('instrumentos/guitarras/guitarra003', 'Portal_controllers/Single_guitars::guitar003');
-    $routes->get('instrumentos/guitarras/guitarra004', 'Portal_controllers/Single_guitars::guitar004');
-    $routes->get('instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
+$routes->get('instrumentos/guitarras/guitarra001', 'Portal_controllers/Single_guitars::guitar001');
+$routes->get('instrumentos/guitarras/guitarra002', 'Portal_controllers/Single_guitars::guitar002');
+$routes->get('instrumentos/guitarras/guitarra003', 'Portal_controllers/Single_guitars::guitar003');
+$routes->get('instrumentos/guitarras/guitarra004', 'Portal_controllers/Single_guitars::guitar004');
+$routes->get('instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
 
 // -----------------------------------------------------------------------
 // PANEL SIDE ROUTES
@@ -65,17 +65,33 @@ $routes->get('login', 'Panel_controllers/Login::index');
 $routes->post('iniciar_sesion', 'Panel_controllers/Login::check_user');
 $routes->get('cerrar_sesion', 'Panel_controllers/Logout::index');
 
+// DASHBOARD PANEL SECTION
 $routes->get('panel/dashboard', 'Panel_controllers/Dashboard::index');
 
+// INSTRUMENTOS PANEL SECTION
 $routes->get('panel/guitarras', 'Panel_controllers/Ins_guitars::index');
-$routes->get('panel/baterias', 'Panel_controllers/Ins_drums::index');
-$routes->get('panel/teclados', 'Panel_controllers/Ins_keyboards::index');
-$routes->get('panel/monitores', 'Panel_controllers/Ins_monitors::index');
+$routes->get('panel/guitarras/registrar_guitarra', 'Panel_controllers/Ins_guitars_new::index');
+$routes->post('panel/registrar_nueva_guitarra', 'Panel_controllers/Ins_guitars_new::index');
 
+$routes->get('panel/baterias', 'Panel_controllers/Ins_drums::index');
+$routes->get('panel/baterias/registrar_bateria', 'Panel_controllers/Ins_drums_new::index');
+$routes->post('panel/registrar_nueva_bateria', 'Panel_controllers/Ins_drums_new::index');
+
+$routes->get('panel/teclados', 'Panel_controllers/Ins_keyboards::index');
+$routes->get('panel/teclados/registrar_teclado', 'Panel_controllers/Ins_keyboards_new::index');
+$routes->post('panel/registrar_nuevo_teclado', 'Panel_controllers/Ins_keyboards_new::index');
+
+$routes->get('panel/monitores', 'Panel_controllers/Ins_monitors::index');
+$routes->get('panel/monitores/registrar_monitor', 'Panel_controllers/Ins_monitors_new::index');
+$routes->post('panel/registrar_nuevo_monitor', 'Panel_controllers/Ins_monitors_new::index');
+
+// OFERTAS PANEL SECTION
 $routes->get('panel/ofertas', 'Panel_controllers/Deals::index');
 
+// GALERÍA PANEL SECTION
 $routes->get('panel/galeria', 'Panel_controllers/Gallery::index');
 
+// USUARIOS PANEL SECTION
 $routes->get('panel/usuarios', 'Panel_controllers/Users_all::index');
 $routes->get('panel/usuarios/registrar_usuario', 'Panel_controllers/Users_new::index');
 $routes->post('panel/registrar_nuevo_usuario', 'Panel_controllers/Users_new::index');
