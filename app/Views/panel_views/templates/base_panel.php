@@ -149,6 +149,7 @@
 
     <!-- Scripts para datatables -->
     <script src="<?= base_url('panel_resources/assets/vendors/datatable/datatables.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/overlord-all-datatable-init.js') ?>"></script>    
 
     <!-- ============================== -->
     <!-- JS's específicos de las vistas -->

@@ -67,7 +67,7 @@ CREATE TABLE ins_guitarra (
     marca varchar(50) NOT NULL COMMENT 'Marca de la guitarra',
     modelo varchar(100) NOT NULL COMMENT 'Modelo de la guitarra',
     acabado_color varchar(50) NOT NULL COMMENT 'Acabado o color de la guitarra',
-    cuerpo varchar(50) NOT NULL COMMENT 'Material del cuerpo de la guitarra',
+    cuerpo varchar(70) NOT NULL COMMENT 'Material del cuerpo de la guitarra',
     mastil varchar(50) NOT NULL COMMENT 'Material del mastil de la guitarra',
     diapason varchar(50) NOT NULL COMMENT 'Material del diapason de la guitarra',
     no_trastes int NOT NULL COMMENT 'Número de trastes de la guitarra',

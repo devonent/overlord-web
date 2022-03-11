@@ -36,24 +36,7 @@ class Ins_keyboards extends BaseController {
         $data['user_full_name'] = $session->user_full_name;
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
-        
-        switch ($session->id_rol) {
-            case ADMIN_ROLE['id']:
-                $data['user_role'] = ADMIN_ROLE['nombre'];
-                break;
-
-            case OPERATOR_ROLE['id']:
-                $data['user_role'] = OPERATOR_ROLE['nombre'];
-                break;
-                
-            case USER_ROLE['id']:
-                $data['user_role'] = USER_ROLE['nombre'];
-                break;
-            
-            default:
-                
-                break;
-        }//end switch determine role
+        $data['user_role'] = $session->user_rol;
 
         $data['section_name'] = 'Teclados';
 
@@ -62,6 +45,12 @@ class Ins_keyboards extends BaseController {
         $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/keyboards');
         $this->breadcrumb->add_breadcrumb('Teclados', 'panel/keyboards');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
+
+        // ==============
+        // TECLADOS TODOS
+        // ==============
+        $keyboard_table = new \App\Models\Tabla_teclado;
+        $data['keyboards_all'] = $keyboard_table->get_datatable_keyboards();
 
         return $data;
     }//end load_data function

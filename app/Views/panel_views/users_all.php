@@ -70,5 +70,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    <script src="<?= base_url('panel_resources/assets/js/views/overlord-all-datatable-init.js') ?>"></script>    
+
 <?= $this->endSection() ?>

@@ -36,24 +36,7 @@ class Ins_guitars extends BaseController {
         $data['user_full_name'] = $session->user_full_name;
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
-        
-        switch ($session->id_rol) {
-            case ADMIN_ROLE['id']:
-                $data['user_role'] = ADMIN_ROLE['nombre'];
-                break;
-
-            case OPERATOR_ROLE['id']:
-                $data['user_role'] = OPERATOR_ROLE['nombre'];
-                break;
-                
-            case USER_ROLE['id']:
-                $data['user_role'] = USER_ROLE['nombre'];
-                break;
-            
-            default:
-                
-                break;
-        }//end switch determine role
+        $data['user_role'] = $session->user_rol;
 
         $data['section_name'] = 'Guitarras';
 
@@ -62,6 +45,12 @@ class Ins_guitars extends BaseController {
         $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/guitarras');
         $this->breadcrumb->add_breadcrumb('Guitarras', 'panel/guitarras');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
+
+        // ==============
+        // GUITARRAS TODAS
+        // ==============
+        $guitar_table = new \App\Models\Tabla_guitarra;
+        $data['guitars_all'] = $guitar_table->get_datatable_guitars();
 
         return $data;
     }//end load_data function

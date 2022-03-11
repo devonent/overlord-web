@@ -24,9 +24,9 @@ class Tabla_bateria extends Model {
         'imagen'
     ];
 
-    public function get_all_drums() {
+    public function get_datatable_drums() {
         $query = $this->select('id_bateria, precio, stock, marca, modelo, acabado_color')
                         ->findAll();
         return $query;
     }
-}//end class Tabla_usuario
+}//end class Tabla_bateria
