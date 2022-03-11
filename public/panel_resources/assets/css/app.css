@@ -1140,13 +1140,14 @@
     border-radius: 0.5rem;
     background-color: #000;
     float: right;
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
 }
 .stats-icon i {
     color: #fff;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
+    margin-top: 10px;
 }
 .stats-icon.purple {
     background-color: #9694ff;
@@ -1159,6 +1160,15 @@
 }
 .stats-icon.green {
     background-color: #5ddab4;
+}
+.stats-icon.gray {
+    background-color: #858585;
+}
+.stats-icon.yellow {
+    background-color: #d1ce29;
+}
+.stats-icon.pink {
+    background-color: #d14cd1;
 }
 @media (max-width: 767px) {
     .stats-icon {
