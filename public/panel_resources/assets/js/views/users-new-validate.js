@@ -45,7 +45,7 @@ $('#form-new-user').validate({
         },
         'apellido-paterno': {
             required: 'Es necesario el apellido paterno del usuario',
-            rangelength: 'El nombre del usuario debe tener entre 3 a 45 caracteres'
+            rangelength: 'El apellido paterno debe tener entre 3 a 45 caracteres'
         },
         'apellido-materno': {
             required: 'Es necesario el apellido materno del usuario',

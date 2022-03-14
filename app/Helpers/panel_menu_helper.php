@@ -46,22 +46,22 @@ function config_nav_menu($id_role = 0) {
     $menu['instruments'] = $menu_item;
     
     //Ofertas section
-    if($id_role == ADMIN_ROLE['id'] || $id_role == OPERATOR_ROLE['id']){
-        $menu_item['is_active'] = false;
-        $menu_item['link'] = route_to('panel/ofertas');
-        $menu_item['icon'] = 'bi bi-tag-fill';
-        $menu_item['text'] = 'Ofertas';
-        $menu_item['submenu'] = array();
-        $menu['deals'] = $menu_item;
-    }//end if admin and operator only
+    // if($id_role == ADMIN_ROLE['id'] || $id_role == OPERATOR_ROLE['id']){
+    //     $menu_item['is_active'] = false;
+    //     $menu_item['link'] = route_to('panel/ofertas');
+    //     $menu_item['icon'] = 'bi bi-tag-fill';
+    //     $menu_item['text'] = 'Ofertas';
+    //     $menu_item['submenu'] = array();
+    //     $menu['deals'] = $menu_item;
+    // }//end if admin and operator only
 
     //Galeria section
-    $menu_item['is_active'] = false;
-    $menu_item['link'] = route_to('panel/galeria');
-    $menu_item['icon'] = 'bi bi-image-fill';
-    $menu_item['text'] = 'Galería';
-    $menu_item['submenu'] = array();
-    $menu['gallery'] = $menu_item;
+    // $menu_item['is_active'] = false;
+    // $menu_item['link'] = route_to('panel/galeria');
+    // $menu_item['icon'] = 'bi bi-image-fill';
+    // $menu_item['text'] = 'Galería';
+    // $menu_item['submenu'] = array();
+    // $menu['gallery'] = $menu_item;
 
     //Usuarios section
     if($id_role == ADMIN_ROLE['id']){

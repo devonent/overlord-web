@@ -46,7 +46,6 @@
                                         ?>
                                     </div>
                                 </div>
-
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
                                         <label for="apellido-paterno">Apellido paterno*</label>
