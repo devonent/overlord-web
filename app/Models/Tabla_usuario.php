@@ -34,6 +34,7 @@ class Tabla_usuario extends Model {
     public function get_all_users() {
         $query = $this->select('id_usuario, nombre, apellido_p, apellido_m, sexo, email, rol')
                         ->join('rol', 'usuario.id_rol = rol.id_rol')
+                        ->orderBy('id_usuario', 'ASC')
                         ->findAll();
         return $query;
     }

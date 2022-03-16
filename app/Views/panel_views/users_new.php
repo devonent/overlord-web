@@ -175,7 +175,9 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-perfil',
-                                                'accept' => '.png, .jpeg, .jpg'
+                                                'name' => 'imagen-perfil',
+                                                'accept' => '.png, .jpeg, .jpg',
+                                                'filesize' => '20'
                                             );
                                             echo form_upload($data);
                                         ?>

@@ -23,7 +23,7 @@ class Users_all extends BaseController {
             return $this->create_view('panel_views/users_all', $this->load_data());
         }//end if not allowed
         else {
-            create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...');
+            create_user_message('No cuentas con los permisos suficientes para acceder a esta sección...', 'warning');
             return redirect()->to(route_to('panel/dashboard'));
         }//end else not allowed
     }//end index function

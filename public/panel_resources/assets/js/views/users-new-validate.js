@@ -1,3 +1,7 @@
+$.validator.addMethod('filesize', function (value, element, param) {
+    return this.optional(element) || (element.files[0].size <= param)
+});
+
 $('#form-new-user').validate({
     errorElement: "div",
     focusInfalid: false,
@@ -34,6 +38,10 @@ $('#form-new-user').validate({
             required: true,
             rangelength: [6,60],
             equalTo: '#contrasenia'
+        },
+        'imagen-perfil' : {
+            filesize: 2097152
+            // filesize: 200097152
         }
     },
 
@@ -69,6 +77,9 @@ $('#form-new-user').validate({
             required: 'Es necesario ingresar una contraseña',
             rangelength: 'La contraseña debe tener entre 6 a 60 caracteres',
             equalTo: 'Las contraseñas no coinciden'
+        },
+        'imagen-perfil' : {
+            filesize: 'Tu imagen no puede ser mayor a 2 MiB'
         }
     },
     
