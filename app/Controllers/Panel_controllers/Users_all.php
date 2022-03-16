@@ -38,6 +38,7 @@ class Users_all extends BaseController {
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
         $data['user_role'] = $session->user_rol;
+        $data['user_img'] = $session->user_img;
 
         $data['section_name'] = 'Usuarios';
 

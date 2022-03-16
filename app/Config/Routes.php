@@ -94,7 +94,9 @@ $routes->get('panel/galeria', 'Panel_controllers/Gallery::index');
 // USUARIOS PANEL SECTION
 $routes->get('panel/usuarios', 'Panel_controllers/Users_all::index');
 $routes->get('panel/usuarios/registrar_usuario', 'Panel_controllers/Users_new::index');
+$routes->get('panel/usuarios/editar_usuario/(:num)', 'Panel_controllers\Users_detail::index/$1');
 $routes->post('panel/registrar_nuevo_usuario', 'Panel_controllers/Users_new::insert_user');
+$routes->post('panel/editar_usuario', 'Panel_controllers/Users_detail::update_user');
 
 
 /*

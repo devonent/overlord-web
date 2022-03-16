@@ -52,7 +52,7 @@ class Login extends BaseController {
             return redirect()->to(route_to('panel/dashboard'));
         }//end if si existe el usuario
         else {
-            create_user_message('Su usuario y/o contraseña son incorrectas...');
+            create_user_message('Su usuario y/o contraseña son incorrectas...', 'warning');
             return redirect()->to(route_to('login'));
         }//end else si existe el usuario
     }//end check_user function

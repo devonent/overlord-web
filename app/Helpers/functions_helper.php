@@ -31,8 +31,6 @@ function create_user_message($text = '', $type = '') {
         'color2' => $color2
     );
     
-    // $message_data = $text;
-
     session()->set('message', $message_data);
 }//end create_user_message function
 

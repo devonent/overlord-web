@@ -119,6 +119,7 @@ define("DEALS_TASK", "ofertas");
 // USUARIOS
 define("USERS_ALL_TASK", "usuarios_todos");
 define("USERS_NEW_TASK", "usuarios_nuevo");
+define("USERS_DETAIL_TASK", "usuarios_detalle");
 
 
 // ======= PORTAL CONSTANTS ===================

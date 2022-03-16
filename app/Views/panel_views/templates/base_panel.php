@@ -84,7 +84,7 @@
                                         <div class="user-img d-flex ">
                                             <div class="avatar avatar-md">
                                                 
-                                                <img src="<?= base_url('panel_resources/assets/images/faces/' . ($user_img == NULL ? ($user_sex == MALE_SEX ? 'avatar-m1.jpg' : 'avatar-f1.jpg') : $user_img)); ?>">
+                                                <img src="<?= base_url('img/users') . '/' . $user_img ?>">
                                             </div>
                                         </div>
                                     </div>

@@ -37,6 +37,7 @@ class Users_new extends BaseController {
         $data['user_img'] = $session->user_img;
         $data['user_sex'] = $session->user_sex;
         $data['user_role'] = $session->user_rol;
+        $data['user_img'] = $session->user_img;
 
         $data['section_name'] = 'Registrar usuario nuevo';
 
@@ -67,12 +68,14 @@ class Users_new extends BaseController {
         $user['id_rol'] = $this->request->getPost('rol');
         $user['email'] = $this->request->getPost('email');
         $user['sexo'] = $this->request->getPost('sexo');
-        // $user['password'] = hash('sha256', $this->request->getPost('confirmar-contrasenia'));
         $user['password'] = $this->request->getPost('confirmar-contrasenia');
-        $user['imagen'] = $this->upload_files($this->request->getFile('imagen-perfil'));
-        if($user['imagen'] == NULL) {
+        // $user['imagen'] = $this->upload_files($this->request->getFile('imagen-perfil'));
+        if(($this->request->getFile('imagen-perfil'))->getSize() > 0) {
+            $user['imagen'] = $this->upload_files($this->request->getFile('imagen-perfil'));
+        }// if si hay imagen insertada
+        else {
             $user['imagen'] = 'avatar-none.jpg';
-        }
+        }// else si hay imagen insertada
 
         if(($user_table->insert($user)) > 0){
             create_user_message('El usuario se registro con éxito', 'success');
@@ -92,7 +95,7 @@ class Users_new extends BaseController {
             return $file_name;
         }//end if file size <= 2 MiB
         else{
-            return NULL;
+            return 'avatar-none.jpg';
         }//end else file size <= 2 MiB
     }//end upload_files funciton
 
