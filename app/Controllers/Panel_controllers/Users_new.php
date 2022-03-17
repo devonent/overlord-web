@@ -79,18 +79,18 @@ class Users_new extends BaseController {
 
         if(($user_table->insert($user)) > 0){
             create_user_message('El usuario se registro con éxito', 'success');
-            return redirect()->to(route_to('panel/usuarios/registrar_usuario'));
+            return redirect()->to(route_to('panel/usuarios'));
         }// end if se inserta usuario
         else {
             create_user_message('Hubo un problema al registrar el usuario. Intenta de nuevo', 'error');
-            return redirect()->to(route_to('panel/usuarios/registrar_usuario'));
+            return redirect()->to(route_to('panel/usuarios'));
         }// end else se inserta usuario
     }//end insert_user function
 
     private function upload_files($file = NULL) {
         $file_name = $file->getRandomName();
         $file_size = $file->getSize();
-        if($file_size <= 2097152 && $file_size > 0){
+        if($file_size <= MAX_USER_IMG_SIZE && $file_size > 0){
             $file->move('img/users', $file_name);
             return $file_name;
         }//end if file size <= 2 MiB
@@ -98,13 +98,4 @@ class Users_new extends BaseController {
             return 'avatar-none.jpg';
         }//end else file size <= 2 MiB
     }//end upload_files funciton
-
-    // Realizar vista detalles
-    // Realizar controlador detalles
-    // Realizar ruta get con parámetro (:num), backslash y indes/$1
-    // Colocar un link con route_to('ruta', parametro)
-    // Generar las tareas para detalles
-    // Crear función en método de tabla_usuario
-    
-
 }//end User_news class

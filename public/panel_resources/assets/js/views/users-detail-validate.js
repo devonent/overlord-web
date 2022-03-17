@@ -2,7 +2,7 @@ $.validator.addMethod('filesize', function (value, element, param) {
     return this.optional(element) || (element.files[0].size <= param)
 });
 
-$('#form-new-user').validate({
+$('#form-detail-user').validate({
     errorElement: "div",
     focusInfalid: false,
 
@@ -31,11 +31,11 @@ $('#form-new-user').validate({
             required: true
         },
         'contrasenia' : {
-            required: true,
+            required: false,
             rangelength: [6,60],
         },
         'confirmar-contrasenia' : {
-            required: true,
+            required: false,
             rangelength: [6,60],
             equalTo: '#contrasenia'
         },
@@ -69,11 +69,9 @@ $('#form-new-user').validate({
             required: 'Es necesario seleccionar un sexo'
         },
         'contrasenia': {
-            required: 'Es necesario ingresar una contraseña',
             rangelength: 'La contraseña debe tener entre 6 a 60 caracteres'
         },
         'confirmar-contrasenia': {
-            required: 'Es necesario ingresar una contraseña',
             rangelength: 'La contraseña debe tener entre 6 a 60 caracteres',
             equalTo: 'Las contraseñas no coinciden'
         },

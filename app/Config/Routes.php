@@ -94,10 +94,10 @@ $routes->get('panel/galeria', 'Panel_controllers/Gallery::index');
 // USUARIOS PANEL SECTION
 $routes->get('panel/usuarios', 'Panel_controllers/Users_all::index');
 $routes->get('panel/usuarios/registrar_usuario', 'Panel_controllers/Users_new::index');
-$routes->get('panel/usuarios/editar_usuario/(:num)', 'Panel_controllers\Users_detail::index/$1');
+$routes->get('panel/usuarios/editar_usuario/(:num)', 'Panel_controllers\Users_detail::index/$1', ['as' => 'panel/usuarios/editar_usuario/']);
+$routes->get('panel/usuarios/eliminar_usuario/(:num)', 'Panel_controllers\Users_all::delete_user/$1', ['as' => 'panel/usuarios/eliminar_usuario/']);
 $routes->post('panel/registrar_nuevo_usuario', 'Panel_controllers/Users_new::insert_user');
 $routes->post('panel/editar_usuario', 'Panel_controllers/Users_detail::update_user');
-
 
 /*
  * --------------------------------------------------------------------

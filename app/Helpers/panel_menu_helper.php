@@ -118,6 +118,7 @@ function activate_section($section_to_activate = NULL, $menu = NULL) {
 
         case USERS_ALL_TASK:
         case USERS_NEW_TASK:
+        case USERS_DETAIL_TASK:
             $menu['users']['is_active'] = TRUE;
             break;
             

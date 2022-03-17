@@ -12,10 +12,10 @@
                     <!-- <form class="form form-vertical"> -->
                     <?php
                         $data = array(
-                            'id' => 'form-new-user',
+                            'id' => 'form-detail-user',
                             'class' => 'form form-vertical'
                         );
-                        echo form_open_multipart('panel/registrar_nuevo_usuario', $data);
+                        echo form_open_multipart('panel/editar_usuario', $data);
                     ?>
                         <div class="form-body">
                             <div class="row">
@@ -24,7 +24,7 @@
 
                                 <div class="col-12 col-lg-4 text-center container-fluid">
                                     <div class="avatar avatar-profile me-3">
-                                        <img class="img-fluid" src="<?= base_url('img/users/avatar-none.jpg') ?>" alt="imagen_perfil" id="imagen-perfil-previsualizacion">
+                                        <img class="img-fluid" src="<?= base_url('img/users/'. $user_details->imagen) ?>" alt="imagen_perfil" id="imagen-perfil-previsualizacion">
                                     </div>
                                 </div>
 
@@ -40,7 +40,8 @@
                                                 'id' => 'nombre',
                                                 'name' => 'nombre',
                                                 'placeholder' => 'Ingresa tu(s) nombre(s)',
-                                                'maxlength' => '45'
+                                                'maxlength' => '45',
+                                                'value' => $user_details->nombre
                                             );
                                             echo form_input($data);
                                         ?>
@@ -55,7 +56,8 @@
                                                 'id' => 'apellido-paterno',
                                                 'name' => 'apellido-paterno',
                                                 'placeholder' => 'Ingresa tu apellido paterno',
-                                                'maxlength' => '45'
+                                                'maxlength' => '45',
+                                                'value' => $user_details->apellido_p
                                             );
                                             echo form_input($data);
                                         ?>
@@ -70,7 +72,8 @@
                                                 'id' => 'apellido-materno',
                                                 'name' => 'apellido-materno',
                                                 'placeholder' => 'Ingresa tu apellido materno',
-                                                'maxlength' => '45'
+                                                'maxlength' => '45',
+                                                'value' => $user_details->apellido_m
                                             );
                                             echo form_input($data);
                                         ?>
@@ -88,7 +91,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'rol'
                                             );
-                                            echo form_dropdown('rol', ['' => 'Seleccionar-rol'] + $roles, array(), $data);
+                                            echo form_dropdown('rol', ['' => 'Seleccionar-rol'] + $roles, $user_details->id_rol , $data);
                                         ?>
                                     </div>
                                 </div>
@@ -101,7 +104,17 @@
                                                 'id' => 'email',
                                                 'name' => 'email',
                                                 'placeholder' => 'Ingresa tu correo electrónico',
-                                                'maxlength' => '60'
+                                                'maxlength' => '60',
+                                                'value' => $user_details->email
+                                            );
+                                            echo form_input($data);
+
+                                            $data = array (
+                                                'type' => 'hidden',
+                                                'class' => 'form-control',
+                                                'id' => 'id_usuario',
+                                                'name' => 'id_usuario',
+                                                'value' => $user_details->id_usuario
                                             );
                                             echo form_input($data);
                                         ?>
@@ -117,7 +130,7 @@
                                                     'name' => 'sexo',
                                                     'class' => 'form-check-input'
                                                 );
-                                                echo form_radio($data, FEMALE_SEX);
+                                                echo form_radio($data, FEMALE_SEX, ($user_details->sexo == FEMALE_SEX));
                                             ?>
                                             <label for="femenino" class="form-check-label">Femenino</label>
                                         </div>
@@ -128,7 +141,7 @@
                                                     'name' => 'sexo',
                                                     'class' => 'form-check-input'
                                                 );
-                                                echo form_radio($data, MALE_SEX);
+                                                echo form_radio($data, MALE_SEX, ($user_details->sexo == MALE_SEX));
                                             ?>
                                             <label for="masculino" class="form-check-label">Masculino</label>
                                         </div>
@@ -188,7 +201,7 @@
                                 <span class="my-2"></span>
 
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary me-1 mb-1">Registrar</button>
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Actualizar</button>
                                     <a class="btn btn-light-secondary me-1 mb-1" type="reset" href="<?= base_url('panel/usuarios') ?>">Cancelar</a>
                                 </div>
 
@@ -202,5 +215,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    <script src="<?= base_url('panel_resources/assets/js/views/users-new-validate.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/users-detail-validate.js') ?>"></script>
 <?= $this->endSection() ?>

@@ -49,7 +49,7 @@
                                 <span class="my-2"></span>
                                 
                                 <div class="col-12 col-lg-4">
-                                <div class="form-group">
+                                    <div class="form-group">
                                         <label class="form-label mb-0">Marca*</label>
                                         <?php
                                             $data = array (

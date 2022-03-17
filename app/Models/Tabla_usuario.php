@@ -29,7 +29,7 @@ class Tabla_usuario extends Model {
                         ->where('password', $pass)
                         ->first();
         return $query;
-    }//end login_user function
+    }// end login_user function
 
     public function get_all_users() {
         $query = $this->select('id_usuario, nombre, apellido_p, apellido_m, sexo, email, rol')
@@ -37,5 +37,12 @@ class Tabla_usuario extends Model {
                         ->orderBy('id_usuario', 'ASC')
                         ->findAll();
         return $query;
-    }
+    }// end get_all_users function
+
+    public function get_single_user($id_user) {
+        $query = $this->select('id_usuario, nombre, apellido_p, apellido_m, sexo, email, imagen, id_rol')
+                        ->where('id_usuario', $id_user)
+                        ->first();
+        return $query;
+    }// end get_single_user
 }//end class Tabla_usuario

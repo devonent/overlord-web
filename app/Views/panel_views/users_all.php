@@ -48,10 +48,10 @@
                                             <td>'.$user->rol.'</td>
                                             <td class="text-center">
                                                 <div class="btn-group" >
-                                                    <a href="#!" class="btn btn-primary">
+                                                    <a href="'.route_to('panel/usuarios/editar_usuario/', $user->id_usuario).'" class="btn btn-primary">
                                                         <i class="bi bi-pencil-fill btn-icon-datatable"></i>
                                                     </a>
-                                                    <a href="#!" class="btn btn-danger">
+                                                    <a href="'.route_to('panel/usuarios/eliminar_usuario/', $user->id_usuario).'" class="btn btn-danger">
                                                         <i class="bi bi-trash-fill btn-icon-datatable"></i>
                                                     </a>
                                                 </div>

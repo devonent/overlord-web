@@ -39,6 +39,7 @@ class Permissions {
             // SECCIONES PERMITIDAS SOLO PARA EL ADMIN
             case USERS_ALL_TASK:
             case USERS_NEW_TASK:
+            case USERS_DETAIL_TASK:
                 $allowed_roles = array(
                     ADMIN_ROLE['id']
                 );
