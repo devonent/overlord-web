@@ -110,6 +110,11 @@ define("INS_DRUMS_NEW_TASK", "baterias_nuevo");
 define("INS_KEYBOARDS_NEW_TASK", "teclados_nuevo");
 define("INS_MONITORS_NEW_TASK", "monitores_nuevo");
 
+define("INS_GUITARS_DETAIL_TASK", "guitarras_detalle");
+define("INS_DRUMS_DETAIL_TASK", "baterias_detalle");
+define("INS_KEYBOARDS_DETAIL_TASK", "teclados_detalle");
+define("INS_MONITORS_DETAIL_TASK", "monitores_detalle");
+
 // GALERÍA
 define("GALLERY_TASK", "galeria");
 

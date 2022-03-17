@@ -38,6 +38,7 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
+                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -54,9 +55,9 @@
                                         <?php
                                             $data = array (
                                                 'class' => 'form-select',
-                                                'id' => 'marca'
+                                                'id' => 'marca',
                                             );
-                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, array(), $data);
+                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, $guitar_details->marca, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -70,7 +71,8 @@
                                                 'id' => 'modelo',
                                                 'name' => 'modelo',
                                                 'placeholder' => 'Ingresa el modelo de la guitarra',
-                                                'maxlength' => '100'
+                                                'maxlength' => '100',
+                                                'value' => $guitar_details->modelo
                                             );
                                             echo form_input($data);
                                         ?>
@@ -85,7 +87,8 @@
                                                 'id' => 'acabado',
                                                 'name' => 'acabado',
                                                 'placeholder' => 'Ingresa el acabado o color de la guitarra',
-                                                'maxlength' => '50'
+                                                'maxlength' => '50',
+                                                'value' => $guitar_details->acabado_color
                                             );
                                             echo form_input($data);
                                         ?>
@@ -109,7 +112,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '1000'
+                                                    'max' => '1000',
+                                                    'value' => $guitar_details->stock
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -130,7 +134,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '40'
+                                                    'max' => '40',
+                                                    'value' => $guitar_details->no_trastes
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -151,7 +156,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '30'
+                                                    'max' => '30',
+                                                    'value' => $guitar_details->no_cuerdas
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -173,6 +179,7 @@
                                                     'step' => '.01',
                                                     'min' => '0',
                                                     'max' => '9999999.99',
+                                                    'value' => $guitar_details->precio
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -191,7 +198,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'material_cuerpo'
                                             );
-                                            echo form_dropdown('material_cuerpo', ['' => 'Seleccionar-material-del-cuerpo'] + $body, array(), $data);
+                                            echo form_dropdown('material_cuerpo', ['' => 'Seleccionar-material-del-cuerpo'] + $body, $guitar_details->cuerpo, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -203,7 +210,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'material_mastil'
                                             );
-                                            echo form_dropdown('material_mastil', ['' => 'Seleccionar-material-del-mástil'] + $neck, array(), $data);
+                                            echo form_dropdown('material_mastil', ['' => 'Seleccionar-material-del-mástil'] + $neck, $guitar_details->mastil, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -215,7 +222,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'material_diapason'
                                             );
-                                            echo form_dropdown('material_diapason', ['' => 'Seleccionar-material-del-diapasón'] + $fretboard, array(), $data);
+                                            echo form_dropdown('material_diapason', ['' => 'Seleccionar-material-del-diapasón'] + $fretboard, $guitar_details->diapason, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -231,7 +238,8 @@
                                                 'class' => 'form-control',
                                                 'id' => 'descripcion',
                                                 'name' => 'descripcion',
-                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal'
+                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal',
+                                                'value' => $guitar_details->descripcion
                                             );
                                             echo form_textarea($data);
 
@@ -240,7 +248,7 @@
                                                 'class' => 'form-control',
                                                 'id' => 'id_guitarra',
                                                 'name' => 'id_guitarra',
-                                                'value' => $user_details->id_guitarra
+                                                'value' => $guitar_details->id_guitarra
                                             );
                                             echo form_input($data);
                                         ?>
@@ -265,5 +273,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    s<script src="<?= base_url('panel_resources/assets/js/views/guitars-new-validate.js') ?>"></script>
+    s<script src="<?= base_url('panel_resources/assets/js/views/guitars-detail-validate.js') ?>"></script>
 <?= $this->endSection() ?>

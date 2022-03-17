@@ -18,6 +18,10 @@ class Permissions {
             case INS_DRUMS_NEW_TASK:
             case INS_KEYBOARDS_NEW_TASK:
             case INS_MONITORS_NEW_TASK:
+            case INS_GUITARS_DETAIL_TASK:
+            case INS_DRUMS_DETAIL_TASK:
+            case INS_KEYBOARDS_DETAIL_TASK:
+            case INS_MONITORS_DETAIL_TASK:
             case GALLERY_TASK:
                 $allowed_roles = array(
                     ADMIN_ROLE['id'],

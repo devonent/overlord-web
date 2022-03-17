@@ -38,6 +38,7 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
+                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -56,7 +57,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'marca'
                                             );
-                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, array(), $data);
+                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, $drum_details->marca, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -70,7 +71,8 @@
                                                 'id' => 'modelo',
                                                 'name' => 'modelo',
                                                 'placeholder' => 'Ingresa el modelo de la batería',
-                                                'maxlength' => '100'
+                                                'maxlength' => '100',
+                                                'value' => $drum_details->modelo
                                             );
                                             echo form_input($data);
                                         ?>
@@ -85,7 +87,8 @@
                                                 'id' => 'acabado',
                                                 'name' => 'acabado',
                                                 'placeholder' => 'Ingresa el acabado o color de la batería',
-                                                'maxlength' => '50'
+                                                'maxlength' => '50',
+                                                'value' => $drum_details->acabado_color
                                             );
                                             echo form_input($data);
                                         ?>
@@ -103,7 +106,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'material'
                                             );
-                                            echo form_dropdown('material', ['' => 'Seleccionar-material'] + $body, array(), $data);
+                                            echo form_dropdown('material', ['' => 'Seleccionar-material'] + $body, $drum_details->carcasa, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -121,7 +124,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '1000'
+                                                    'max' => '1000',
+                                                    'value' => $drum_details->stock
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -142,7 +146,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '100'
+                                                    'max' => '100',
+                                                    'value' => $drum_details->piezas_totales
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -164,6 +169,7 @@
                                                     'step' => '.01',
                                                     'min' => '0',
                                                     'max' => '9999999.99',
+                                                    'value' => $drum_details->precio
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -182,7 +188,8 @@
                                                 'class' => 'form-control',
                                                 'id' => 'piezas',
                                                 'name' => 'piezas',
-                                                'placeholder' => 'Ingresa el nombre de las piezas que vienen en el kit'
+                                                'placeholder' => 'Ingresa el nombre de las piezas que vienen en el kit',
+                                                'value' => $drum_details->elementos_extra
                                             );
                                             echo form_textarea($data);
                                         ?>
@@ -196,7 +203,8 @@
                                                 'class' => 'form-control',
                                                 'id' => 'descripcion',
                                                 'name' => 'descripcion',
-                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal'
+                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal',
+                                                'value' => $drum_details->descripcion
                                             );
                                             echo form_textarea($data);
 
@@ -205,7 +213,7 @@
                                                 'class' => 'form-control',
                                                 'id' => 'id_bateria',
                                                 'name' => 'id_bateria',
-                                                'value' => $user_details->id_bateria
+                                                'value' => $drum_details->id_bateria
                                             );
                                             echo form_input($data);
                                         ?>
@@ -230,5 +238,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    <script src="<?= base_url('panel_resources/assets/js/views/drums-new-validate.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/drums-detail-validate.js') ?>"></script>
 <?= $this->endSection() ?>

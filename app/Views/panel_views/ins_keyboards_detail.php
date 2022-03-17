@@ -38,6 +38,7 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
+                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -56,7 +57,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'marca'
                                             );
-                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, array(), $data);
+                                            echo form_dropdown('marca', ['' => 'Seleccionar-marca'] + $brands, $keyboard_details->marca, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -69,7 +70,8 @@
                                                 'id' => 'modelo',
                                                 'name' => 'modelo',
                                                 'placeholder' => 'Ingresa el modelo del teclado',
-                                                'maxlength' => '100'
+                                                'maxlength' => '100',
+                                                'value' => $keyboard_details->modelo
                                             );
                                             echo form_input($data);
                                         ?>
@@ -88,7 +90,8 @@
                                                 'id' => 'acabado',
                                                 'name' => 'acabado',
                                                 'placeholder' => 'Ingresa el acabado o color del teclado',
-                                                'maxlength' => '50'
+                                                'maxlength' => '50',
+                                                'value' => $keyboard_details->acabado_color
                                             );
                                             echo form_input($data);
                                         ?>
@@ -102,7 +105,7 @@
                                                 'class' => 'form-select',
                                                 'id' => 'monitor'
                                             );
-                                            echo form_dropdown('monitor', ['' => 'Seleccionar-tipo-monitor'] + $monitors, array(), $data);
+                                            echo form_dropdown('monitor', ['' => 'Seleccionar-tipo-monitor'] + $monitors, $keyboard_details->monitor, $data);
                                         ?>
                                     </div>
                                 </div>
@@ -124,7 +127,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '1000'
+                                                    'max' => '1000',
+                                                    'value' => $keyboard_details->stock
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -145,7 +149,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '100'
+                                                    'max' => '100',
+                                                    'value' => $keyboard_details->no_teclas
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -167,6 +172,7 @@
                                                     'step' => '.01',
                                                     'min' => '0',
                                                     'max' => '9999999.99',
+                                                    'value' => $keyboard_details->precio
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -190,7 +196,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '2000'
+                                                    'max' => '2000',
+                                                    'value' => $keyboard_details->anchura_mm
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -211,7 +218,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '2000'
+                                                    'max' => '2000',
+                                                    'value' => $keyboard_details->altura_mm
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -232,7 +240,8 @@
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '2000'
+                                                    'max' => '2000',
+                                                    'value' => $keyboard_details->profundidad_mm
                                                 );
                                                 echo form_input($data);
                                             ?>
@@ -252,7 +261,8 @@
                                                 'class' => 'form-control',
                                                 'id' => 'descripcion',
                                                 'name' => 'descripcion',
-                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal'
+                                                'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal',
+                                                'value' => $keyboard_details->descripcion
                                             );
                                             echo form_textarea($data);
 
@@ -261,7 +271,7 @@
                                                 'class' => 'form-control',
                                                 'id' => 'id_teclado',
                                                 'name' => 'id_teclado',
-                                                'value' => $user_details->id_teclado
+                                                'value' => $keyboard_details->id_teclado
                                             );
                                             echo form_input($data);
                                         ?>
@@ -286,5 +296,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    <script src="<?= base_url('panel_resources/assets/js/views/keyboards-new-validate.js') ?>"></script>
+    <script src="<?= base_url('panel_resources/assets/js/views/keyboards-detail-validate.js') ?>"></script>
 <?= $this->endSection() ?>

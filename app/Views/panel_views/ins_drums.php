@@ -50,7 +50,7 @@
                                             <td>'.$drum->stock.'</td>
                                             <td class="text-center">
                                                 <div class="btn-group" >
-                                                    <a href="#!" class="btn btn-primary">
+                                                    <a href="'.route_to('panel/baterias/editar_bateria/', $drum->id_bateria).'" class="btn btn-primary">
                                                         <i class="bi bi-pencil-fill btn-icon-datatable"></i>
                                                     </a>
                                                     <a href="'.route_to('panel/baterias/eliminar_bateria/', $drum->id_bateria).'" class="btn btn-danger">

@@ -71,23 +71,31 @@ $routes->get('panel/dashboard', 'Panel_controllers/Dashboard::index');
 // INSTRUMENTOS PANEL SECTION
 $routes->get('panel/guitarras', 'Panel_controllers/Ins_guitars::index');
 $routes->get('panel/guitarras/registrar_guitarra', 'Panel_controllers/Ins_guitars_new::index');
+$routes->get('panel/guitarras/editar_guitarra/(:num)', 'Panel_controllers\Ins_guitars_detail::index/$1', ['as' => 'panel/guitarras/editar_guitarra/']);
 $routes->get('panel/guitarras/eliminar_guitarra/(:num)', 'Panel_controllers\Ins_guitars::delete_guitar/$1', ['as' => 'panel/guitarras/eliminar_guitarra/']);
 $routes->post('panel/registrar_nueva_guitarra', 'Panel_controllers/Ins_guitars_new::insert_guitar');
+$routes->post('panel/editar_guitarra', 'Panel_controllers/Ins_guitars_detail::update_guitar');
 
 $routes->get('panel/baterias', 'Panel_controllers/Ins_drums::index');
 $routes->get('panel/baterias/registrar_bateria', 'Panel_controllers/Ins_drums_new::index');
+$routes->get('panel/baterias/editar_bateria/(:num)', 'Panel_controllers\Ins_drums_detail::index/$1', ['as' => 'panel/baterias/editar_bateria/']);
 $routes->get('panel/baterias/eliminar_bateria/(:num)', 'Panel_controllers\Ins_drums::delete_drum/$1', ['as' => 'panel/baterias/eliminar_bateria/']);
 $routes->post('panel/registrar_nueva_bateria', 'Panel_controllers/Ins_drums_new::insert_drum');
+$routes->post('panel/editar_bateria', 'Panel_controllers/Ins_drums_detail::update_drum');
 
 $routes->get('panel/teclados', 'Panel_controllers/Ins_keyboards::index');
 $routes->get('panel/teclados/registrar_teclado', 'Panel_controllers/Ins_keyboards_new::index');
+$routes->get('panel/teclados/editar_teclado/(:num)', 'Panel_controllers\Ins_keyboards_detail::index/$1', ['as' => 'panel/teclados/editar_teclado/']);
 $routes->get('panel/teclados/eliminar_teclado/(:num)', 'Panel_controllers\Ins_keyboards::delete_keyboard/$1', ['as' => 'panel/teclados/eliminar_teclado/']);
 $routes->post('panel/registrar_nuevo_teclado', 'Panel_controllers/Ins_keyboards_new::insert_keyboard');
+$routes->post('panel/editar_teclado', 'Panel_controllers/Ins_keyboards_detail::update_keyboard');
 
 $routes->get('panel/monitores', 'Panel_controllers/Ins_monitors::index');
 $routes->get('panel/monitores/registrar_monitor', 'Panel_controllers/Ins_monitors_new::index');
+$routes->get('panel/monitores/editar_monitor/(:num)', 'Panel_controllers\Ins_monitors_detail::index/$1', ['as' => 'panel/monitores/editar_monitor/']);
 $routes->get('panel/monitores/eliminar_monitor/(:num)', 'Panel_controllers\Ins_monitors::delete_monitor/$1', ['as' => 'panel/monitores/eliminar_monitor/']);
 $routes->post('panel/registrar_nuevo_monitor', 'Panel_controllers/Ins_monitors_new::insert_monitor');
+$routes->post('panel/editar_monitor', 'Panel_controllers/Ins_monitors_detail::update_monitor');
 
 // OFERTAS PANEL SECTION
 $routes->get('panel/ofertas', 'Panel_controllers/Deals::index');

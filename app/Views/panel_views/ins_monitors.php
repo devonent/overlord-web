@@ -52,7 +52,7 @@
                                             <td>'.$monitor->stock.'</td>
                                             <td class="text-center">
                                                 <div class="btn-group" >
-                                                    <a href="#!" class="btn btn-primary">
+                                                    <a href="'.route_to('panel/monitores/editar_monitor/', $monitor->id_monitor).'" class="btn btn-primary">
                                                         <i class="bi bi-pencil-fill btn-icon-datatable"></i>
                                                     </a>
                                                     <a href="'.route_to('panel/monitores/eliminar_monitor/', $monitor->id_monitor).'" class="btn btn-danger">
