@@ -2,7 +2,7 @@ $.validator.addMethod('filesize', function (value, element, param) {
     return this.optional(element) || (element.files[0].size <= param)
 });
 
-$('#form-new-monitor').validate({
+$('#form-detail-guitar').validate({
     errorElement: "div",
     focusInfalid: false,
 
@@ -19,20 +19,23 @@ $('#form-new-monitor').validate({
             required: true,
             maxlength: 49
         },
-        'material' : {
-            required: true
-        },
         'stock' : {
             required: true,
             step: 1,
             min: 0,
             max: 1000
         },
-        'no_monitores' : {
+        'no_trastes' : {
             required: true,
             step: 1,
             min: 0,
-            max: 10
+            max: 40
+        },
+        'no_cuerdas' : {
+            required: true,
+            step: 1,
+            min: 0,
+            max: 30
         },
         'precio' : {
             required: true,
@@ -40,23 +43,14 @@ $('#form-new-monitor').validate({
             min: 0,
             max: 9999999.99
         },
-        'anchura' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
+        'material_cuerpo' : {
+            required: true
         },
-        'altura' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
+        'material_mastil' : {
+            required: true
         },
-        'profundidad' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
+        'material_diapason' : {
+            required: true
         },
         'descripcion' : {
             required: true
@@ -79,20 +73,23 @@ $('#form-new-monitor').validate({
             required: 'Es necesario ingresar un color o acabado',
             maxlength: 'El nombre del acabado debe tener menos de 50 caracteres'
         },
-        'material' : {
-            required: 'Es necesario seleccionar un material del monitor'
-        },
         'stock' : {
             required: 'Es necesario ingresar una cantidad de unidades',
             step: 'Solo puede ingresar números enteros',
             min: 'Ingrese un valor mayor o igual a 0',
             max: 'Ingrese un valor menor o igual a 1000'
         },
-        'no_monitores' : {
-            required: 'Es necesario ingresar un número de monitores',
+        'no_trastes' : {
+            required: 'Es necesario ingresar un número de trastes',
             step: 'Solo puede ingresar números enteros',
             min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 10'
+            max: 'Ingrese un valor menor o igual a 40'
+        },
+        'no_cuerdas' : {
+            required: 'Es necesario ingresar un número de cuerdas',
+            step: 'Solo puede ingresar números enteros',
+            min: 'Ingrese un valor mayor o igual a 0',
+            max: 'Ingrese un valor menor o igual a 30'
         },
         'precio' : {
             required: 'Es necesario ingresar un precio',
@@ -100,23 +97,14 @@ $('#form-new-monitor').validate({
             min: 'Ingrese un valor mayor o igual a $0.00',
             max: 'Ingrese un valor menor o igual a $9999999.99'
         },
-        'anchura' : {
-            required: 'Es necesario ingresar una medida de anchura',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
+        'material_cuerpo' : {
+            required: 'Es necesario seleccionar un material del cuerpo'
         },
-        'altura' : {
-            required: 'Es necesario ingresar una medida de altura',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
+        'material_mastil' : {
+            required: 'Es necesario seleccionar un material del mástil'
         },
-        'profundidad' : {
-            required: 'Es necesario ingresar una medida de profundidad',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
+        'material_diapason' : {
+            required: 'Es necesario seleccionar un material del diapasón'
         },
         'descripcion' : {
             required: 'Ingresa una descripción del producto'

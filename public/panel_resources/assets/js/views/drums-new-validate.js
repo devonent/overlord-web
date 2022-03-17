@@ -1,3 +1,7 @@
+$.validator.addMethod('filesize', function (value, element, param) {
+    return this.optional(element) || (element.files[0].size <= param)
+});
+
 $('#form-new-drum').validate({
     errorElement: "div",
     focusInfalid: false,
@@ -11,11 +15,11 @@ $('#form-new-drum').validate({
             required: true,
             maxlength: 99
         },
-        'acabado' : {
+        'acabado_color' : {
             required: true,
             maxlength: 49
         },
-        'material' : {
+        'carcasa' : {
             required: true
         },
         'stock' : {
@@ -41,6 +45,9 @@ $('#form-new-drum').validate({
         },
         'descripcion' : {
             required: true
+        },
+        'imagen-producto' : {
+            filesize: 4194304 
         }
     },
 
@@ -53,11 +60,11 @@ $('#form-new-drum').validate({
             required: 'Es necesario ingresar un modelo',
             maxlength: 'El modelo debe de tener menos de 100 caracteres'
         },
-        'acabado': {
+        'acabado_color': {
             required: 'Es necesario ingresar un color o acabado',
             maxlength: 'El nombre del acabado debe tener menos de 50 caracteres'
         },
-        'material': {
+        'carcasa': {
             required: 'Es necesario seleccionar un material'
         },
         'stock': {
@@ -83,6 +90,9 @@ $('#form-new-drum').validate({
         },
         'descripcion' : {
             required: 'Ingresa una descripción del producto'
+        },
+        'imagen-producto' : {
+            filesize: 'Tu imagen no puede ser mayor a 4MiB' 
         }
     },
     

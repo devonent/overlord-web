@@ -38,6 +38,7 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
+                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -78,12 +79,12 @@
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
-                                        <label for="acabado">Acabado/color*</label>
+                                        <label for="acabado_color">Acabado/color*</label>
                                         <?php 
                                             $data = array (
                                                 'class' => 'form-control',
-                                                'id' => 'acabado',
-                                                'name' => 'acabado',
+                                                'id' => 'acabado_color',
+                                                'name' => 'acabado_color',
                                                 'placeholder' => 'Ingresa el acabado o color de la batería',
                                                 'maxlength' => '50'
                                             );
@@ -101,9 +102,9 @@
                                         <?php
                                             $data = array (
                                                 'class' => 'form-select',
-                                                'id' => 'material'
+                                                'id' => 'carcasa'
                                             );
-                                            echo form_dropdown('material', ['' => 'Seleccionar-material'] + $body, array(), $data);
+                                            echo form_dropdown('carcasa', ['' => 'Seleccionar-material'] + $body, array(), $data);
                                         ?>
                                     </div>
                                 </div>

@@ -122,7 +122,7 @@ define("USERS_NEW_TASK", "usuarios_nuevo");
 define("USERS_DETAIL_TASK", "usuarios_detalle");
 
 // EXTRAS
-DEFINE("MAX_USER_IMG_SIZE", 4194304);
+DEFINE("MAX_IMG_SIZE", 4194304);
 
 // ======= PORTAL CONSTANTS ===================
 

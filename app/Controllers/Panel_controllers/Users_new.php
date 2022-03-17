@@ -62,6 +62,7 @@ class Users_new extends BaseController {
     public function insert_user(){
         $user_table = new \App\Models\Tabla_usuario();
         $user = array();
+
         $user['nombre'] = $this->request->getPost('nombre');
         $user['apellido_p'] = $this->request->getPost('apellido-paterno');
         $user['apellido_m'] = $this->request->getPost('apellido-materno');
@@ -69,7 +70,7 @@ class Users_new extends BaseController {
         $user['email'] = $this->request->getPost('email');
         $user['sexo'] = $this->request->getPost('sexo');
         $user['password'] = $this->request->getPost('confirmar-contrasenia');
-        // $user['imagen'] = $this->upload_files($this->request->getFile('imagen-perfil'));
+        
         if(($this->request->getFile('imagen-perfil'))->getSize() > 0) {
             $user['imagen'] = $this->upload_files($this->request->getFile('imagen-perfil'));
         }// if si hay imagen insertada
@@ -78,7 +79,7 @@ class Users_new extends BaseController {
         }// else si hay imagen insertada
 
         if(($user_table->insert($user)) > 0){
-            create_user_message('El usuario se registro con éxito', 'success');
+            create_user_message('El usuario se registró con éxito', 'success');
             return redirect()->to(route_to('panel/usuarios'));
         }// end if se inserta usuario
         else {
@@ -90,7 +91,7 @@ class Users_new extends BaseController {
     private function upload_files($file = NULL) {
         $file_name = $file->getRandomName();
         $file_size = $file->getSize();
-        if($file_size <= MAX_USER_IMG_SIZE && $file_size > 0){
+        if($file_size <= MAX_IMG_SIZE && $file_size > 0){
             $file->move('img/users', $file_name);
             return $file_name;
         }//end if file size <= 2 MiB

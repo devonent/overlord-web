@@ -12,10 +12,10 @@
                     <!-- <form class="form form-vertical"> -->
                     <?php
                         $data = array(
-                            'id' => 'form-new-keyboard',
+                            'id' => 'form-detail-guitar',
                             'class' => 'form form-vertical'
                         );
-                        echo form_open_multipart('panel/registrar_nuevo_teclado', $data);
+                        echo form_open_multipart('panel/editar_guitarra', $data);
                     ?>
                         <div class="form-body">
                             <div class="row">
@@ -24,7 +24,7 @@
 
                                 <div class="col-12 col-lg-4 text-center container-fluid">
                                     <div class="product-picture me-3">
-                                        <img class="img-fluid" src="<?= base_url('img/products/k00.jpg') ?>" alt="imagen_producto" id="imagen-producto-previsualizacion">
+                                        <img class="img-fluid" src="<?= base_url('img/products/'. $guitar_details->imagen) ?>" alt="imagen_producto" id="imagen-producto-previsualizacion">
                                     </div>
                                 </div>
 
@@ -38,7 +38,6 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
-                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -49,8 +48,8 @@
                                 <!-- Separador -->
                                 <span class="my-2"></span>
                                 
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-group">
+                                <div class="col-12 col-lg-4">
+                                <div class="form-group">
                                         <label class="form-label mb-0">Marca*</label>
                                         <?php
                                             $data = array (
@@ -61,7 +60,8 @@
                                         ?>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6">
+
+                                <div class="col-12 col-lg-4">
                                     <div class="form-group">
                                         <label for="modelo">Modelo*</label>
                                         <?php 
@@ -69,18 +69,14 @@
                                                 'class' => 'form-control',
                                                 'id' => 'modelo',
                                                 'name' => 'modelo',
-                                                'placeholder' => 'Ingresa el modelo del teclado',
+                                                'placeholder' => 'Ingresa el modelo de la guitarra',
                                                 'maxlength' => '100'
                                             );
                                             echo form_input($data);
                                         ?>
                                     </div>
                                 </div>
-
-                                <!-- Separador -->
-                                <span class="my-2"></span>
-                                
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-4">
                                     <div class="form-group">
                                         <label for="acabado">Acabado/color*</label>
                                         <?php 
@@ -88,22 +84,10 @@
                                                 'class' => 'form-control',
                                                 'id' => 'acabado',
                                                 'name' => 'acabado',
-                                                'placeholder' => 'Ingresa el acabado o color del teclado',
+                                                'placeholder' => 'Ingresa el acabado o color de la guitarra',
                                                 'maxlength' => '50'
                                             );
                                             echo form_input($data);
-                                        ?>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="form-label mb-0">Tipo de monitor*</label>
-                                        <?php
-                                            $data = array (
-                                                'class' => 'form-select',
-                                                'id' => 'monitor'
-                                            );
-                                            echo form_dropdown('monitor', ['' => 'Seleccionar-tipo-monitor'] + $monitors, array(), $data);
                                         ?>
                                     </div>
                                 </div>
@@ -111,7 +95,7 @@
                                 <!-- Separador -->
                                 <span class="my-2"></span>
 
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-3">
                                     <div class="form-group">
                                         <label for="stock">Unidades disponibles*</label>
                                         <div class="input-group">
@@ -132,28 +116,49 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-3">
                                     <div class="form-group">
-                                        <label for="no_teclas">Número de teclas*</label>
+                                        <label for="no_trastes">Número de trastes*</label>
                                         <div class="input-group">
-                                            <span class="input-group-text"><i class="bi bi-view-stacked"></i></span>
+                                            <span class="input-group-text"><i class="bi bi-layout-split"></i></span>
                                             <?php
                                                 $data = array (
                                                     'class' => 'form-control',
-                                                    'id' => 'no_teclas',
-                                                    'name' => 'no_teclas',
+                                                    'id' => 'no_trastes',
+                                                    'name' => 'no_trastes',
                                                     'type' => 'number',
                                                     'placeholder' => '-',
                                                     'step' => '1',
                                                     'min' => '0',
-                                                    'max' => '100'
+                                                    'max' => '40'
                                                 );
                                                 echo form_input($data);
                                             ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-3">
+                                    <div class="form-group">
+                                        <label for="no_cuerdas">Número de cuerdas*</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-list"></i></span>
+                                            <?php
+                                                $data = array (
+                                                    'class' => 'form-control',
+                                                    'id' => 'no_cuerdas',
+                                                    'name' => 'no_cuerdas',
+                                                    'type' => 'number',
+                                                    'placeholder' => '-',
+                                                    'step' => '1',
+                                                    'min' => '0',
+                                                    'max' => '30'
+                                                );
+                                                echo form_input($data);
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
                                     <div class="form-group">
                                         <label for="precio">Precio (MXN)*</label>
                                         <div class="input-group">
@@ -180,65 +185,38 @@
 
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
-                                        <label for="anchura">Anchura*</label>
-                                        <div class="input-group">
-                                            <?php
-                                                $data = array (
-                                                    'class' => 'form-control text-right',
-                                                    'id' => 'anchura',
-                                                    'name' => 'anchura',
-                                                    'type' => 'number',
-                                                    'placeholder' => '-',
-                                                    'step' => '1',
-                                                    'min' => '0',
-                                                    'max' => '2000'
-                                                );
-                                                echo form_input($data);
-                                            ?>
-                                            <span class="input-group-text">mm</span>
-                                        </div>
+                                        <label class="form-label mb-0">Material del cuerpo*</label>
+                                        <?php
+                                            $data = array (
+                                                'class' => 'form-select',
+                                                'id' => 'material_cuerpo'
+                                            );
+                                            echo form_dropdown('material_cuerpo', ['' => 'Seleccionar-material-del-cuerpo'] + $body, array(), $data);
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
-                                        <label for="altura">Altura*</label>
-                                        <div class="input-group">
-                                            <?php
-                                                $data = array (
-                                                    'class' => 'form-control text-right',
-                                                    'id' => 'altura',
-                                                    'name' => 'altura',
-                                                    'type' => 'number',
-                                                    'placeholder' => '-',
-                                                    'step' => '1',
-                                                    'min' => '0',
-                                                    'max' => '2000'
-                                                );
-                                                echo form_input($data);
-                                            ?>
-                                            <span class="input-group-text">mm</span>
-                                        </div>
+                                        <label class="form-label mb-0">Material del mástil*</label>
+                                        <?php
+                                            $data = array (
+                                                'class' => 'form-select',
+                                                'id' => 'material_mastil'
+                                            );
+                                            echo form_dropdown('material_mastil', ['' => 'Seleccionar-material-del-mástil'] + $neck, array(), $data);
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group">
-                                        <label for="profundidad">Profundidad*</label>
-                                        <div class="input-group">
-                                            <?php
-                                                $data = array (
-                                                    'class' => 'form-control text-right',
-                                                    'id' => 'profundidad',
-                                                    'name' => 'profundidad',
-                                                    'type' => 'number',
-                                                    'placeholder' => '-',
-                                                    'step' => '1',
-                                                    'min' => '0',
-                                                    'max' => '2000'
-                                                );
-                                                echo form_input($data);
-                                            ?>
-                                            <span class="input-group-text">mm</span>
-                                        </div>
+                                        <label class="form-label mb-0">Material del diapasón*</label>
+                                        <?php
+                                            $data = array (
+                                                'class' => 'form-select',
+                                                'id' => 'material_diapason'
+                                            );
+                                            echo form_dropdown('material_diapason', ['' => 'Seleccionar-material-del-diapasón'] + $fretboard, array(), $data);
+                                        ?>
                                     </div>
                                 </div>
 
@@ -256,6 +234,15 @@
                                                 'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal'
                                             );
                                             echo form_textarea($data);
+
+                                            $data = array (
+                                                'type' => 'hidden',
+                                                'class' => 'form-control',
+                                                'id' => 'id_guitarra',
+                                                'name' => 'id_guitarra',
+                                                'value' => $user_details->id_guitarra
+                                            );
+                                            echo form_input($data);
                                         ?>
                                     </div>
                                 </div>
@@ -264,8 +251,8 @@
                                 <span class="my-3"></span>
 
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary me-1 mb-1">Registrar</button>
-                                    <a class="btn btn-light-secondary me-1 mb-1" type="reset" href="<?= base_url('panel/teclados') ?>">Cancelar</a>
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Actualizar</button>
+                                    <a class="btn btn-light-secondary me-1 mb-1" type="reset" href="<?= base_url('panel/guitarras') ?>">Cancelar</a>
                                 </div>
 
                             </div>
@@ -278,5 +265,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-    <script src="<?= base_url('panel_resources/assets/js/views/keyboards-new-validate.js') ?>"></script>
+    s<script src="<?= base_url('panel_resources/assets/js/views/guitars-new-validate.js') ?>"></script>
 <?= $this->endSection() ?>

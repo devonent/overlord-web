@@ -30,5 +30,12 @@ class Tabla_teclado extends Model {
         $query = $this->select('id_teclado, precio, stock, marca, modelo, no_teclas, anchura_mm, altura_mm, profundidad_mm')
                         ->findAll();
         return $query;
-    }
+    }// end get_datatable_keyboards function
+
+    public function get_single_keyboard($id_keyboard) {
+        $query = $this->select('id_teclado, precio, stock, marca, modelo, acabado_color, monitor, no_teclas, anchura_mm, altura_mm, profundidad_mm, descripcion, imagen')
+                        ->where('id_teclado', $id_keyboard)
+                        ->first();
+        return $query;
+    }// end get_single_keyboard funciton
 }//end class Tabla_teclado

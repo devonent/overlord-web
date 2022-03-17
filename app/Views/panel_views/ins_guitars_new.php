@@ -38,6 +38,7 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
+                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);

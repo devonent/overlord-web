@@ -116,7 +116,7 @@ class Users_detail extends BaseController {
     private function upload_files($file = NULL) {
         $file_name = $file->getRandomName();
         $file_size = $file->getSize();
-        if($file_size <= MAX_USER_IMG_SIZE && $file_size > 0){
+        if($file_size <= MAX_IMG_SIZE && $file_size > 0){
             $file->move('img/users', $file_name);
             return $file_name;
         }//end if file size <= 2 MiB

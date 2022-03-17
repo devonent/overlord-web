@@ -50,50 +50,50 @@ class Ins_guitars_new extends BaseController {
 
         //Materiales del cuerpo
         $data['body'] = array(
-            1 => "Caoba",
-            2 => "Tapa de grano de arce acolchado con cuerpo de álamo",
-            3 => "Fresno",
-            4 => "Aliso",
-            5 => "Triplay Arce/Álamo/Arce",
-            6 => "Arce",
-            7 => "Tilo",
-            8 => "Arce/Caoba",
-            9 => "Caoba africana y Arce rizado",
-            10 => "Álamo"
+            "Caoba" => "Caoba",
+            "Tapa de grano de arce acolchado con cuerpo de álamo" => "Tapa de grano de arce acolchado con cuerpo de álamo",
+            "Fresno" => "Fresno",
+            "Aliso" => "Aliso",
+            "Triplay Arce/Álamo/Arce" => "Triplay Arce/Álamo/Arce",
+            "Arce" => "Arce",
+            "Tilo" => "Tilo",
+            "Arce/Caoba" => "Arce/Caoba",
+            "Caoba africana y Arce rizado" => "Caoba africana y Arce rizado",
+            "Álamo" => "Álamo"
         );
 
         //Materiales del mastil
         $data['neck'] = array(
-            1 => "Caoba",
-            2 => "Caoba",
-            3 => "Arce",
-            4 => "Arce/Nogal",
-            5 => "Palisandro Indio Oriental",
-            6 => "Arce GRX"
+            "Caoba" => "Caoba",
+            "Caoba" => "Caoba",
+            "Arce" => "Arce",
+            "Arce/Nogal" => "Arce/Nogal",
+            "Palisandro Indio Oriental" => "Palisandro Indio Oriental",
+            "Arce GRX" => "Arce GRX"
         );
 
         //Materiales del diapasón
         $data['fretboard'] = array(
-            1 => "Palo de rosa",
-            2 => "Ébano",
-            3 => "Corazón Púrputa",
-            4 => "Arce",
-            5 => "Palo de rosa",
-            6 => "Jatoba",
-            7 => "Laurel Indio",
-            8 => "Laminado de álamo",
-            9 => "Arce/Ébano"
+            "Palo de rosa" => "Palo de rosa",
+            "Ébano" => "Ébano",
+            "Corazón Púrputa" => "Corazón Púrputa",
+            "Arce" => "Arce",
+            "Palo de rosa" => "Palo de rosa",
+            "Jatoba" => "Jatoba",
+            "Laurel Indio" => "Laurel Indio",
+            "Laminado de álamo" => "Laminado de álamo",
+            "Arce/Ébano" => "Arce/Ébano"
         );
         
         //Marcas de guitarras
         $data['brands'] = array(
-            1 => "Gibson",
-            2 => "Epiphone",
-            3 => "Ibanez",
-            4 => "Hartwood",
-            5 => "Jackson",
-            6 => "PRS",
-            7 => "Gear4music"
+            "Gibson" => "Gibson",
+            "Epiphone" => "Epiphone",
+            "Ibanez" => "Ibanez",
+            "Hartwood" => "Hartwood",
+            "Jackson" => "Jackson",
+            "PRS" => "PRS",
+            "Gear4music" => "Gear4music"
         );
 
         return $data;
@@ -103,4 +103,50 @@ class Ins_guitars_new extends BaseController {
         $content['menu'] = generate_nav_menu(INS_GUITARS_NEW_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function insert_guitar(){
+        $guitar_table = new \App\Models\Tabla_guitarra();
+        $guitar = array();
+
+        $guitar['precio'] = $this->request->getPost('precio');
+        $guitar['stock'] = $this->request->getPost('stock');
+        $guitar['marca'] = $this->request->getPost('marca');
+        $guitar['modelo'] = $this->request->getPost('modelo');
+        $guitar['acabado_color'] = $this->request->getPost('acabado');
+
+        $guitar['cuerpo'] = $this->request->getPost('material_cuerpo');
+        $guitar['mastil'] = $this->request->getPost('material_mastil');
+        $guitar['diapason'] = $this->request->getPost('material_diapason');
+        $guitar['no_trastes'] = $this->request->getPost('no_trastes');
+        $guitar['no_cuerdas'] = $this->request->getPost('no_cuerdas');
+        $guitar['descripcion'] = $this->request->getPost('descripcion');
+
+        if(($this->request->getFile('imagen-producto'))->getSize() > 0) {
+            $guitar['imagen'] = $this->upload_files($this->request->getFile('imagen-producto'));
+        }// if si hay imagen insertada
+        else {
+            $guitar['imagen'] = 'g00.jpg';
+        }// else si hay imagen insertada
+
+        if(($guitar_table->insert($guitar)) > 0){
+            create_user_message('La guitarra se registró con éxito', 'success');
+            return redirect()->to(route_to('panel/guitarras'));
+        }// end if se inserta guitarra
+        else {
+            create_user_message('Hubo un problema al registrar la guitarra. Intenta de nuevo', 'error');
+            return redirect()->to(route_to('panel/guitarras'));
+        }// end else se inserta guitarra
+    }// end insert_guitar function
+
+    private function upload_files($file = NULL) {
+        $file_name = $file->getRandomName();
+        $file_size = $file->getSize();
+        if($file_size <= MAX_IMG_SIZE && $file_size > 0){
+            $file->move('img/products', $file_name);
+            return $file_name;
+        }//end if file size <= 2 MiB
+        else{
+            return 'g00.jpg';
+        }//end else file size <= 2 MiB
+    }//end upload_files funciton
 }//end Dashboard class

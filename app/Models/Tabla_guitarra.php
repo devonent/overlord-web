@@ -30,5 +30,12 @@ class Tabla_guitarra extends Model {
         $query = $this->select('id_guitarra, precio, stock, marca, modelo, cuerpo, no_cuerdas, no_trastes')
                         ->findAll();
         return $query;
-    }
+    }// end get_databale_guitars
+
+    public function get_single_guitar($id_guitar) {
+        $query = $this->select('id_guitarra, precio, stock, marca, modelo, acabado_color, cuerpo, mastil, diapason, no_trastes, no_cuerdas, descripcion, imagen')
+                        ->where('id_guitarra', $id_guitar)
+                        ->first();
+        return $query;
+    }// end get_single_guitar funciton
 }//end class Tabla_guitarra

@@ -39,7 +39,7 @@ class Ins_monitors_new extends BaseController {
         $data['user_role'] = $session->user_rol;
         $data['user_img'] = $session->user_img;
 
-        $data['section_name'] = 'Registrar batería nueva';
+        $data['section_name'] = 'Registrar monitor nuevo';
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
@@ -50,33 +50,33 @@ class Ins_monitors_new extends BaseController {
 
         //Marcas de monitores
         $data['brands'] = array(
-            1 => "Presonus",
-            2 => "Mackie",
-            3 => "SubZero",
-            4 => "ESI",
-            5 => "KRK",
-            6 => "Neumann",
-            7 => "Hercules",
-            8 => "Pioneer",
-            9 => "JBL",
-            10 => "Avantone",
-            11 => "Yamaha",
-            12 => "Focal",
-            13 => "Palmer"
+            "Presonus" => "Presonus",
+            "Mackie" => "Mackie",
+            "SubZero" => "SubZero",
+            "ESI" => "ESI",
+            "KRK" => "KRK",
+            "Neumann" => "Neumann",
+            "Hercules" => "Hercules",
+            "Pioneer" => "Pioneer",
+            "JBL" => "JBL",
+            "Avantone" => "Avantone",
+            "Yamaha" => "Yamaha",
+            "Focal" => "Focal",
+            "Palmer" => "Palmer"
         );
 
         //Materiales de monitores
         $data['material'] = array(
-            1 => "Fibra de densidad media",
-            2 => "Metal cepillado",
-            3 => "MDF, PVC",
-            4 => "Metal",
-            5 => "ABS con rejilla metálica",
-            6 => "MDF 18mm",
-            7 => "MDF Bass Reflex",
-            8 => "Paneles MDF",
-            9 => "Contrachapado de abedul, MDF",
-            10 => "MDF"
+            "Fibra de densidad media" => "Fibra de densidad media",
+            "Metal cepillado" => "Metal cepillado",
+            "MDF, PVC" => "MDF, PVC",
+            "Metal" => "Metal",
+            "ABS con rejilla metálica" => "ABS con rejilla metálica",
+            "MDF 18mm" => "MDF 18mm",
+            "MDF Bass Reflex" => "MDF Bass Reflex",
+            "Paneles MDF" => "Paneles MDF",
+            "Contrachapado de abedul, MDF" => "Contrachapado de abedul, MDF",
+            "MDF" => "MDF"
         );
 
         return $data;
@@ -86,4 +86,50 @@ class Ins_monitors_new extends BaseController {
         $content['menu'] = generate_nav_menu(INS_MONITORS_NEW_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function insert_monitor(){
+        $monitor_table = new \App\Models\Tabla_monitor();
+        $monitor = array();
+
+        $monitor['precio'] = $this->request->getPost('precio');
+        $monitor['stock'] = $this->request->getPost('stock');
+        $monitor['marca'] = $this->request->getPost('marca');
+        $monitor['modelo'] = $this->request->getPost('modelo');
+        $monitor['acabado_color'] = $this->request->getPost('acabado');
+
+        $monitor['material'] = $this->request->getPost('material');
+        $monitor['no_monitores'] = $this->request->getPost('no_monitores');
+        $monitor['anchura_mm'] = $this->request->getPost('anchura');
+        $monitor['altura_mm'] = $this->request->getPost('altura');
+        $monitor['profundidad_mm'] = $this->request->getPost('profundidad');
+        $monitor['descripcion'] = $this->request->getPost('descripcion');
+
+        if(($this->request->getFile('imagen-producto'))->getSize() > 0) {
+            $monitor['imagen'] = $this->upload_files($this->request->getFile('imagen-producto'));
+        }// if si hay imagen insertada
+        else {
+            $monitor['imagen'] = 'm00.jpg';
+        }// else si hay imagen insertada
+
+        if(($monitor_table->insert($monitor)) > 0){
+            create_user_message('El monitor se registró con éxito', 'success');
+            return redirect()->to(route_to('panel/monitores'));
+        }// end if se inserta monitor
+        else {
+            create_user_message('Hubo un problema al registrar el monitor. Intenta de nuevo', 'error');
+            return redirect()->to(route_to('panel/monitores'));
+        }// end else se inserta monitor
+    }// end insert_monitor function
+
+    private function upload_files($file = NULL) {
+        $file_name = $file->getRandomName();
+        $file_size = $file->getSize();
+        if($file_size <= MAX_IMG_SIZE && $file_size > 0){
+            $file->move('img/products', $file_name);
+            return $file_name;
+        }//end if file size <= 2 MiB
+        else{
+            return 'm00.jpg';
+        }//end else file size <= 2 MiB
+    }//end upload_files funciton
 }//end Dashboard class

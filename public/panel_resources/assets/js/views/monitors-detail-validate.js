@@ -2,7 +2,7 @@ $.validator.addMethod('filesize', function (value, element, param) {
     return this.optional(element) || (element.files[0].size <= param)
 });
 
-$('#form-new-monitor').validate({
+$('#form-detail-monitor').validate({
     errorElement: "div",
     focusInfalid: false,
 

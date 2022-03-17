@@ -71,19 +71,19 @@ $routes->get('panel/dashboard', 'Panel_controllers/Dashboard::index');
 // INSTRUMENTOS PANEL SECTION
 $routes->get('panel/guitarras', 'Panel_controllers/Ins_guitars::index');
 $routes->get('panel/guitarras/registrar_guitarra', 'Panel_controllers/Ins_guitars_new::index');
-$routes->post('panel/registrar_nueva_guitarra', 'Panel_controllers/Ins_guitars_new::index');
+$routes->post('panel/registrar_nueva_guitarra', 'Panel_controllers/Ins_guitars_new::insert_guitar');
 
 $routes->get('panel/baterias', 'Panel_controllers/Ins_drums::index');
 $routes->get('panel/baterias/registrar_bateria', 'Panel_controllers/Ins_drums_new::index');
-$routes->post('panel/registrar_nueva_bateria', 'Panel_controllers/Ins_drums_new::index');
+$routes->post('panel/registrar_nueva_bateria', 'Panel_controllers/Ins_drums_new::insert_drum');
 
 $routes->get('panel/teclados', 'Panel_controllers/Ins_keyboards::index');
 $routes->get('panel/teclados/registrar_teclado', 'Panel_controllers/Ins_keyboards_new::index');
-$routes->post('panel/registrar_nuevo_teclado', 'Panel_controllers/Ins_keyboards_new::index');
+$routes->post('panel/registrar_nuevo_teclado', 'Panel_controllers/Ins_keyboards_new::insert_keyboard');
 
 $routes->get('panel/monitores', 'Panel_controllers/Ins_monitors::index');
 $routes->get('panel/monitores/registrar_monitor', 'Panel_controllers/Ins_monitors_new::index');
-$routes->post('panel/registrar_nuevo_monitor', 'Panel_controllers/Ins_monitors_new::index');
+$routes->post('panel/registrar_nuevo_monitor', 'Panel_controllers/Ins_monitors_new::insert_monitor');
 
 // OFERTAS PANEL SECTION
 $routes->get('panel/ofertas', 'Panel_controllers/Deals::index');

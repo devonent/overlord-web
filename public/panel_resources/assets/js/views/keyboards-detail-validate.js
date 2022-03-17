@@ -2,7 +2,7 @@ $.validator.addMethod('filesize', function (value, element, param) {
     return this.optional(element) || (element.files[0].size <= param)
 });
 
-$('#form-new-monitor').validate({
+$('#form-detail-keyboard').validate({
     errorElement: "div",
     focusInfalid: false,
 
@@ -19,7 +19,7 @@ $('#form-new-monitor').validate({
             required: true,
             maxlength: 49
         },
-        'material' : {
+        'monitor' : {
             required: true
         },
         'stock' : {
@@ -28,11 +28,11 @@ $('#form-new-monitor').validate({
             min: 0,
             max: 1000
         },
-        'no_monitores' : {
+        'no_teclas' : {
             required: true,
             step: 1,
             min: 0,
-            max: 10
+            max: 100
         },
         'precio' : {
             required: true,
@@ -79,8 +79,8 @@ $('#form-new-monitor').validate({
             required: 'Es necesario ingresar un color o acabado',
             maxlength: 'El nombre del acabado debe tener menos de 50 caracteres'
         },
-        'material' : {
-            required: 'Es necesario seleccionar un material del monitor'
+        'monitor' : {
+            required: 'Es necesario seleccionar un tipo de monitor'
         },
         'stock' : {
             required: 'Es necesario ingresar una cantidad de unidades',
@@ -88,11 +88,11 @@ $('#form-new-monitor').validate({
             min: 'Ingrese un valor mayor o igual a 0',
             max: 'Ingrese un valor menor o igual a 1000'
         },
-        'no_monitores' : {
-            required: 'Es necesario ingresar un número de monitores',
+        'no_teclas' : {
+            required: 'Es necesario ingresar un número de teclas',
             step: 'Solo puede ingresar números enteros',
             min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 10'
+            max: 'Ingrese un valor menor o igual a 100'
         },
         'precio' : {
             required: 'Es necesario ingresar un precio',

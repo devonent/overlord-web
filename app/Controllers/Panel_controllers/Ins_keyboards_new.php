@@ -39,7 +39,7 @@ class Ins_keyboards_new extends BaseController {
         $data['user_role'] = $session->user_rol;
         $data['user_img'] = $session->user_img;
 
-        $data['section_name'] = 'Registrar batería nueva';
+        $data['section_name'] = 'Registrar teclado nuevo';
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
@@ -50,18 +50,18 @@ class Ins_keyboards_new extends BaseController {
 
         //Marcas de teclados
         $data['brands'] = array(
-            1 => "Casio",
-            2 => "Alesis",
-            3 => "Yamaha",
-            4 => "Roland Go",
-            5 => "Korg"
+            "Casio" => "Casio",
+            "Alesis" => "Alesis",
+            "Yamaha" => "Yamaha",
+            "Roland Go" => "Roland Go",
+            "Korg" => "Korg"
         );
 
         //Marcas de teclados
         $data['monitors'] = array(
-            1 => "N/A",
-            2 => "LCD",
-            3 => "LED"
+            "N/A" => "N/A",
+            "LCD" => "LCD",
+            "LED" => "LED"
         );
 
         return $data;
@@ -71,4 +71,50 @@ class Ins_keyboards_new extends BaseController {
         $content['menu'] = generate_nav_menu(INS_KEYBOARDS_NEW_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function insert_keyboard(){
+        $keyboard_table = new \App\Models\Tabla_teclado();
+        $keyboard = array();
+
+        $keyboard['precio'] = $this->request->getPost('precio');
+        $keyboard['stock'] = $this->request->getPost('stock');
+        $keyboard['marca'] = $this->request->getPost('marca');
+        $keyboard['modelo'] = $this->request->getPost('modelo');
+        $keyboard['acabado_color'] = $this->request->getPost('acabado');
+
+        $keyboard['monitor'] = $this->request->getPost('monitor');
+        $keyboard['no_teclas'] = $this->request->getPost('no_teclas');
+        $keyboard['anchura_mm'] = $this->request->getPost('anchura');
+        $keyboard['altura_mm'] = $this->request->getPost('altura');
+        $keyboard['profundidad_mm'] = $this->request->getPost('profundidad');
+        $keyboard['descripcion'] = $this->request->getPost('descripcion');
+
+        if(($this->request->getFile('imagen-producto'))->getSize() > 0) {
+            $keyboard['imagen'] = $this->upload_files($this->request->getFile('imagen-producto'));
+        }// if si hay imagen insertada
+        else {
+            $keyboard['imagen'] = 'k00.jpg';
+        }// else si hay imagen insertada
+
+        if(($keyboard_table->insert($keyboard)) > 0){
+            create_user_message('El teclado se registró con éxito', 'success');
+            return redirect()->to(route_to('panel/teclados'));
+        }// end if se inserta teclado
+        else {
+            create_user_message('Hubo un problema al registrar el teclado. Intenta de nuevo', 'error');
+            return redirect()->to(route_to('panel/teclados'));
+        }// end else se inserta teclado
+    }// end insert_keyboard function
+
+    private function upload_files($file = NULL) {
+        $file_name = $file->getRandomName();
+        $file_size = $file->getSize();
+        if($file_size <= MAX_IMG_SIZE && $file_size > 0){
+            $file->move('img/products', $file_name);
+            return $file_name;
+        }//end if file size <= 2 MiB
+        else{
+            return 'k00.jpg';
+        }//end else file size <= 2 MiB
+    }//end upload_files funciton
 }//end Dashboard class

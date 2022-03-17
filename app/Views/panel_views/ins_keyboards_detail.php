@@ -12,10 +12,10 @@
                     <!-- <form class="form form-vertical"> -->
                     <?php
                         $data = array(
-                            'id' => 'form-new-keyboard',
+                            'id' => 'form-detail-keyboard',
                             'class' => 'form form-vertical'
                         );
-                        echo form_open_multipart('panel/registrar_nuevo_teclado', $data);
+                        echo form_open_multipart('panel/editar_teclado', $data);
                     ?>
                         <div class="form-body">
                             <div class="row">
@@ -24,7 +24,7 @@
 
                                 <div class="col-12 col-lg-4 text-center container-fluid">
                                     <div class="product-picture me-3">
-                                        <img class="img-fluid" src="<?= base_url('img/products/k00.jpg') ?>" alt="imagen_producto" id="imagen-producto-previsualizacion">
+                                        <img class="img-fluid" src="<?= base_url('img/products/'. $keyboard_details->imagen) ?>" alt="imagen_producto" id="imagen-producto-previsualizacion">
                                     </div>
                                 </div>
 
@@ -38,7 +38,6 @@
                                             $data = array (
                                                 'class' => 'form-control',
                                                 'id' => 'imagen-producto',
-                                                'name' => 'imagen-producto',
                                                 'accept' => '.png, .jpeg, .jpg'
                                             );
                                             echo form_upload($data);
@@ -256,6 +255,15 @@
                                                 'placeholder' => 'Ingresa la descripción del producto que se mostrará en el portal'
                                             );
                                             echo form_textarea($data);
+
+                                            $data = array (
+                                                'type' => 'hidden',
+                                                'class' => 'form-control',
+                                                'id' => 'id_teclado',
+                                                'name' => 'id_teclado',
+                                                'value' => $user_details->id_teclado
+                                            );
+                                            echo form_input($data);
                                         ?>
                                     </div>
                                 </div>
@@ -264,7 +272,7 @@
                                 <span class="my-3"></span>
 
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary me-1 mb-1">Registrar</button>
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Actualizar</button>
                                     <a class="btn btn-light-secondary me-1 mb-1" type="reset" href="<?= base_url('panel/teclados') ?>">Cancelar</a>
                                 </div>
 

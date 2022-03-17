@@ -1,3 +1,7 @@
+$.validator.addMethod('filesize', function (value, element, param) {
+    return this.optional(element) || (element.files[0].size <= param)
+});
+
 $('#form-new-keyboard').validate({
     errorElement: "div",
     focusInfalid: false,
@@ -56,6 +60,9 @@ $('#form-new-keyboard').validate({
         },
         'descripcion' : {
             required: true
+        },
+        'imagen-producto' : {
+            filesize: 4194304 
         }
     },
 
@@ -113,6 +120,9 @@ $('#form-new-keyboard').validate({
         },
         'descripcion' : {
             required: 'Ingresa una descripción del producto'
+        },
+        'imagen-producto' : {
+            filesize: 'Tu imagen no puede ser mayor a 4MiB' 
         }
 
     },

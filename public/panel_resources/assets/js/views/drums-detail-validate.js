@@ -2,7 +2,7 @@ $.validator.addMethod('filesize', function (value, element, param) {
     return this.optional(element) || (element.files[0].size <= param)
 });
 
-$('#form-new-monitor').validate({
+$('#form-detail-drum').validate({
     errorElement: "div",
     focusInfalid: false,
 
@@ -28,11 +28,11 @@ $('#form-new-monitor').validate({
             min: 0,
             max: 1000
         },
-        'no_monitores' : {
+        'no_piezas' : {
             required: true,
             step: 1,
             min: 0,
-            max: 10
+            max: 100
         },
         'precio' : {
             required: true,
@@ -40,23 +40,8 @@ $('#form-new-monitor').validate({
             min: 0,
             max: 9999999.99
         },
-        'anchura' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
-        },
-        'altura' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
-        },
-        'profundidad' : {
-            required: true,
-            step: 1,
-            min: 0,
-            max: 2000
+        'piezas' : {
+            required: true
         },
         'descripcion' : {
             required: true
@@ -64,59 +49,45 @@ $('#form-new-monitor').validate({
         'imagen-producto' : {
             filesize: 4194304 
         }
+        
     },
 
     // Mensajes para las reglas de validación
     messages: {
-        'marca' : {
+        'marca': {
             required: 'Es necesario seleccionar una marca'
         },
-        'modelo' : {
+        'modelo': {
             required: 'Es necesario ingresar un modelo',
             maxlength: 'El modelo debe de tener menos de 100 caracteres'
         },
-        'acabado' : {
+        'acabado': {
             required: 'Es necesario ingresar un color o acabado',
             maxlength: 'El nombre del acabado debe tener menos de 50 caracteres'
         },
-        'material' : {
-            required: 'Es necesario seleccionar un material del monitor'
+        'material': {
+            required: 'Es necesario seleccionar un material'
         },
-        'stock' : {
+        'stock': {
             required: 'Es necesario ingresar una cantidad de unidades',
             step: 'Solo puede ingresar números enteros',
             min: 'Ingrese un valor mayor o igual a 0',
             max: 'Ingrese un valor menor o igual a 1000'
         },
-        'no_monitores' : {
-            required: 'Es necesario ingresar un número de monitores',
+        'no_piezas': {
+            required: 'Es necesario ingresar una cantidad de piezas',
             step: 'Solo puede ingresar números enteros',
             min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 10'
+            max: 'Ingrese un valor menor o igual a 100'
         },
-        'precio' : {
+        'precio': {
             required: 'Es necesario ingresar un precio',
             step: 'Ingresa un número de hasta 2 decimales',
             min: 'Ingrese un valor mayor o igual a $0.00',
             max: 'Ingrese un valor menor o igual a $9999999.99'
         },
-        'anchura' : {
-            required: 'Es necesario ingresar una medida de anchura',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
-        },
-        'altura' : {
-            required: 'Es necesario ingresar una medida de altura',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
-        },
-        'profundidad' : {
-            required: 'Es necesario ingresar una medida de profundidad',
-            step: 'Solo puede ingresar números enteros',
-            min: 'Ingrese un valor mayor o igual a 0',
-            max: 'Ingrese un valor menor o igual a 2000'
+        'piezas' : {
+            required: 'Ingresa las piezas contenidas en el kit'
         },
         'descripcion' : {
             required: 'Ingresa una descripción del producto'
@@ -124,7 +95,7 @@ $('#form-new-monitor').validate({
         'imagen-producto' : {
             filesize: 'Tu imagen no puede ser mayor a 4MiB' 
         }
-
+        
     },
     
     errorPlacement: function errorPlacement(error, element) {
