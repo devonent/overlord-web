@@ -60,4 +60,30 @@ class Ins_drums extends BaseController {
         $content['menu'] = generate_nav_menu(INS_DRUMS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function delete_drum($id_drum = 0){
+        $drum_table = new \App\Models\Tabla_bateria();
+        if($drum_table->find($id_drum) != NULL){
+            $drum_in_db = $drum_table->find($id_drum);
+            if($drum_table->delete($id_drum)){
+                $this->delete_file($drum_in_db->imagen);
+                create_user_message('La batería <b>' . $drum_in_db->marca .' '. $drum_in_db->modelo .' '. $drum_in_db->acabado_color . '</b> ha sido eliminada', 'success');
+                return redirect()->to(route_to('panel/baterias'));
+            }// end if eliminación de usuario
+            else{
+                create_user_message('No se ha podido eliminar la batería, intente de nuevo...', 'error');
+                return redirect()->to(route_to('panel/baterias'));
+            }// end else eliminación de usuario
+        }// end if existe usuario
+        else{
+            create_user_message('La batería a eliminar no existe...', 'error');
+            return redirect()->to(route_to('panel/baterias'));
+        }
+    }// end delete_drum function
+
+    private function delete_file($file = NULL) {
+        if(file_exists('img/products/' . $file) && $file != 'd00.jpg'){
+            unlink('img/products/' . $file);
+        }//end if file exist
+    }// end delete_file function
 }//end Dashboard class

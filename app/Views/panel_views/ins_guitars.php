@@ -57,7 +57,7 @@
                                                     <a href="#!" class="btn btn-primary">
                                                         <i class="bi bi-pencil-fill btn-icon-datatable"></i>
                                                     </a>
-                                                    <a href="#!" class="btn btn-danger">
+                                                    <a href="'.route_to('panel/guitarras/eliminar_guitarra/', $guitar->id_guitarra).'" class="btn btn-danger">
                                                         <i class="bi bi-trash-fill btn-icon-datatable"></i>
                                                     </a>
                                                 </div>

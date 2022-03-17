@@ -43,8 +43,8 @@ class Ins_keyboards extends BaseController {
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
-        $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/keyboards');
-        $this->breadcrumb->add_breadcrumb('Teclados', 'panel/keyboards');
+        $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/teclados');
+        $this->breadcrumb->add_breadcrumb('Teclados', 'panel/teclados');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
 
         // ==============
@@ -60,4 +60,30 @@ class Ins_keyboards extends BaseController {
         $content['menu'] = generate_nav_menu(INS_KEYBOARDS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function delete_keyboard($id_keyboard = 0){
+        $keyboard_table = new \App\Models\Tabla_teclado();
+        if($keyboard_table->find($id_keyboard) != NULL){
+            $keyboard_in_db = $keyboard_table->find($id_keyboard);
+            if($keyboard_table->delete($id_keyboard)){
+                $this->delete_file($keyboard_in_db->imagen);
+                create_user_message('El teclado <b>' . $keyboard_in_db->marca .' '. $keyboard_in_db->modelo .' '. $keyboard_in_db->acabado_color . '</b> ha sido eliminado', 'success');
+                return redirect()->to(route_to('panel/teclados'));
+            }// end if eliminación de usuario
+            else{
+                create_user_message('No se ha podido eliminar el teclado, intente de nuevo...', 'error');
+                return redirect()->to(route_to('panel/teclados'));
+            }// end else eliminación de usuario
+        }// end if existe usuario
+        else{
+            create_user_message('El teclado a eliminar no existe...', 'error');
+            return redirect()->to(route_to('panel/teclados'));
+        }
+    }// end delete_keyboard function
+
+    private function delete_file($file = NULL) {
+        if(file_exists('img/products/' . $file) && $file != 'k00.jpg'){
+            unlink('img/products/' . $file);
+        }//end if file exist
+    }// end delete_file function
 }//end Dashboard class

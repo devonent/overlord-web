@@ -43,8 +43,8 @@ class Ins_monitors extends BaseController {
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');
-        $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/monitors');
-        $this->breadcrumb->add_breadcrumb('Monitores', 'panel/monitors');
+        $this->breadcrumb->add_breadcrumb('Instrumentos', 'panel/monitores');
+        $this->breadcrumb->add_breadcrumb('Monitores', 'panel/monitores');
         $data['breadcrumb'] = $this->breadcrumb->generate_breadcrumb();
 
         // ==============
@@ -60,4 +60,30 @@ class Ins_monitors extends BaseController {
         $content['menu'] = generate_nav_menu(INS_MONITORS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+    
+    public function delete_monitor($id_monitor = 0){
+        $monitor_table = new \App\Models\Tabla_monitor();
+        if($monitor_table->find($id_monitor) != NULL){
+            $monitor_in_db = $monitor_table->find($id_monitor);
+            if($monitor_table->delete($id_monitor)){
+                $this->delete_file($monitor_in_db->imagen);
+                create_user_message('El monitor <b>' . $monitor_in_db->marca .' '. $monitor_in_db->modelo .' '. $monitor_in_db->acabado_color . '</b> ha sido eliminado', 'success');
+                return redirect()->to(route_to('panel/monitores'));
+            }// end if eliminación de usuario
+            else{
+                create_user_message('No se ha podido eliminar el monitor, intente de nuevo...', 'error');
+                return redirect()->to(route_to('panel/monitores'));
+            }// end else eliminación de usuario
+        }// end if existe usuario
+        else{
+            create_user_message('El monitor a eliminar no existe...', 'error');
+            return redirect()->to(route_to('panel/monitores'));
+        }
+    }// end delete_monitor function
+
+    private function delete_file($file = NULL) {
+        if(file_exists('img/products/' . $file) && $file != 'm00.jpg'){
+            unlink('img/products/' . $file);
+        }//end if file exist
+    }// end delete_file function
 }//end Dashboard class

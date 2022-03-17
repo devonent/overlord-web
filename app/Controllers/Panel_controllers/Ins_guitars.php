@@ -60,4 +60,30 @@ class Ins_guitars extends BaseController {
         $content['menu'] = generate_nav_menu(INS_GUITARS_TASK, session()->id_rol);
         return view($view_name, $content);
     }//end create_view function
+
+    public function delete_guitar($id_guitar = 0){
+        $guitar_table = new \App\Models\Tabla_guitarra();
+        if($guitar_table->find($id_guitar) != NULL){
+            $guitar_in_db = $guitar_table->find($id_guitar);
+            if($guitar_table->delete($id_guitar)){
+                $this->delete_file($guitar_in_db->imagen);
+                create_user_message('La guitarra <b>' . $guitar_in_db->marca .' '. $guitar_in_db->modelo .' '. $guitar_in_db->acabado_color . '</b> ha sido eliminada', 'success');
+                return redirect()->to(route_to('panel/guitarras'));
+            }// end if eliminación de usuario
+            else{
+                create_user_message('No se ha podido eliminar la guitarra, intente de nuevo...', 'error');
+                return redirect()->to(route_to('panel/guitarras'));
+            }// end else eliminación de usuario
+        }// end if existe usuario
+        else{
+            create_user_message('La guitarra a eliminar no existe...', 'error');
+            return redirect()->to(route_to('panel/guitarras'));
+        }
+    }// end delete_guitar function
+
+    private function delete_file($file = NULL) {
+        if(file_exists('img/products/' . $file) && $file != 'g00.jpg'){
+            unlink('img/products/' . $file);
+        }//end if file exist
+    }// end delete_file function
 }//end Dashboard class
