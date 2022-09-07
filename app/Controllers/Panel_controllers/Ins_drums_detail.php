@@ -110,8 +110,6 @@ class Ins_drums_detail extends BaseController {
             $drum['piezas_totales'] = $this->request->getPost('no_piezas');
             $drum['descripcion'] = $this->request->getPost('descripcion');
 
-            dd($drum_in_db);
-
             if(($this->request->getFile('imagen-producto'))->getSize() > 0 ) {
                 $this->delete_file($drum_in_db->imagen);
                 $drum['imagen'] = $this->upload_files($this->request->getFile('imagen-producto'));

@@ -13,7 +13,7 @@ class Dashboard extends BaseController {
         $session = session();
         $this->breadcrumb = new Panel_breadcrumb();
 
-        if(!Permissions::is_role_allowed(DASHBOARD_TASK, (isset($session->id_rol) ? $session->id_rol : 0))){
+        if(!Permissions::is_role_allowed(DASHBOARD_TASK, (isset($session->id_rol) ? $session->id_rol : 0))) {
             $this->is_allowed = FALSE;
         }//end if role not allowed
     }//end __construct function
@@ -39,6 +39,17 @@ class Dashboard extends BaseController {
         $data['user_img'] = $session->user_img;
 
         $data['section_name'] = 'Dashboard';
+
+        $guitars_table = new \App\Models\Tabla_guitarra();
+        $data['guitars_quantity'] = count($guitars_table->get_guitars_quantity());
+        $drums_table = new \App\Models\Tabla_bateria();
+        $data['drums_quantity'] = count($drums_table->get_drums_quantity());
+        $keyboards_table = new \App\Models\Tabla_teclado();
+        $data['keyboards_quantity'] = count($keyboards_table->get_keyboards_quantity());
+        $monitors_table = new \App\Models\Tabla_monitor();
+        $data['monitors_quantity'] = count($monitors_table->get_monitors_quantity());
+        $users_table = new \App\Models\Tabla_usuario();
+        $data['users_quantity'] = count($users_table->get_users_quantity());
 
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Dashboard', 'panel/dashboard');

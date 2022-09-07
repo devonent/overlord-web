@@ -38,4 +38,39 @@ class Tabla_guitarra extends Model {
                         ->first();
         return $query;
     }// end get_single_guitar funciton
+
+    public function get_home_guitars(){
+        $query = $this->select('id_guitarra, marca, modelo, acabado_color, precio, imagen')
+                        ->orderBy('id_guitarra', 'DESC')
+                        ->limit(6)
+                        ->find();
+        return $query;        
+    }// end get_home_guitars function
+
+    public function get_gallery_img_guitars(){
+        $query = $this->select('imagen')
+                        ->where('imagen !=', 'g00.jpg')
+                        ->findAll();
+        return $query;
+    }// end get_gallery_img_guitars function
+
+    public function get_portal_guitars(){
+        $query = $this->select('id_guitarra, marca, modelo, acabado_color, precio, imagen')
+                        ->orderBy('id_guitarra', 'DESC')
+                        ->findAll();
+        return $query;
+    }// end get_portal_guitars function
+
+    public function get_portal_details_guitar($guitar_name){
+        $query = $this->select('precio, stock, marca, modelo, acabado_color, cuerpo, mastil, diapason, no_trastes, no_cuerdas, descripcion, imagen')
+                        ->where('CONCAT_WS(" ", marca, modelo, acabado_color)', $guitar_name)
+                        ->first();
+        return $query;
+    }// end get_portal_details_guitar function
+
+    public function get_guitars_quantity(){
+        $query = $this->select('id_guitarra')
+                        ->findAll();
+        return $query;
+    }// end get_guitars_quantity function
 }//end class Tabla_guitarra

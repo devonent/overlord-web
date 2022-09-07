@@ -146,6 +146,11 @@ define("PORTAL_INS_DRUMS_TASK", "baterias_portal");
 define("PORTAL_INS_KEYBOARDS_TASK", "teclados_portal");
 define("PORTAL_INS_MONITORS_TASK", "monitores_portal");
 
+define("PORTAL_INS_GUITARS_SINGLE_TASK", "guitarras_portal_especifico");
+define("PORTAL_INS_DRUMS_SINGLE_TASK", "baterias_portal_especifico");
+define("PORTAL_INS_KEYBOARDS_SINGLE_TASK", "teclados_portal_especifico");
+define("PORTAL_INS_MONITORS_SINGLE_TASK", "monitores_portal_especifico");
+
 // GALERÍA
 define("PORTAL_GALLERY_TASK", "galeria_portal");
 
@@ -155,3 +160,6 @@ define("PORTAL_CONTACT_TASK", "contacto_portal");
 // ACERCA DE
 define("PORTAL_ABOUT_SITE_TASK", "sitio_portal");
 define("PORTAL_ABOUT_AUTHOR_TASK", "autor_portal");
+
+// RUTAS
+define('INS_IMG_ROUTE', 'img/products/');

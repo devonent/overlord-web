@@ -33,8 +33,8 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'overlord_admin',
-        'password' => 'Mision:Dralion117Dadawin',
+        'username' => 'root',
+        'password' => '',
         'database' => 'overlord_db',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

@@ -23,7 +23,7 @@
 										con un diseño clásico y características modernas.
 									</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>"><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="<?= base_url('instrumentos/guitarras/Gibson%20SG%20Standard%20Heritage%20Cherry')?>"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Ver producto</span>
 									</div>
 								</div>
@@ -46,7 +46,7 @@
 										humbucker. Llamarás la atención, seguro, y sin perder el estilo.
 									</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra002') ?>"><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="<?= base_url('instrumentos/guitarras/Epiphone%20Les%20Paul%20Custom%20Alpine%20White') ?>"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Ver producto</span>
 									</div>
 								</div>
@@ -68,7 +68,7 @@
 										Infinity R son ideales para tonos saturados y sucios, hechas para las almas que buscan el rock pesado y el metal.
 									</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra003') ?>"><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="<?= base_url('instrumentos/guitarras/Ibanez%20GRGA120QA%20GIO%20Transparent%20Black%20Sunburst') ?>"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Ver producto</span>
 									</div>
 								</div>
@@ -90,7 +90,7 @@
 										ha sido esculpida para ser versátil, adaptandose a cualquier tipo de música gracias a sus pastillas Quantum Humbucker.
 									</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra004') ?>"><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="<?= base_url('instrumentos/guitarras/Ibanez%20RG421AHM%20Blue%20Moon%20Burst') ?>"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Ver producto</span>
 									</div>
 								</div>
@@ -113,7 +113,7 @@
 										un mordisco arenoso, hasta un crujido vicioso en un abrir y cerrar de ojos.
 									</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="<?= base_url('/instrumentos/guitarras/guitarra005') ?>"><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="<?= base_url('instrumentos/guitarras/Ibanez%20PIA3761%20Stallion%20White') ?>"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Ver producto</span>
 									</div>
 								</div>
@@ -203,11 +203,11 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-deal">
-						<a href="<?= base_url('/ofertas') ?>">
+						<a href="<?= base_url('/galeria') ?>">
 						<div class="overlay"></div>
 						<img class="img-fluid w-100" src="<?= base_url('portal_resources/img/category/deal_c.jpg') ?>" alt="">
 							<div class="deal-details">
-								<h6 class="deal-title">Ofertas</h6>
+								<h6 class="deal-title">Galería</h6>
 							</div>
 						</a>
 					</div>
@@ -219,147 +219,7 @@
 
 	<!-- start product Area -->
 	<section class="owl-carousel active-product-area section_gap text-center">
-		<!-- single product slide -->
-		<div class="single-product-slider">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-6 text-center">
-						<div class="section-title">
-							<h1>Ofertas</h1>
-							<p>Checa estas ofertas, seguro que encuentras <br> algo que te vuelva una estrella de la música.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<!-- single product slide -->
 		<div class="single-product-slider">
 			<div class="container">
@@ -367,141 +227,167 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Lo más nuevo</h1>
-							<p>Instrumentos novedosos, que seguro te harán ver como <br> una estrella de la industria de la música.</p>
+							<p>Checa nuestras novedades en guitarras</p>
 						</div>
 					</div>
 				</div>
 				<div class="row justify-content-center">
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
+					<?php
+						foreach($new_guitars as $new_guitar){
+							echo'
+							<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
+								<div class="single-product my-0">
+									<a href="'. base_url(INS_IMG_ROUTE.$new_guitar->imagen) .'" class="img-fluid img-pop-up-single">
+										<img class="img-fluid" src="'. base_url(INS_IMG_ROUTE.$new_guitar->imagen) .'" alt="">
 									</a>
+									<div class="product-details">
+										<h6>'.$new_guitar->marca .' '. $new_guitar->modelo.'</h6>
+										<div class="price">
+											<h6>$'.$new_guitar->precio.'</h6>
+											<!-- <h6 class="l-through">$210.00</h6> -->
+										</div>
+										<div class="prd-bottom">
+											<a href="'. route_to('guitarras/guitarra', $new_guitar->marca . ' ' . $new_guitar->modelo . ' ' . $new_guitar->acabado_color) .'" class="social-info">
+												<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
+												<p class="hover-text">Más info.</p>
+											</a>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- single product -->
-					<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
-						<div class="single-product my-0">
-							<a href="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" class="img-fluid img-pop-up-single">
-								<img class="img-fluid" src="<?= base_url('portal_resources/img/product/guitar_default.jpg') ?>" alt="">
-							</a>
-							<div class="product-details">
-								<h6>Guitarra Less Paul</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="<?= base_url('/instrumentos/guitarras/guitarra001') ?>" class="social-info">
-										<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
-										<p class="hover-text">Más info.</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
+							';
+						}//end foreach
+					?>
 				</div>
 			</div>
 		</div>
+
+		<!-- single product slide -->
+		<div class="single-product-slider">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>Lo más nuevo</h1>
+							<p>Checa nuestras novedades en baterías</p>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<?php
+						foreach($new_drums as $new_drum){
+							echo'
+							<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
+								<div class="single-product my-0">
+									<a href="'. base_url(INS_IMG_ROUTE.$new_drum->imagen) .'" class="img-fluid img-pop-up-single">
+										<img class="img-fluid" src="'. base_url(INS_IMG_ROUTE.$new_drum->imagen) .'" alt="">
+									</a>
+									<div class="product-details">
+										<h6>'.$new_drum->marca .' '. $new_drum->modelo.'</h6>
+										<div class="price">
+											<h6>$'.$new_drum->precio.'</h6>
+											<!-- <h6 class="l-through">$210.00</h6> -->
+										</div>
+										<div class="prd-bottom">
+											<a href="'. route_to('baterias/bateria', $new_drum->marca . ' ' . $new_drum->modelo . ' ' . $new_drum->acabado_color) .'" class="social-info">
+												<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
+												<p class="hover-text">Más info.</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							';
+						}//end foreach
+					?>
+				</div>
+			</div>
+		</div>
+
+		<!-- single product slide -->
+		<div class="single-product-slider">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>Lo más nuevo</h1>
+							<p>Checa nuestras novedades en teclados</p>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<?php
+						foreach($new_keyboards as $new_keyboard){
+							echo'
+							<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
+								<div class="single-product my-0">
+									<a href="'. base_url(INS_IMG_ROUTE.$new_keyboard->imagen) .'" class="img-fluid img-pop-up-single">
+										<img class="img-fluid" src="'. base_url(INS_IMG_ROUTE.$new_keyboard->imagen) .'" alt="">
+									</a>
+									<div class="product-details">
+										<h6>'.$new_keyboard->marca .' '. $new_keyboard->modelo.'</h6>
+										<div class="price">
+											<h6>$'.$new_keyboard->precio.'</h6>
+											<!-- <h6 class="l-through">$210.00</h6> -->
+										</div>
+										<div class="prd-bottom">
+											<a href="'. route_to('teclados/teclado', $new_keyboard->marca . ' ' . $new_keyboard->modelo . ' ' . $new_keyboard->acabado_color) .'" class="social-info">
+												<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
+												<p class="hover-text">Más info.</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							';
+						}//end foreach
+					?>
+				</div>
+			</div>
+		</div>
+
+		<!-- single product slide -->
+		<div class="single-product-slider">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>Lo más nuevo</h1>
+							<p>Checa nuestras novedades en monitores</p>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<?php
+						foreach($new_monitors as $new_monitor){
+							echo'
+							<div class="col-lg-3 col-md-4 shadow-sm m-2 p-2">
+								<div class="single-product my-0">
+									<a href="'. base_url(INS_IMG_ROUTE.$new_monitor->imagen) .'" class="img-fluid img-pop-up-single">
+										<img class="img-fluid" src="'. base_url(INS_IMG_ROUTE.$new_monitor->imagen) .'" alt="">
+									</a>
+									<div class="product-details">
+										<h6>'.$new_monitor->marca .' '. $new_monitor->modelo.'</h6>
+										<div class="price">
+											<h6>$'.$new_monitor->precio.'</h6>
+											<!-- <h6 class="l-through">$210.00</h6> -->
+										</div>
+										<div class="prd-bottom">
+											<a href="'. route_to('monitores/monitor', $new_monitor->marca . ' ' . $new_monitor->modelo . ' ' . $new_monitor->acabado_color) .'" class="social-info">
+												<span class="lnr lnr-cross" style="transform: rotate(45deg);"></span>
+												<p class="hover-text">Más info.</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							';
+						}//end foreach
+					?>
+				</div>
+			</div>
+		</div>
+
 	</section>
 	<!-- end product Area -->
 <?= $this->endSection() ?>

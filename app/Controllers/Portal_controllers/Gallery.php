@@ -17,6 +17,27 @@ class Gallery extends BaseController {
         $data = array();
         $data['section_name'] = 'Galería';
 
+        // Imagenes guitarra
+        $guitar_table = new \App\Models\Tabla_guitarra();
+        $data['imagenes'] = $guitar_table->get_gallery_img_guitars();
+        
+        // Imagenes batería
+        $drum_table = new \App\Models\Tabla_bateria();
+        $drums = $drum_table->get_gallery_img_drums();
+        array_splice( $data['imagenes'], count($data['imagenes']), null, $drums);
+        
+        // Imagenes teclado
+        $keyboard_table = new \App\Models\Tabla_teclado();
+        $keyboards = $keyboard_table->get_gallery_img_keyboards();
+        array_splice( $data['imagenes'], count($data['imagenes']), null, $keyboards);
+        
+        // Imagenes monitor
+        $monitor_table = new \App\Models\Tabla_monitor();
+        $monitors = $monitor_table->get_gallery_img_monitors();
+        array_splice( $data['imagenes'], count($data['imagenes']), null, $monitors);
+
+        shuffle($data['imagenes']);
+        
         //Breadcrumb
         $this->breadcrumb->add_breadcrumb('Inicio', '/');
         $this->breadcrumb->add_breadcrumb('Galería', 'galeria');

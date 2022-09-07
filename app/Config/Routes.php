@@ -40,11 +40,7 @@ $routes->get('/', 'Portal_controllers/Home::index');
 
 $routes->get('nosotros', 'Portal_controllers/Info::index');
 $routes->get('ofertas', 'Portal_controllers/Deals::index');
-// Instruments dropdown
-$routes->get('instrumentos/guitarras', 'Portal_controllers/Ins_guitars::index');
-$routes->get('instrumentos/baterias', 'Portal_controllers/Ins_drums::index');
-$routes->get('instrumentos/teclados', 'Portal_controllers/Ins_keyboards::index');
-$routes->get('instrumentos/monitores', 'Portal_controllers/Ins_monitors::index');
+
 //
 $routes->get('galeria', 'Portal_controllers/Gallery::index');
 $routes->get('contacto', 'Portal_controllers/Contact::index');
@@ -52,11 +48,16 @@ $routes->get('contacto', 'Portal_controllers/Contact::index');
 $routes->get('acerca/sitio', 'Portal_controllers/Site::index');
 $routes->get('acerca/autor', 'Portal_controllers/Author::index');
 
-$routes->get('instrumentos/guitarras/guitarra001', 'Portal_controllers/Single_guitars::guitar001');
-$routes->get('instrumentos/guitarras/guitarra002', 'Portal_controllers/Single_guitars::guitar002');
-$routes->get('instrumentos/guitarras/guitarra003', 'Portal_controllers/Single_guitars::guitar003');
-$routes->get('instrumentos/guitarras/guitarra004', 'Portal_controllers/Single_guitars::guitar004');
-$routes->get('instrumentos/guitarras/guitarra005', 'Portal_controllers/Single_guitars::guitar005');
+$routes->group('instrumentos', ['namespace' => 'App\Controllers\Portal_controllers'], function($routes){
+    $routes->get('guitarras/(:any)', 'Ins_guitars_single::index/$1', ['as' => 'guitarras/guitarra']);
+    $routes->get('baterias/(:any)', 'Ins_drums_single::index/$1', ['as' => 'baterias/bateria']);
+    $routes->get('teclados/(:any)', 'Ins_keyboards_single::index/$1', ['as' => 'teclados/teclado']);
+    $routes->get('monitores/(:any)', 'Ins_monitors_single::index/$1', ['as' => 'monitores/monitor']);
+    $routes->get('guitarras', 'Ins_guitars::index');
+    $routes->get('baterias', 'Ins_drums::index');
+    $routes->get('teclados', 'Ins_keyboards::index');
+    $routes->get('monitores', 'Ins_monitors::index');
+});
 
 // -----------------------------------------------------------------------
 // PANEL SIDE ROUTES

@@ -45,4 +45,10 @@ class Tabla_usuario extends Model {
                         ->first();
         return $query;
     }// end get_single_user
+
+    public function get_users_quantity(){
+        $query = $this->select('id_usuario')
+                        ->findAll();
+        return $query;
+    }// end get_guitars_quantity function
 }//end class Tabla_usuario

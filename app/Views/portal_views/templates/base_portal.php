@@ -72,7 +72,6 @@
                 <div class="col-lg-2 col-5 px-lg-5">
                     <div class="single-footer-widget">
                         <h6>Explora</h6>
-                        <a href="<?= base_url('/ofertas') ?>" class="extra-links">Ofetas</a><br>
                         <a href="<?= base_url('/instrumentos/guitarras') ?>" class="extra-links">Guitarras</a><br>
                         <a href="<?= base_url('/instrumentos/baterias') ?>" class="extra-links">Baterías</a><br>
                         <a href="<?= base_url('/instrumentos/teclados') ?>" class="extra-links">Teclados</a><br>

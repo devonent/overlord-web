@@ -55,6 +55,5 @@ function print_message(){
     }//end if message_data exists
 
     session()->message = '';
-    // dd($html);
     return $html;
 }//end print_message function

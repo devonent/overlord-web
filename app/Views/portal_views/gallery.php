@@ -23,48 +23,30 @@
 		<div class="container my-5">
 			<div class="section-top-border text-center">
 				<h3>¿Necesitas un poco de inspiración?</h3>
-				<p>Mira algunas fotos asombrosas de algunos productos que recopilamos.</p>
+				<p>Mira algunas fotos asombrosas de nuestros productos.</p>
 				<div class="row gallery-item">
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g1.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g1.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g2.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g2.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g3.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g3.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="<?= base_url('portal_resources/img/gallery/g4.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g4.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="<?= base_url('portal_resources/img/gallery/g5.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g5.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g6.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g6.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g7.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g7.jpg') ?>);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="<?= base_url('portal_resources/img/gallery/g8.jpg') ?>" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(<?= base_url('portal_resources/img/gallery/g8.jpg') ?>);"></div>
-						</a>
-					</div>
+					<?php
+					$img_size = 0;
+					$col_lenght = 4;
+						foreach($imagenes as $imagen){
+							if($img_size == 3){
+								$col_lenght = 6;
+							}else if($img_size == 5){
+								$col_lenght = 4;
+								$img_size = 0;
+							}
+
+							echo'
+							<div class="col-md-'.$col_lenght.'">
+								<a href="'. base_url(INS_IMG_ROUTE.$imagen->imagen) .'" class="img-pop-up">
+									<div class="single-gallery-image" style="background: url('. base_url(INS_IMG_ROUTE.$imagen->imagen) .');"></div>
+								</a>
+							</div>
+							';
+
+							$img_size++;
+						}//end foreach
+					?>
 				</div>
 			</div>
 		</div>

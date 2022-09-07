@@ -20,11 +20,11 @@ function config_portal_navbar() {
     $menu['info'] = $menu_item;
 
     //Ofertas section
-    $menu_item['is_active'] = false;
-    $menu_item['link'] = route_to('ofertas');
-    $menu_item['text'] = 'Ofertas';
-    $menu_item['submenu'] = array();
-    $menu['deals'] = $menu_item;
+    // $menu_item['is_active'] = false;
+    // $menu_item['link'] = route_to('ofertas');
+    // $menu_item['text'] = 'Ofertas';
+    // $menu_item['submenu'] = array();
+    // $menu['deals'] = $menu_item;
 
     //Instrumentos section
     $menu_item['is_active'] = false;
@@ -112,21 +112,25 @@ function activate_section_navbar($section_to_activate = NULL, $menu = NULL) {
 
         // Activate instruments subsections
         case PORTAL_INS_GUITARS_TASK:
+        case PORTAL_INS_GUITARS_SINGLE_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['guitars']['is_active'] = TRUE;
             break;
 
         case PORTAL_INS_DRUMS_TASK:
+        case PORTAL_INS_DRUMS_SINGLE_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['drums']['is_active'] = TRUE;
             break;
 
         case PORTAL_INS_KEYBOARDS_TASK:
+        case PORTAL_INS_KEYBOARDS_SINGLE_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['keyboards']['is_active'] = TRUE;
             break;
 
         case PORTAL_INS_MONITORS_TASK:
+        case PORTAL_INS_MONITORS_SINGLE_TASK:
             $menu['instruments']['is_active'] = TRUE;
             $menu['instruments']['submenu']['monitors']['is_active'] = TRUE;
             break;
