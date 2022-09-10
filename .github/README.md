@@ -4,6 +4,8 @@
 
 Overlord is a web-based CRUD system to manage a ficticial musical store under the same name.
 
+---
+
 ![Main page of Overlord portal](main-portal-page.png)
 *Main page of Overlord portal*
 
@@ -13,6 +15,10 @@ Overlord is a web-based CRUD system to manage a ficticial musical store under th
 *Guitars page of Overlord dashboard*
 
 </div>
+
+---
+
+More info comming soon...
 
 ## More of Overlord
 
