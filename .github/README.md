@@ -4,7 +4,7 @@
 
 Overlord is a web-based CRUD system to manage a ficticial musical store under the same name. 
 
-See the demo at [Overlord Official website](https://overlordmusic.000webhostapp.com/)
+Watch the demo at [Overlord Official website](https://overlordmusic.000webhostapp.com/)
 
 ---
 
