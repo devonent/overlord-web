@@ -20,4 +20,4 @@ Watch the demo at [Overlord Official website](https://overlordmusic.000webhostap
 
 ---
 
-*More info comming soon...*
+*More info coming soon...*
